@@ -1,0 +1,52 @@
+<div class="login-outer">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Left Part: Login Form -->
+        <div class="col-md-6 left-login">
+          <h3>Login</h3>
+          <form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm()">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" formControlName="email" />
+              <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">
+                <small *ngIf="loginForm.controls.email.errors?.required" class="text-danger">Email is required.</small>
+                <small *ngIf="loginForm.controls.email.errors?.email" class="text-danger">Invalid email format.</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" class="form-control" formControlName="password" />
+              <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">
+                <small *ngIf="loginForm.controls.password.errors?.required" class="text-danger">Password is required.</small>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+          <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+          <span class="new-user" style="padding-top: 20px;">
+            Don't have an account? <strong style="color: #f86c64;" routerLink="/register">Register</strong>
+          </span>
+        </div>
+  
+        <!-- Right Part: Carousel -->
+        <div class="col-md-6 d-none d-md-block">
+          <div id="loginCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/images/login.png" class="d-block w-100" alt="Login Illustration 1">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#loginCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#loginCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

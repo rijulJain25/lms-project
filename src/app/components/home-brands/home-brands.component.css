@@ -1,0 +1,61 @@
+
+  button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .brand-outer{
+    text-align: center; 
+    padding: 40px 0px;
+  }
+  
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  
+  article {
+    display: flex;
+    width: 200%;
+    animation: bannermove 20s linear infinite;
+  }
+  
+  article.paused {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+
+  .section-brand{
+    width: 100%;
+    overflow: hidden;
+    background: rgb(255,203,215);
+    background: linear-gradient(61deg, rgba(255,203,215,1) 10%, rgba(214,255,239,1) 100%);        
+
+    
+  }
+  
+  div {
+    width: 100%;
+  }
+  
+  ul {
+    display: flex;
+    /* background: red; */
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+ 
+  
+  @keyframes bannermove {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }

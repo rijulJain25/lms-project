@@ -1,0 +1,30 @@
+.instructor-home-outer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card-trend:hover{
+    background-color: #3b295c;
+    color: white;
+}
+
+.data-course{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-trending-cr{
+    height: 240px; 
+    width: 80%; 
+    border-radius: 5px !important; 
+    margin-top: 10px; 
+    align-self: center;
+}
+
+.carddd{
+    height: 220px;
+}
+

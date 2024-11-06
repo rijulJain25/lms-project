@@ -1,0 +1,190 @@
+/* General layout */
+.blog-outer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 75px;
+  gap: 20px;
+  background-color: rgb(247, 247, 247);
+  flex-wrap: wrap;  /* Ensure the content can wrap on smaller screens */
+}
+
+.blog-left {
+  flex: 2.7;
+}
+
+.blog-right {
+  flex: 1;
+}
+
+/* Blog left container */
+.blog-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.blog-card {
+  width: 100%;
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added box-shadow for a subtle effect */
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.form-blog{
+  width: 100%;
+}
+
+.blog-card:hover {
+  transform: scale(1.02); /* Added hover effect */
+}
+
+.imageblog {
+  height: 100%;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  object-fit: cover; /* Ensure image fills the space without distortion */
+}
+
+.blog-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.blog-toolbar h2 {
+  color: #f86c64;
+}
+
+.mat-card-header {
+  background-color: #fff; /* Ensures consistent card header background */
+  border-bottom: 1px solid #ddd;
+}
+
+.blog-search {
+  border-radius: 10px 0px 0px 10px !important;
+  background-color: white !important;
+  padding: 8px !important;
+  width: 70% !important;
+  border: 2px solid #f86c64 !important;
+}
+
+.search-container {
+  margin-bottom: 30px; 
+}
+
+.recent-post-card {
+  margin-bottom: 16px;
+}
+
+.recent-post-card mat-card-title {
+  font-weight: bold;
+}
+
+.recent-post-card mat-card-subtitle {
+  color: #757575;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 1024px) {
+  .blog-outer {
+    padding: 20px; /* Reduce padding on tablets */
+    flex-direction: column; /* Stack the columns on tablets and smaller screens */
+    align-items: center; /* Center content */
+  }
+
+  .blog-left,
+  .blog-right {
+    flex: 1 1 100%; /* Ensure both sections take full width on smaller screens */
+    margin-bottom: 20px; /* Space between the sections */
+  }
+
+  .blog-container {
+    max-width: 100%; /* Allow blog container to take full width */
+    margin: 10px 0; /* Margin adjustments */
+  }
+
+  .blog-card {
+    flex-direction: column; /* Stack image and content vertically on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .imageblog {
+    width: 100%; /* Make image full width */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover;
+    margin-bottom: 10px; /* Space between image and text */
+  }
+
+  .blog-search {
+    width: 70% !important; /* Full width for search bar on smaller screens */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .search-container {
+    width: 100%; /* Full width container for search */
+    margin-bottom: 20px; /* Margin for spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-outer {
+    padding: 15px; /* More compact padding on smaller screens */
+  }
+
+  .blog-container {
+    max-width: 100%; /* Ensure blog container is responsive */
+  }
+
+  .blog-card {
+    flex-direction: column; /* Stack items vertically for mobile */
+    height: auto; /* Allow content to adjust its height */
+  }
+
+  .imageblog {
+    width: 100%; /* Full-width images */
+    height: 200px; /* Fixed height for images */
+  }
+
+  .blog-left,
+  .blog-right {
+    margin-bottom: 15px; /* Ensure there's space between sections */
+    flex: 1; /* Make sure both sections take full width */
+  }
+
+  .search-container {
+    width: 100%; /* Full width search container */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-outer {
+    padding: 10px; /* More compact padding on small devices */
+  }
+
+  .blog-container {
+    margin: 10px 0;
+  }
+
+  .blog-card {
+    flex-direction: column; /* Stack image and content on very small screens */
+    height: auto;
+  }
+
+  .imageblog {
+    width: 100%; /* Full width for image */
+    height: 180px; /* Adjust image height */
+  }
+
+  .search-container {
+    width: 100%; /* Full width search bar on small screens */
+    margin-bottom: 15px;
+  }
+
+  .blog-search {
+    width: 100% !important; /* Ensure the search bar takes full width */
+    border-radius: 10px;
+  }
+}

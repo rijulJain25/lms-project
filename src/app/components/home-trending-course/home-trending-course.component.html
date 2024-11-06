@@ -1,0 +1,77 @@
+<div class="container mt-4 trending-chk">
+    <h2 class="text-center mb-4">TRENDING COURSES</h2>
+    <p style="text-align: center; padding: 0px 20px 15px 20px">
+      Discover the most popular courses on our platform. These courses are
+      carefully curated to help you build a strong foundation in your chosen
+      field. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe
+      quidem sunt at, impedit laborum fuga. Quia, error nostrum dignissimos.
+    </p>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4" *ngFor="let course of courses">
+        <div class="card h-100 card-trend">
+          <img
+            src="{{ course.img }}"
+            class="img-trending-cr"
+            alt="{{ course.title }}"
+          />
+          <div class="card-body carddd">
+            <div class="instructor-home-outer">
+              <div style="display: flex; gap: 20px">
+                <img
+                  [src]="course.instructor.image"
+                  class="instructor-home-img"
+                  alt="{{ course.instructor.name }}"
+                  style="width: 55px; height: 55px; border-radius: 50px"
+                />
+                <div
+                  class="inst-desc"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                  "
+                >
+                  <p class="inst-name" style="margin-bottom: 2px">
+                    {{ course.instructor.name }}
+                  </p>
+                  <p class="inst-title" style="font-size: 15px">Instructor</p>
+                </div>
+              </div>
+              <span><i class="fa-regular fa-heart" style="color: #f86c64"></i></span>
+            </div>
+  
+            <div style="padding: 0px 10px 10px 10px">
+              <h4 class="card-title">{{ course.title }}</h4>
+              <div class="data-course">
+                <p style="margin: 0">
+                  <i class="fa-solid fa-book-open-reader" style="color: #f86c64"></i>
+                  + {{ course.numberOfLessons }} Lessons
+                </p>
+                <p style="margin: 0">
+                  <i class="fa-solid fa-clock" style="color: #f86c64"></i>
+                  {{ course.duration }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card-footer"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div class="reviews-wrapper">
+              <p style="margin: 0">
+                <i class="fa-solid fa-star" style="color: #f86c64"></i>
+                {{ course.reviews.rating }} Reviews ({{ course.reviews.count }})
+              </p>
+            </div>
+            <button class="classic-btn-two">Enroll Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

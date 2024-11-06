@@ -1,0 +1,78 @@
+.container-cour {
+    width: 80%;
+    margin: auto;
+    padding: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .all-courses-head{
+    text-align: center;
+    font-size: 20px;
+    padding: 70px 70px;
+    border-bottom: 1px solid #ccc;
+    background: rgb(255,203,215);
+    background: linear-gradient(61deg, rgba(255,203,215,1) 10%, rgba(214,255,239,1) 100%);        
+    
+  }
+
+  .all-cour-heading{
+    font-size: 50px;
+  }
+
+  .para-cour{
+    font-size: 17px;
+    margin-bottom: 60px;
+  }
+
+  .button-cour{
+    padding: 12px 20px;
+    background-color: #f86c64;
+    text-decoration: none !important;
+    color: white;
+    border-radius: 30px;
+  }
+
+  .button-cour:hover{
+    background-color: #ff584f;
+  }
+
+  .input-cour{
+    width: 70%;
+    padding: 10px 20px;
+    border-radius: 25px 0px 0px 25px;
+    border: 2px solid #f86c64;
+  }
+  
+  .select-cour{
+    width: 20%;
+    padding: 10px 20px;
+    border-radius: 0px 25px 25px 0px;
+    border: 2px solid #f86c64;
+    background-color: #f86c64;
+    color: white !important;
+  }
+
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  

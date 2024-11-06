@@ -1,0 +1,87 @@
+footer {
+    padding: 80px 0px 40px 0px !important;
+    background-color: #f8f9fa; /* Light background */
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+footer .footer-logo {
+    margin-bottom: 20px;
+}
+
+
+
+footer h5 {
+    margin-bottom: 15px;
+    font-weight: bold; /* Make headings bold */
+}
+
+.desc-footer {
+    width: 70%;
+}
+
+.list-footer {
+    padding-bottom: 10px;
+}
+
+.list-footer:hover {
+    color: #f86c64 !important;
+}
+
+.anchor-footer {
+    text-decoration: none !important;
+}
+
+.anchor-footer:hover {
+    color: #f86c64 !important;
+}
+
+.icon-footer {
+    color: #f86c64;
+    font-size: 27px;
+    padding-right: 14px;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.icon-footer:hover {
+    color: #bfa1f8;
+}
+
+.input-footer {
+    width: 100%; 
+    max-width: 300px; /* Limit max width */
+    padding: 10px 20px;
+    border-radius: 25px 0px 0px 25px;
+    border: 1px solid #f86c64;
+    margin: 0px !important;
+}
+
+.btn-footer {
+    padding: 5px 20px;
+    border-radius: 0px 25px 25px 0px;
+    border: none;
+    background-color: #f86c64;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-footer:hover {
+    background-color: #d55b48; 
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        text-align: center;
+        padding: 20px;
+        background-color: #bfa1f8;
+        color: white;
+        border-radius: 20px;
+    }
+    .desc-footer {
+        width: 100%;
+    }
+
+}

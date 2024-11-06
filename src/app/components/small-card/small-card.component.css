@@ -1,0 +1,9 @@
+    .card img {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .small-card-outer{
+    border: 1px solid #ddd;
+    border-radius: 20px;
+  }

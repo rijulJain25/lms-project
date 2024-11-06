@@ -1,0 +1,108 @@
+.reg-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Kanit", sans-serif;
+    background-color: #f8f9fa; /* Light background for contrast */
+    min-height: 100vh; /* Full viewport height */
+}
+
+.container-fluid {
+    max-width: 1000px;
+    margin: 30px auto; /* Center container */
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background-color: #ffffff; /* White background for form */
+}
+
+.carousel-inner img {
+    border-radius: 20px 0 0 20px; /* Rounded corners on images */
+    object-fit: cover; /* Cover the space without distortion */
+}
+
+.right-reg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stack form elements vertically */
+    padding: 20px; /* Padding around the form */
+}
+
+.form-group {
+    width: 100%; /* Full width for form groups */
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #80bdff; 
+    outline: none; 
+}
+
+.btn-primary {
+    background-color: #f86c64; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 5px;  
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #ff544b;
+}
+
+.btn-secondary {
+    background-color: #bfa1f8; /* Bootstrap secondary color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.reg-form{
+    width: 300px !important;
+}
+
+.left-reg{
+    background-color: #ffdcf2;
+    border-radius: 20px;
+}
+
+
+.btn-secondary:hover {
+    background-color: rgb(37, 85, 121); /* Darker shade on hover */
+}
+
+@media (max-width: 767.98px) {
+    .carousel {
+        display: none;
+    }
+    .container-fluid {
+        margin: 15px; /* Adjust margin for smaller screens */
+    }
+    .right-reg {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+    .form-group {
+        margin-bottom: 10px; /* Reduced space between form groups */
+    }
+}

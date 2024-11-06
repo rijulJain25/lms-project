@@ -1,0 +1,61 @@
+.home-instructor-outer{
+    text-align: center;
+    padding: 60px 73px;
+}
+
+.instructor-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .instructor-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 300px; /* Fixed width for card */
+    transition: transform 0.2s;
+  }
+  
+  .instructor-card:hover {
+    transform: scale(1.05);
+    background-color: #3b295c;
+    color: white;
+  }
+  
+  .instructor-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .instructor-details {
+    flex: 1; /* Allows this section to take the remaining space */
+  }
+  
+  .instructor-name {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .instructor-expertise, .instructor-experience, .instructor-reviews {
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+  
+  @media (max-width: 520px) {
+    .instructor-card {
+      width: 100%;
+    }
+    .home-instructor-outer{
+      padding: 60px 20px;
+    }
+  }
+  

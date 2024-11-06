@@ -1,0 +1,52 @@
+.card-section{
+    padding:  40px 73px 0px 73px !important;
+    margin: 0;
+}
+
+.card-custom{
+    display: flex !important;
+    flex-direction: row !important;
+    border-radius: 20px !important;
+    padding: 20px 10px !important;
+    gap: 20px;
+    text-align: center;
+    position: relative;
+    top: -120px;
+    transition: 0.5s ease;
+
+}
+
+.col{
+    padding: 20px !important;
+}
+
+.card-img-top{
+    width: 40%;
+}
+
+.card-body{
+    padding: 0px !important;
+    transition: 0.5s ease;
+}
+
+.card-custom:hover{
+    transform: translateY(-10px);
+}
+
+@media (max-width:1200px){
+
+    .card-section{
+        padding: 40px 53px 0px 53px !important
+    }
+
+    .stats-col{
+        padding: 5px !important;
+    }
+
+}
+
+@media (max-width: 700px){
+    .card-section{
+        padding: 40px 73px 0px 73px !important
+    }
+}

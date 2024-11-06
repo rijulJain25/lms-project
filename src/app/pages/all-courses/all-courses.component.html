@@ -1,0 +1,37 @@
+<div class="all-courses-head">
+  <h1 class="all-cour-heading">ALL COURSES</h1>
+  <p class="para-cour">Explore our wide range of courses designed to help you learn and grow in your chosen field, offering valuable skills and knowledge tailored to your goals. Join us to enhance your expertise and connect with industry professionals on your journey to success!</p>
+  <a class="button-cour" (click)="scrollToCourses()">Start Exploring</a>
+</div>
+
+<div class="container-cour" id="container-cour">
+  <div style="width: 100%; display: flex; justify-content: center; padding-bottom: 30px;"> 
+    <input class="input-cour" type="text" [(ngModel)]="searchTerm" (input)="filterCourses()" placeholder="Search courses..." />
+  
+    <select class="select-cour" [(ngModel)]="selectedCategory" (change)="filterCourses()">
+      <option value="">All Categories</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Data Science">Data Science</option>
+      <option value="Marketing">Marketing</option>
+      <option value="Design">Design</option>
+      <option value="Mobile Development">Mobile Development</option>
+      <option value="Cybersecurity">Cybersecurity</option>
+      <option value="Game Development">Game Development</option>
+      <option value="Business">Business</option>
+      <option value="Blockchain">Blockchain</option>
+      <option value="Cloud Computing">Cloud Computing</option>
+      <option value="Programming">Programming</option>
+    </select>
+  </div>
+  <div class="card-container">
+    <div *ngFor="let course of filteredCourses" class="card">
+      <img [src]="course.img || 'assets/images/intoPro.png'" alt="{{ course.name }}">
+      <h2>{{ course.name }}</h2>
+      <p>Category: {{ course.category }}</p>
+      <p>Instructor: {{ course.instructor.name }}</p>
+      <p>Price: ${{ course.price }}</p>
+      <p>Rating: {{ course.reviews[0]?.rating }}</p>
+    </div>
+  </div>
+</div>

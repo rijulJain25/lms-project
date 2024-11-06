@@ -1,0 +1,16 @@
+<div class="home-instructor-outer">
+    <h3>OUR TOP INSTRUCTOR</h3>
+    <p class="home-instructor-Para">Discover our skilled instructors, each with unique expertise and extensive experience, ready to guide you on your learning journey! Their dedication and knowledge ensure a transformative educational experience for every student.</p>
+<div class="instructor-container">
+    <div class="instructor-card" *ngFor="let instructor of instructors">
+      <img [src]="instructor.imageSrc" alt="{{ instructor.name }}" class="instructor-image" />
+      <div class="instructor-details">
+        <h3 class="instructor-name" style="color: #f86c64;">{{ instructor.name }}</h3>
+        <p class="instructor-expertise">{{ instructor.expertise }}</p>
+        <p class="instructor-experience">Experience: {{ instructor.experience }} years</p>
+        <p class="instructor-reviews">Reviews: {{ instructor.reviews }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+  

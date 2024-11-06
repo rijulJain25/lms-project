@@ -1,0 +1,38 @@
+body{
+    font-family: "Kanit", sans-serif !important;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+html{
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+.classic-btn-two{
+    padding: 7px 26px;
+    background-color: transparent;
+    border: 3.5px solid #bfa1f8;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.classic-btn-two:hover{
+    background-color: #f86c64;
+    border: 3.5px solid #f86c64;
+}
+
+.classic-btn{
+    padding: 7px 24px;
+    border: 3.5px solid rgb(243, 239, 221);
+    border-radius: 30px;
+    cursor: pointer;
+    background-color:rgb(243, 239, 221);
+}
+
+.classic-btn:hover{
+    background-color: #f86c64;
+    border: 3.5px solid #f86c64;
+    color: white;
+}
