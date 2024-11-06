@@ -28,7 +28,7 @@
         "date": "2024-11-01",
         "description": "A guide to advanced Angular techniques, including lazy loading, custom pipes, and optimizing application performance.",
         "images": [
-            "assets/images/angularblog.png",
+            "assets/images/teacher1.png",
             "assets/images/angularblog2.png"
         ]
     },
@@ -39,7 +39,7 @@
         "date": "2024-11-10",
         "description": "Learn how to build responsive Angular applications that adapt seamlessly to all screen sizes.",
         "images": [
-            "assets/images/angularblog.png",
+            "assets/images/python.png",
             "assets/images/angularblog2.png"
         ]
     },
@@ -50,7 +50,7 @@
         "date": "2024-10-20",
         "description": "An introduction to state management techniques in Angular, including services, NgRx, and Akita.",
         "images": [
-            "assets/images/angularblog.png",
+            "assets/images/ui.png",
             "assets/images/angularblog2.png"
         ]
     },
