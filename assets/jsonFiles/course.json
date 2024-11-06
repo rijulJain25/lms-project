@@ -1,0 +1,1787 @@
+[
+    {
+        "id": 1,
+        "name": "Introduction to Programming",
+        "category": "Computer Science",
+        "duration": "8 weeks",
+        "description": "This course provides a comprehensive introduction to programming, ideal for beginners. Students will learn the fundamentals of programming using Python, one of the most popular and versatile programming languages today. The course covers essential concepts such as variables, control structures, data structures, and basic algorithms through hands-on projects. Each week builds on the previous one, ensuring a gradual and thorough understanding of programming principles.",
+        "instructor": {
+            "name": "Frank Miller",
+            "email": "frank@example.com",
+            "bio": "An experienced software developer with over 10 years of teaching experience in programming and software engineering.",
+            "reviewIns": "5"
+        },
+        "img": "assets/images/intoPro.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Programming and Python",
+                "description": "Get acquainted with programming concepts and Python installation. Learn how to write your first simple program."
+            },
+            {
+                "week": 2,
+                "title": "Variables and Data Types",
+                "description": "Explore different data types in Python. Understand how to store and manipulate data using variables."
+            },
+            {
+                "week": 3,
+                "title": "Control Structures",
+                "description": "Learn about conditionals (if-else statements) and loops (for and while) to control the flow of your program."
+            },
+            {
+                "week": 4,
+                "title": "Functions",
+                "description": "Understand the concept of functions, how to define them, and their importance in structuring code."
+            },
+            {
+                "week": 5,
+                "title": "Data Structures",
+                "description": "Delve into lists, tuples, and dictionaries. Learn how to store and manage data efficiently."
+            },
+            {
+                "week": 6,
+                "title": "Introduction to Object-Oriented Programming",
+                "description": "Discover the principles of object-oriented programming, including classes and objects, encapsulation, inheritance, and polymorphism."
+            },
+            {
+                "week": 7,
+                "title": "Basic Algorithms",
+                "description": "Learn fundamental algorithms, including sorting and searching, and understand their complexity."
+            },
+            {
+                "week": 8,
+                "title": "Final Project",
+                "description": "Apply all the skills learned throughout the course to build a simple application, which you will present at the end."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Alice Johnson",
+                "rating": 5,
+                "comment": "This course was incredibly helpful! The instructor made complex topics easy to understand."
+            },
+            {
+                "reviewer": "Bob Smith",
+                "rating": 4,
+                "comment": "Great introduction to programming. I learned a lot, but some sections felt rushed."
+            }
+        ],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2024-01-15",
+        "price": 299,
+        "maxEnrollment": 30,
+        "faq": [
+            {
+                "question": "Do I need prior programming experience?",
+                "answer": "No, this course is designed for beginners and requires no prior experience."
+            },
+            {
+                "question": "What materials do I need for this course?",
+                "answer": "You'll need a computer with internet access and Python installed. We will provide all additional resources."
+            },
+            {
+                "question": "Will I receive a certificate upon completion?",
+                "answer": "Yes, you will receive a certificate of completion after finishing the course and the final project."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Web Development Bootcamp",
+        "category": "Web Development",
+        "duration": "12 weeks",
+        "description": "This intensive bootcamp is designed to equip students with the skills needed to become a proficient web developer. The curriculum covers HTML, CSS, and JavaScript, along with popular frameworks like React. Students will work on real-world projects that reinforce their learning and culminate in a portfolio that showcases their capabilities as web developers.",
+        "instructor": {
+            "name": "Grace Lee",
+            "email": "grace@example.com",
+            "bio": "A web developer with over 8 years of experience in full-stack development and teaching web technologies.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/webd.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Web Development",
+                "description": "Learn the fundamentals of web development, including the structure of the web and the role of developers."
+            },
+            {
+                "week": 2,
+                "title": "HTML Basics",
+                "description": "Get hands-on with HTML and learn how to create well-structured web pages with headings, paragraphs, lists, and links."
+            },
+            {
+                "week": 3,
+                "title": "CSS Fundamentals",
+                "description": "Discover CSS and how to style your web pages. Understand selectors, properties, and the box model."
+            },
+            {
+                "week": 4,
+                "title": "JavaScript Basics",
+                "description": "Learn the basics of JavaScript, including variables, data types, and operators. Write your first scripts."
+            },
+            {
+                "week": 5,
+                "title": "Responsive Design",
+                "description": "Explore responsive web design principles and how to create layouts that work on all devices using media queries."
+            },
+            {
+                "week": 6,
+                "title": "Introduction to Frontend Frameworks",
+                "description": "Understand the advantages of using frameworks and libraries. Get an overview of popular options like React and Vue.js."
+            },
+            {
+                "week": 7,
+                "title": "React.js",
+                "description": "Dive deep into React. Learn about components, props, state management, and lifecycle methods."
+            },
+            {
+                "week": 8,
+                "title": "Backend Basics with Node.js",
+                "description": "Get introduced to server-side programming with Node.js. Learn about setting up a server and handling requests."
+            },
+            {
+                "week": 9,
+                "title": "Database Integration",
+                "description": "Learn about databases and how to connect your web applications to MongoDB. Understand CRUD operations."
+            },
+            {
+                "week": 10,
+                "title": "Deployment and Hosting",
+                "description": "Understand the deployment process of web applications. Learn how to host your applications on platforms like Heroku."
+            },
+            {
+                "week": 11,
+                "title": "Final Project Planning",
+                "description": "Plan your final project. Brainstorm ideas and begin building a project that incorporates all the skills you've learned."
+            },
+            {
+                "week": 12,
+                "title": "Final Project Presentation",
+                "description": "Present your final project to the class. Showcase your work and receive feedback from peers and instructors."
+            }
+        ],
+        "prerequisites": [
+            "Basic computer skills"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Carol White",
+                "rating": 5,
+                "comment": "Absolutely transformative! I now feel confident to apply for web developer positions."
+            },
+            {
+                "reviewer": "David Brown",
+                "rating": 4,
+                "comment": "Very thorough course, though the pace was a bit fast at times."
+            }
+        ],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2024-03-01",
+        "price": 599,
+        "maxEnrollment": 25,
+        "faq": [
+            {
+                "question": "What prior knowledge do I need?",
+                "answer": "Basic computer skills are recommended, but no prior programming knowledge is required."
+            },
+            {
+                "question": "Will I work on real projects?",
+                "answer": "Yes, you will work on multiple real-world projects throughout the course to build your portfolio."
+            },
+            {
+                "question": "Is this course suitable for career changers?",
+                "answer": "Absolutely! Many of our students are career changers who have successfully transitioned into web development."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Data Science and Machine Learning",
+        "category": "Data Science",
+        "duration": "10 weeks",
+        "description": "This course introduces students to the fascinating world of data science and machine learning. Using Python and libraries like Pandas, NumPy, and Scikit-learn, students will learn to analyze complex datasets, build predictive models, and apply machine learning algorithms to solve real-world problems. The course includes a capstone project that allows students to showcase their skills on a real dataset.",
+        "instructor": {
+            "name": "Emily Davis",
+            "email": "emily@example.com",
+            "bio": "A data scientist with extensive experience in analytics and teaching data science courses at various institutions.",
+            "reviewIns": "5"
+        },
+        "img": "assets/images/data.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Data Science",
+                "description": "Explore the field of data science, its significance, and its various applications in today's data-driven world."
+            },
+            {
+                "week": 2,
+                "title": "Data Collection and Cleaning",
+                "description": "Learn how to collect data from various sources and the importance of cleaning data for analysis."
+            },
+            {
+                "week": 3,
+                "title": "Exploratory Data Analysis",
+                "description": "Discover techniques for exploring datasets, including visualization methods to uncover patterns."
+            },
+            {
+                "week": 4,
+                "title": "Introduction to Machine Learning",
+                "description": "Understand the basic concepts of machine learning and its various types, including supervised and unsupervised learning."
+            },
+            {
+                "week": 5,
+                "title": "Supervised Learning",
+                "description": "Dive into supervised learning algorithms like linear regression and decision trees. Learn how to implement them using Python."
+            },
+            {
+                "week": 6,
+                "title": "Unsupervised Learning",
+                "description": "Explore unsupervised learning techniques such as clustering and dimensionality reduction. Use real datasets to practice."
+            },
+            {
+                "week": 7,
+                "title": "Model Evaluation and Selection",
+                "description": "Learn how to evaluate machine learning models using various metrics and techniques for model selection."
+            },
+            {
+                "week": 8,
+                "title": "Working with Real-World Datasets",
+                "description": "Apply your knowledge by working with real datasets, implementing your own analysis and models."
+            },
+            {
+                "week": 9,
+                "title": "Capstone Project Preparation",
+                "description": "Prepare for the capstone project by selecting a dataset and outlining your analysis plan."
+            },
+            {
+                "week": 10,
+                "title": "Capstone Project Presentation",
+                "description": "Present your capstone project, demonstrating your analytical skills and findings to the class."
+            }
+        ],
+        "prerequisites": [
+            "Basic statistics knowledge",
+            "Familiarity with Python is recommended"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Jack Thompson",
+                "rating": 5,
+                "comment": "Incredibly informative course! The projects really helped solidify my understanding."
+            },
+            {
+                "reviewer": "Maria Garcia",
+                "rating": 4,
+                "comment": "Great content, but some topics were quite dense. More practical examples would help."
+            }
+        ],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2024-04-10",
+        "price": 499,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "Do I need a background in statistics?",
+                "answer": "Basic knowledge of statistics is recommended, but we will cover essential concepts in the course."
+            },
+            {
+                "question": "What tools will I use?",
+                "answer": "You will primarily use Python along with libraries like Pandas, NumPy, and Scikit-learn."
+            },
+            {
+                "question": "Is there a capstone project?",
+                "answer": "Yes, the course includes a capstone project where you'll apply what you've learned to a real dataset."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Digital Marketing Masterclass",
+        "category": "Marketing",
+        "duration": "10 weeks",
+        "description": "This comprehensive course covers all aspects of digital marketing, from SEO and content marketing to social media and analytics. Learn how to create effective digital marketing strategies that drive traffic and conversions.",
+        "instructor": {
+            "name": "Lisa Chang",
+            "email": "lisa@example.com",
+            "bio": "A digital marketing expert with over 12 years of experience, specializing in SEO and content marketing.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/businessAna.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Digital Marketing",
+                "description": "Understand the landscape of digital marketing and its key components."
+            },
+            {
+                "week": 2,
+                "title": "Search Engine Optimization (SEO)",
+                "description": "Learn how to optimize websites for search engines to increase visibility."
+            },
+            {
+                "week": 3,
+                "title": "Content Marketing Strategies",
+                "description": "Explore effective content marketing techniques and best practices."
+            },
+            {
+                "week": 4,
+                "title": "Social Media Marketing",
+                "description": "Discover how to leverage social media platforms for brand promotion."
+            },
+            {
+                "week": 5,
+                "title": "Email Marketing Essentials",
+                "description": "Learn to create effective email campaigns and understand segmentation."
+            },
+            {
+                "week": 6,
+                "title": "Pay-Per-Click Advertising (PPC)",
+                "description": "Understand the fundamentals of PPC and how to create successful ad campaigns."
+            },
+            {
+                "week": 7,
+                "title": "Analytics and Data Interpretation",
+                "description": "Learn how to analyze data and derive actionable insights."
+            },
+            {
+                "week": 8,
+                "title": "Creating a Digital Marketing Plan",
+                "description": "Build a comprehensive digital marketing plan for a mock business."
+            },
+            {
+                "week": 9,
+                "title": "Case Studies in Digital Marketing",
+                "description": "Examine successful digital marketing campaigns and their impact."
+            },
+            {
+                "week": 10,
+                "title": "Final Project Presentation",
+                "description": "Present your digital marketing strategy to the class."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2024-05-15",
+        "price": 399,
+        "maxEnrollment": 30,
+        "faq": [
+            {
+                "question": "Do I need prior marketing experience?",
+                "answer": "No, this course is suitable for beginners."
+            },
+            {
+                "question": "What tools will I use?",
+                "answer": "You'll use various digital marketing tools; recommendations will be provided."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you'll create and present a digital marketing plan."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Graphic Design Fundamentals",
+        "category": "Design",
+        "duration": "8 weeks",
+        "description": "This course introduces the principles of graphic design. Students will learn about typography, color theory, and layout design, using software tools like Adobe Illustrator and Photoshop.",
+        "instructor": {
+            "name": "Tom Green",
+            "email": "tom@example.com",
+            "bio": "A professional graphic designer with over 15 years of experience in various design fields.",
+            "reviewIns": "3"
+        },
+        "img": "assets/images/graphicInto.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Graphic Design",
+                "description": "Learn the basic principles and history of graphic design."
+            },
+            {
+                "week": 2,
+                "title": "Typography",
+                "description": "Understand the role of typography in design and how to choose fonts."
+            },
+            {
+                "week": 3,
+                "title": "Color Theory",
+                "description": "Explore color theory and how to create effective color palettes."
+            },
+            {
+                "week": 4,
+                "title": "Layout and Composition",
+                "description": "Learn how to arrange elements on a page for maximum impact."
+            },
+            {
+                "week": 5,
+                "title": "Adobe Illustrator Basics",
+                "description": "Get hands-on experience with Adobe Illustrator for creating graphics."
+            },
+            {
+                "week": 6,
+                "title": "Adobe Photoshop Basics",
+                "description": "Learn how to edit and manipulate images using Adobe Photoshop."
+            },
+            {
+                "week": 7,
+                "title": "Creating a Portfolio",
+                "description": "Begin building a personal portfolio to showcase your work."
+            },
+            {
+                "week": 8,
+                "title": "Final Project",
+                "description": "Design a complete branding package for a mock client."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2024-06-01",
+        "price": 299,
+        "maxEnrollment": 25,
+        "faq": [
+            {
+                "question": "Do I need special software?",
+                "answer": "Yes, Adobe Illustrator and Photoshop are recommended."
+            },
+            {
+                "question": "Will I receive feedback on my work?",
+                "answer": "Yes, the instructor will provide feedback on all projects."
+            },
+            {
+                "question": "Is this course suitable for beginners?",
+                "answer": "Absolutely! No prior design experience is required."
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Python for Data Analysis",
+        "category": "Data Science",
+        "duration": "6 weeks",
+        "description": "This course focuses on using Python for data analysis. Students will learn how to manipulate data with Pandas, visualize data with Matplotlib, and perform statistical analysis.",
+        "instructor": {
+            "name": "James White",
+            "email": "james@example.com",
+            "bio": "A data analyst with expertise in Python, statistics, and data visualization.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/python.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Python",
+                "description": "Learn the basics of Python programming and its applications in data analysis."
+            },
+            {
+                "week": 2,
+                "title": "Data Manipulation with Pandas",
+                "description": "Explore data manipulation techniques using the Pandas library."
+            },
+            {
+                "week": 3,
+                "title": "Data Visualization with Matplotlib",
+                "description": "Learn to create various visualizations to represent data."
+            },
+            {
+                "week": 4,
+                "title": "Statistical Analysis",
+                "description": "Understand basic statistical concepts and how to apply them in Python."
+            },
+            {
+                "week": 5,
+                "title": "Working with Real Datasets",
+                "description": "Apply your skills on real-world datasets to extract insights."
+            },
+            {
+                "week": 6,
+                "title": "Final Project",
+                "description": "Analyze a dataset of your choice and present your findings."
+            }
+        ],
+        "prerequisites": [
+            "Basic programming knowledge"
+        ],
+        "reviews": [],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2024-07-15",
+        "price": 399,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "What prior knowledge do I need?",
+                "answer": "Basic programming knowledge is required."
+            },
+            {
+                "question": "Will we work with real data?",
+                "answer": "Yes, you will analyze real datasets throughout the course."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you'll complete a final project analyzing a dataset."
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Mobile App Development with Flutter",
+        "category": "Mobile Development",
+        "duration": "10 weeks",
+        "description": "This course teaches students how to develop mobile applications using Flutter. Learn how to build cross-platform apps for iOS and Android with a single codebase.",
+        "instructor": {
+            "name": "Anna Kim",
+            "email": "anna@example.com",
+            "bio": "A mobile developer with extensive experience in Flutter and cross-platform development.",
+            "reviewIns": "5"
+        },
+        "img": "assets/images/mobile.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Flutter",
+                "description": "Get familiar with the Flutter framework and its architecture."
+            },
+            {
+                "week": 2,
+                "title": "Setting Up Your Development Environment",
+                "description": "Learn how to set up Flutter and the necessary tools on your machine."
+            },
+            {
+                "week": 3,
+                "title": "Building Your First App",
+                "description": "Create a simple mobile app using Flutter and understand the widget tree."
+            },
+            {
+                "week": 4,
+                "title": "State Management",
+                "description": "Explore state management techniques and patterns in Flutter."
+            },
+            {
+                "week": 5,
+                "title": "Working with APIs",
+                "description": "Learn how to fetch and display data from APIs in your app."
+            },
+            {
+                "week": 6,
+                "title": "Building UIs with Flutter",
+                "description": "Understand how to design user interfaces using Flutter widgets."
+            },
+            {
+                "week": 7,
+                "title": "Navigation and Routing",
+                "description": "Explore navigation and routing in a Flutter application."
+            },
+            {
+                "week": 8,
+                "title": "Testing and Debugging",
+                "description": "Learn how to test and debug your Flutter applications."
+            },
+            {
+                "week": 9,
+                "title": "Publishing Your App",
+                "description": "Understand the steps to publish your app on the Google Play Store and Apple App Store."
+            },
+            {
+                "week": 10,
+                "title": "Final Project",
+                "description": "Develop a complete mobile application and present it to the class."
+            }
+        ],
+        "prerequisites": [
+            "Basic programming knowledge"
+        ],
+        "reviews": [],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2024-08-01",
+        "price": 499,
+        "maxEnrollment": 25,
+        "faq": [
+            {
+                "question": "Do I need a Mac to develop iOS apps?",
+                "answer": "Yes, a Mac is required to publish iOS applications."
+            },
+            {
+                "question": "What tools will I use?",
+                "answer": "You'll use Flutter and Dart for mobile app development."
+            },
+            {
+                "question": "Is prior mobile development experience needed?",
+                "answer": "Basic programming knowledge is necessary, but no prior mobile experience is required."
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Cybersecurity Fundamentals",
+        "category": "Cybersecurity",
+        "duration": "8 weeks",
+        "description": "This course introduces the basics of cybersecurity. Students will learn about common threats, vulnerabilities, and protective measures to secure networks and data.",
+        "instructor": {
+            "name": "Michael Brown",
+            "email": "michael@example.com",
+            "bio": "A cybersecurity professional with over 10 years of experience in protecting networks and data.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Cybersecurity",
+                "description": "Understand the importance of cybersecurity and its key concepts."
+            },
+            {
+                "week": 2,
+                "title": "Types of Cyber Threats",
+                "description": "Explore various types of cyber threats and attacks."
+            },
+            {
+                "week": 3,
+                "title": "Network Security Basics",
+                "description": "Learn about securing networks and best practices."
+            },
+            {
+                "week": 4,
+                "title": "Data Protection Strategies",
+                "description": "Understand methods to protect data from unauthorized access."
+            },
+            {
+                "week": 5,
+                "title": "Security Policies and Compliance",
+                "description": "Learn about the role of policies in maintaining security and compliance."
+            },
+            {
+                "week": 6,
+                "title": "Incident Response",
+                "description": "Explore the steps to take when responding to a cybersecurity incident."
+            },
+            {
+                "week": 7,
+                "title": "Risk Management",
+                "description": "Understand the principles of risk management in cybersecurity."
+            },
+            {
+                "week": 8,
+                "title": "Final Assessment",
+                "description": "Demonstrate your understanding of cybersecurity concepts through a final assessment."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2024-09-01",
+        "price": 349,
+        "maxEnrollment": 30,
+        "faq": [
+            {
+                "question": "Do I need technical skills?",
+                "answer": "No, this course is designed for beginners."
+            },
+            {
+                "question": "What materials do I need?",
+                "answer": "You will need access to a computer with an internet connection."
+            },
+            {
+                "question": "Will I receive a certificate upon completion?",
+                "answer": "Yes, you will receive a certificate of completion."
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Game Development with Unity",
+        "category": "Game Development",
+        "duration": "12 weeks",
+        "description": "Learn how to develop video games using Unity, a powerful game development platform. This course covers 2D and 3D game design, scripting, and deployment.",
+        "instructor": {
+            "name": "Sarah Wilson",
+            "email": "sarah@example.com",
+            "bio": "A game developer with over 7 years of experience in creating immersive gaming experiences.",
+            "reviewIns": "2"
+        },
+        "img": "assets/images/gameDev.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Game Development",
+                "description": "Explore the game development process and the Unity environment."
+            },
+            {
+                "week": 2,
+                "title": "2D Game Design Basics",
+                "description": "Learn the principles of 2D game design and create your first game."
+            },
+            {
+                "week": 3,
+                "title": "3D Game Design Basics",
+                "description": "Understand the fundamentals of 3D game design in Unity."
+            },
+            {
+                "week": 4,
+                "title": "Scripting with C#",
+                "description": "Learn C# scripting for game functionality."
+            },
+            {
+                "week": 5,
+                "title": "Game Physics and Mechanics",
+                "description": "Explore game physics and how to implement mechanics in Unity."
+            },
+            {
+                "week": 6,
+                "title": "User Interface Design",
+                "description": "Design engaging user interfaces for your games."
+            },
+            {
+                "week": 7,
+                "title": "Audio Integration",
+                "description": "Learn how to integrate audio elements into your games."
+            },
+            {
+                "week": 8,
+                "title": "Testing and Debugging",
+                "description": "Explore methods for testing and debugging games."
+            },
+            {
+                "week": 9,
+                "title": "Game Monetization Strategies",
+                "description": "Understand different monetization strategies for games."
+            },
+            {
+                "week": 10,
+                "title": "Final Project Development",
+                "description": "Begin development on your final game project."
+            },
+            {
+                "week": 11,
+                "title": "Final Project Polish",
+                "description": "Refine and finalize your game project for presentation."
+            },
+            {
+                "week": 12,
+                "title": "Final Project Presentation",
+                "description": "Present your completed game to the class."
+            }
+        ],
+        "prerequisites": [
+            "Basic programming knowledge"
+        ],
+        "reviews": [],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2024-10-01",
+        "price": 599,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "Do I need a powerful computer?",
+                "answer": "A moderately powerful computer is recommended for game development."
+            },
+            {
+                "question": "Will I learn about 2D and 3D games?",
+                "answer": "Yes, the course covers both 2D and 3D game development."
+            },
+            {
+                "question": "Is prior game development experience needed?",
+                "answer": "Basic programming knowledge is necessary, but no prior game development experience is required."
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Business Analytics with Excel",
+        "category": "Business",
+        "duration": "8 weeks",
+        "description": "This course teaches students how to leverage Excel for business analytics. Learn data analysis techniques, visualization methods, and decision-making skills using Excel.",
+        "instructor": {
+            "name": "David Taylor",
+            "email": "david@example.com",
+            "bio": "A business analyst with expertise in data analytics and Excel.",
+            "reviewIns": "5"
+        },
+        "img": "assets/images/businessAna.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Business Analytics",
+                "description": "Understand the role of analytics in business decision-making."
+            },
+            {
+                "week": 2,
+                "title": "Excel Basics for Analytics",
+                "description": "Learn essential Excel functions and formulas."
+            },
+            {
+                "week": 3,
+                "title": "Data Visualization in Excel",
+                "description": "Explore techniques for visualizing data in Excel."
+            },
+            {
+                "week": 4,
+                "title": "Descriptive Analytics",
+                "description": "Understand descriptive analytics techniques to summarize data."
+            },
+            {
+                "week": 5,
+                "title": "Predictive Analytics",
+                "description": "Learn how to create predictive models using Excel."
+            },
+            {
+                "week": 6,
+                "title": "Data Cleaning Techniques",
+                "description": "Explore methods for cleaning and preparing data for analysis."
+            },
+            {
+                "week": 7,
+                "title": "Dashboard Creation",
+                "description": "Create interactive dashboards in Excel to present data."
+            },
+            {
+                "week": 8,
+                "title": "Final Project",
+                "description": "Conduct a complete analysis project using Excel and present findings."
+            }
+        ],
+        "prerequisites": [
+            "Basic Excel knowledge"
+        ],
+        "reviews": [],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2024-11-01",
+        "price": 299,
+        "maxEnrollment": 30,
+        "faq": [
+            {
+                "question": "What prior knowledge do I need?",
+                "answer": "Basic Excel knowledge is required."
+            },
+            {
+                "question": "Will we use real data?",
+                "answer": "Yes, you will analyze real-world data throughout the course."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you'll complete a final project analyzing a dataset."
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Blockchain Basics",
+        "category": "Blockchain",
+        "duration": "6 weeks",
+        "description": "This course introduces the fundamentals of blockchain technology. Learn about its applications, potential impacts, and how to develop basic blockchain solutions.",
+        "instructor": {
+            "name": "Emma Smith",
+            "email": "emma@example.com",
+            "bio": "A blockchain consultant with years of experience in technology implementation and training.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/blockchain.png",
+
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Blockchain",
+                "description": "Understand the basic concepts of blockchain technology and its significance."
+            },
+            {
+                "week": 2,
+                "title": "How Blockchain Works",
+                "description": "Explore the mechanics of blockchain, including mining and consensus algorithms."
+            },
+            {
+                "week": 3,
+                "title": "Blockchain Use Cases",
+                "description": "Learn about various applications of blockchain technology across industries."
+            },
+            {
+                "week": 4,
+                "title": "Smart Contracts",
+                "description": "Understand smart contracts and how they function on blockchain platforms."
+            },
+            {
+                "week": 5,
+                "title": "Developing a Simple Blockchain Application",
+                "description": "Hands-on experience creating a simple blockchain application."
+            },
+            {
+                "week": 6,
+                "title": "Future of Blockchain Technology",
+                "description": "Discuss the future potential of blockchain and emerging trends."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2024-12-01",
+        "price": 249,
+        "maxEnrollment": 40,
+        "faq": [
+            {
+                "question": "Do I need programming knowledge?",
+                "answer": "No, this course is suitable for beginners."
+            },
+            {
+                "question": "What tools will I use?",
+                "answer": "We'll use various online resources for learning."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you will develop a simple blockchain application."
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Web Development Bootcamp",
+        "category": "Web Development",
+        "duration": "12 weeks",
+        "description": "A comprehensive bootcamp covering front-end and back-end web development. Learn HTML, CSS, JavaScript, Node.js, and more.",
+        "instructor": {
+            "name": "Mark Johnson",
+            "email": "mark@example.com",
+            "bio": "A full-stack developer with extensive experience in building web applications.",
+            "reviewIns": "2"
+        },
+        "img": "assets/images/ui.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Web Development",
+                "description": "Learn the basics of web development and its technologies."
+            },
+            {
+                "week": 2,
+                "title": "HTML and CSS Fundamentals",
+                "description": "Explore the building blocks of web pages with HTML and CSS."
+            },
+            {
+                "week": 3,
+                "title": "JavaScript Basics",
+                "description": "Understand the fundamentals of JavaScript programming."
+            },
+            {
+                "week": 4,
+                "title": "DOM Manipulation",
+                "description": "Learn how to manipulate the Document Object Model (DOM) with JavaScript."
+            },
+            {
+                "week": 5,
+                "title": "Introduction to Responsive Design",
+                "description": "Explore responsive web design principles and frameworks."
+            },
+            {
+                "week": 6,
+                "title": "Node.js Basics",
+                "description": "Understand server-side programming with Node.js."
+            },
+            {
+                "week": 7,
+                "title": "Working with Databases",
+                "description": "Learn about databases and how to interact with them using Node.js."
+            },
+            {
+                "week": 8,
+                "title": "Building RESTful APIs",
+                "description": "Explore how to create and consume RESTful APIs."
+            },
+            {
+                "week": 9,
+                "title": "User Authentication",
+                "description": "Learn about user authentication and session management."
+            },
+            {
+                "week": 10,
+                "title": "Deploying Web Applications",
+                "description": "Understand how to deploy your web applications online."
+            },
+            {
+                "week": 11,
+                "title": "Capstone Project Development",
+                "description": "Start developing your final project."
+            },
+            {
+                "week": 12,
+                "title": "Capstone Project Presentation",
+                "description": "Present your final web application project."
+            }
+        ],
+        "prerequisites": [
+            "Basic computer skills"
+        ],
+        "reviews": [],
+        "level": "Beginner to Intermediate",
+        "language": "English",
+        "startDate": "2025-01-01",
+        "price": 699,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "Do I need prior coding experience?",
+                "answer": "No, this bootcamp is designed for beginners."
+            },
+            {
+                "question": "What materials will I need?",
+                "answer": "A laptop with internet access is required."
+            },
+            {
+                "question": "Will I receive a certificate?",
+                "answer": "Yes, you'll receive a certificate of completion."
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Introduction to Data Science",
+        "category": "Data Science",
+        "duration": "10 weeks",
+        "description": "This course provides an introduction to data science. Learn about data manipulation, analysis, visualization, and machine learning concepts.",
+        "instructor": {
+            "name": "Olivia Martin",
+            "email": "olivia@example.com",
+            "bio": "A data scientist with experience in machine learning and statistical analysis.",
+            "reviewIns": "3"
+        },
+        "img": "assets/images/teacher1.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Data Science",
+                "description": "Understand the data science process and its importance."
+            },
+            {
+                "week": 2,
+                "title": "Data Collection Techniques",
+                "description": "Learn about various data collection methods."
+            },
+            {
+                "week": 3,
+                "title": "Data Cleaning and Preparation",
+                "description": "Explore techniques for cleaning and preparing data."
+            },
+            {
+                "week": 4,
+                "title": "Exploratory Data Analysis",
+                "description": "Discover how to explore datasets and find patterns."
+            },
+            {
+                "week": 5,
+                "title": "Data Visualization Techniques",
+                "description": "Learn to create effective visualizations to represent data."
+            },
+            {
+                "week": 6,
+                "title": "Introduction to Machine Learning",
+                "description": "Understand the basics of machine learning and its applications."
+            },
+            {
+                "week": 7,
+                "title": "Supervised Learning",
+                "description": "Explore supervised learning algorithms and their implementations."
+            },
+            {
+                "week": 8,
+                "title": "Unsupervised Learning",
+                "description": "Learn about unsupervised learning techniques and clustering."
+            },
+            {
+                "week": 9,
+                "title": "Model Evaluation and Validation",
+                "description": "Understand how to evaluate and validate machine learning models."
+            },
+            {
+                "week": 10,
+                "title": "Final Project",
+                "description": "Work on a data science project and present your findings."
+            }
+        ],
+        "prerequisites": [
+            "Basic statistics knowledge"
+        ],
+        "reviews": [],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2025-02-01",
+        "price": 499,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "What prior knowledge do I need?",
+                "answer": "Basic statistics knowledge is recommended."
+            },
+            {
+                "question": "Will we work with real datasets?",
+                "answer": "Yes, you will analyze real datasets throughout the course."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you'll complete a final project analyzing a dataset."
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Cloud Computing Basics",
+        "category": "Cloud Computing",
+        "duration": "8 weeks",
+        "description": "This course introduces cloud computing concepts, services, and deployment models. Learn about major cloud platforms and their functionalities.",
+        "instructor": {
+            "name": "Nathan Lee",
+            "email": "nathan@example.com",
+            "bio": "A cloud architect with extensive experience in cloud technologies and implementations.",
+            "reviewIns": "5"
+        },
+        "img": "assets/images/cloud.png",
+
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Cloud Computing",
+                "description": "Understand the fundamentals of cloud computing."
+            },
+            {
+                "week": 2,
+                "title": "Cloud Service Models",
+                "description": "Explore different service models: IaaS, PaaS, and SaaS."
+            },
+            {
+                "week": 3,
+                "title": "Major Cloud Providers",
+                "description": "Learn about major cloud service providers like AWS, Azure, and Google Cloud."
+            },
+            {
+                "week": 4,
+                "title": "Cloud Deployment Models",
+                "description": "Understand public, private, and hybrid cloud models."
+            },
+            {
+                "week": 5,
+                "title": "Cloud Security Best Practices",
+                "description": "Explore security challenges and best practices in the cloud."
+            },
+            {
+                "week": 6,
+                "title": "Cloud Storage Solutions",
+                "description": "Learn about various cloud storage options and their implementations."
+            },
+            {
+                "week": 7,
+                "title": "Developing Cloud Applications",
+                "description": "Understand how to develop applications for the cloud."
+            },
+            {
+                "week": 8,
+                "title": "Final Assessment",
+                "description": "Demonstrate your understanding of cloud computing concepts through a final assessment."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2025-03-01",
+        "price": 299,
+        "maxEnrollment": 40,
+        "faq": [
+            {
+                "question": "Do I need technical skills?",
+                "answer": "No, this course is designed for beginners."
+            },
+            {
+                "question": "What materials do I need?",
+                "answer": "You will need access to a computer with an internet connection."
+            },
+            {
+                "question": "Will I receive a certificate upon completion?",
+                "answer": "Yes, you will receive a certificate of completion."
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Digital Marketing Essentials",
+        "category": "Marketing",
+        "duration": "8 weeks",
+        "description": "Learn the fundamentals of digital marketing, including SEO, social media, email marketing, and analytics.",
+        "instructor": {
+            "name": "Laura Green",
+            "email": "laura@example.com",
+            "bio": "A digital marketing strategist with over 8 years of experience in various industries.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/teacher4.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Digital Marketing",
+                "description": "Understand the key concepts and importance of digital marketing."
+            },
+            {
+                "week": 2,
+                "title": "Search Engine Optimization (SEO)",
+                "description": "Learn the basics of SEO and how to improve website visibility."
+            },
+            {
+                "week": 3,
+                "title": "Social Media Marketing",
+                "description": "Explore effective social media strategies and platforms."
+            },
+            {
+                "week": 4,
+                "title": "Email Marketing Strategies",
+                "description": "Understand how to create and manage effective email campaigns."
+            },
+            {
+                "week": 5,
+                "title": "Content Marketing Basics",
+                "description": "Learn about creating engaging content for different platforms."
+            },
+            {
+                "week": 6,
+                "title": "Digital Analytics",
+                "description": "Explore tools and techniques for analyzing digital marketing performance."
+            },
+            {
+                "week": 7,
+                "title": "Developing a Digital Marketing Plan",
+                "description": "Create a comprehensive digital marketing plan for a case study."
+            },
+            {
+                "week": 8,
+                "title": "Final Project",
+                "description": "Present your digital marketing plan to the class."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2025-04-01",
+        "price": 249,
+        "maxEnrollment": 35,
+        "faq": [
+            {
+                "question": "Do I need prior marketing experience?",
+                "answer": "No, this course is suitable for beginners."
+            },
+            {
+                "question": "Will we work on real projects?",
+                "answer": "Yes, you'll create a marketing plan based on a case study."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you'll present your marketing plan at the end of the course."
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Advanced Python Programming",
+        "category": "Programming",
+        "duration": "10 weeks",
+        "description": "This course dives deep into advanced Python concepts such as decorators, generators, and web frameworks. Enhance your programming skills to develop complex applications.",
+        "instructor": {
+            "name": "Alice Thompson",
+            "email": "alice@example.com",
+            "bio": "An experienced software engineer with a passion for teaching Python and software development.",
+            "reviewIns": "2"
+        },
+        "img": "assets/images/intoPro.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Python Decorators",
+                "description": "Learn how to create and use decorators to modify function behavior."
+            },
+            {
+                "week": 2,
+                "title": "Generators and Iterators",
+                "description": "Explore the use of generators to manage memory efficiently."
+            },
+            {
+                "week": 3,
+                "title": "Error Handling",
+                "description": "Understand exception handling and best practices."
+            },
+            {
+                "week": 4,
+                "title": "Working with APIs",
+                "description": "Learn how to consume APIs using Python."
+            },
+            {
+                "week": 5,
+                "title": "Web Frameworks Overview",
+                "description": "Introduction to Flask and Django for web development."
+            },
+            {
+                "week": 6,
+                "title": "Building RESTful APIs with Flask",
+                "description": "Create your own RESTful API using Flask."
+            },
+            {
+                "week": 7,
+                "title": "Database Integration",
+                "description": "Learn how to integrate SQL databases with Python applications."
+            },
+            {
+                "week": 8,
+                "title": "Unit Testing in Python",
+                "description": "Explore techniques for writing and executing tests in Python."
+            },
+            {
+                "week": 9,
+                "title": "Concurrency in Python",
+                "description": "Understand threading and multiprocessing in Python applications."
+            },
+            {
+                "week": 10,
+                "title": "Final Project",
+                "description": "Develop a comprehensive Python application that incorporates learned concepts."
+            }
+        ],
+        "prerequisites": [
+            "Intermediate Python knowledge"
+        ],
+        "reviews": [],
+        "level": "Advanced",
+        "language": "English",
+        "startDate": "2025-05-01",
+        "price": 399,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "Do I need to know basic Python?",
+                "answer": "Yes, this course is for those with intermediate knowledge."
+            },
+            {
+                "question": "Will I receive a certificate?",
+                "answer": "Yes, you'll receive a certificate of completion."
+            },
+            {
+                "question": "What tools will I use?",
+                "answer": "You'll need Python installed on your computer."
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Introduction to Graphic Design",
+        "category": "Design",
+        "duration": "8 weeks",
+        "description": "Learn the fundamentals of graphic design, including typography, color theory, and composition. Create visually compelling designs using industry-standard tools.",
+        "instructor": {
+            "name": "Jake Anderson",
+            "email": "jake@example.com",
+            "bio": "A graphic designer with over 5 years of experience in branding and visual communication.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/graphicFunda.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Principles of Design",
+                "description": "Understand the key principles of design."
+            },
+            {
+                "week": 2,
+                "title": "Typography Basics",
+                "description": "Explore the art of typography and font selection."
+            },
+            {
+                "week": 3,
+                "title": "Color Theory",
+                "description": "Learn about color theory and its impact on design."
+            },
+            {
+                "week": 4,
+                "title": "Creating Visual Hierarchy",
+                "description": "Understand how to create effective visual hierarchy in design."
+            },
+            {
+                "week": 5,
+                "title": "Using Design Software",
+                "description": "Hands-on experience with Adobe Photoshop and Illustrator."
+            },
+            {
+                "week": 6,
+                "title": "Logo Design",
+                "description": "Create a logo for a fictional brand."
+            },
+            {
+                "week": 7,
+                "title": "Designing for Print vs. Web",
+                "description": "Understand the differences in designing for print and digital platforms."
+            },
+            {
+                "week": 8,
+                "title": "Final Portfolio Presentation",
+                "description": "Compile your work into a portfolio and present it to the class."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2025-06-01",
+        "price": 249,
+        "maxEnrollment": 25,
+        "faq": [
+            {
+                "question": "Do I need design experience?",
+                "answer": "No, this course is suitable for beginners."
+            },
+            {
+                "question": "What software will I need?",
+                "answer": "You'll need Adobe Creative Cloud for this course."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you will create a design portfolio."
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Introduction to Machine Learning",
+        "category": "Data Science",
+        "duration": "10 weeks",
+        "description": "This course covers the basics of machine learning, including supervised and unsupervised learning, and practical implementations using Python.",
+        "instructor": {
+            "name": "Daniel Harris",
+            "email": "daniel@example.com",
+            "bio": "A machine learning engineer with experience in developing predictive models.",
+            "reviewIns": "5"
+        },
+        "img": "assets/images/introData.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "What is Machine Learning?",
+                "description": "Understand the basics and applications of machine learning."
+            },
+            {
+                "week": 2,
+                "title": "Supervised Learning Algorithms",
+                "description": "Explore linear regression, decision trees, and more."
+            },
+            {
+                "week": 3,
+                "title": "Data Preprocessing",
+                "description": "Learn how to clean and prepare data for modeling."
+            },
+            {
+                "week": 4,
+                "title": "Model Evaluation Techniques",
+                "description": "Understand how to evaluate model performance."
+            },
+            {
+                "week": 5,
+                "title": "Unsupervised Learning",
+                "description": "Explore clustering and dimensionality reduction techniques."
+            },
+            {
+                "week": 6,
+                "title": "Working with Scikit-Learn",
+                "description": "Hands-on experience using the Scikit-Learn library."
+            },
+            {
+                "week": 7,
+                "title": "Introduction to Neural Networks",
+                "description": "Learn the basics of neural networks and deep learning."
+            },
+            {
+                "week": 8,
+                "title": "Model Deployment",
+                "description": "Explore methods for deploying machine learning models."
+            },
+            {
+                "week": 9,
+                "title": "Final Project Preparation",
+                "description": "Prepare for your final machine learning project."
+            },
+            {
+                "week": 10,
+                "title": "Final Project Presentation",
+                "description": "Present your machine learning project to the class."
+            }
+        ],
+        "prerequisites": [
+            "Basic statistics knowledge"
+        ],
+        "reviews": [],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2025-07-01",
+        "price": 499,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "What prior knowledge do I need?",
+                "answer": "Basic statistics knowledge is recommended."
+            },
+            {
+                "question": "Will I work on real datasets?",
+                "answer": "Yes, you will work with real datasets throughout the course."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you'll complete a final project using machine learning techniques."
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Foundations of Web Security",
+        "category": "Cybersecurity",
+        "duration": "6 weeks",
+        "description": "This course introduces essential web security concepts, including vulnerabilities, threat modeling, and secure coding practices.",
+        "instructor": {
+            "name": "Sophia White",
+            "email": "sophia@example.com",
+            "bio": "A cybersecurity expert with a focus on web application security.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Understanding Web Security",
+                "description": "Explore the importance of web security in modern applications."
+            },
+            {
+                "week": 2,
+                "title": "Common Web Vulnerabilities",
+                "description": "Learn about common vulnerabilities such as XSS and SQL Injection."
+            },
+            {
+                "week": 3,
+                "title": "Threat Modeling",
+                "description": "Understand how to model threats to identify potential security risks."
+            },
+            {
+                "week": 4,
+                "title": "Secure Coding Practices",
+                "description": "Learn best practices for writing secure code."
+            },
+            {
+                "week": 5,
+                "title": "Web Security Testing",
+                "description": "Explore tools and techniques for testing web application security."
+            },
+            {
+                "week": 6,
+                "title": "Final Assessment",
+                "description": "Demonstrate your understanding of web security concepts through a final assessment."
+            }
+        ],
+        "prerequisites": [
+            "Basic understanding of web development"
+        ],
+        "reviews": [],
+        "level": "Intermediate",
+        "language": "English",
+        "startDate": "2025-08-01",
+        "price": 349,
+        "maxEnrollment": 30,
+        "faq": [
+            {
+                "question": "Do I need programming skills?",
+                "answer": "A basic understanding of web development is recommended."
+            },
+            {
+                "question": "What tools will I use?",
+                "answer": "You'll explore various web security testing tools."
+            },
+            {
+                "question": "Will I receive a certificate?",
+                "answer": "Yes, you'll receive a certificate of completion."
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Project Management Fundamentals",
+        "category": "Business",
+        "duration": "8 weeks",
+        "description": "Learn the basics of project management, including planning, executing, and closing projects effectively.",
+        "instructor": {
+            "name": "Henry Clark",
+            "email": "henry@example.com",
+            "bio": "A project manager with over a decade of experience leading projects in various industries.",
+            "reviewIns": "3"
+        },
+        "img": "assets/images/businessAna.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Project Management",
+                "description": "Understand the fundamentals of project management."
+            },
+            {
+                "week": 2,
+                "title": "Project Lifecycle",
+                "description": "Explore the stages of a project from initiation to closure."
+            },
+            {
+                "week": 3,
+                "title": "Planning and Scheduling",
+                "description": "Learn how to create effective project plans and schedules."
+            },
+            {
+                "week": 4,
+                "title": "Risk Management",
+                "description": "Understand how to identify and manage project risks."
+            },
+            {
+                "week": 5,
+                "title": "Resource Management",
+                "description": "Explore techniques for managing project resources."
+            },
+            {
+                "week": 6,
+                "title": "Effective Communication",
+                "description": "Learn how to communicate effectively with project stakeholders."
+            },
+            {
+                "week": 7,
+                "title": "Project Monitoring and Control",
+                "description": "Understand how to monitor and control project progress."
+            },
+            {
+                "week": 8,
+                "title": "Final Project Presentation",
+                "description": "Present your final project management plan to the class."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2025-09-01",
+        "price": 299,
+        "maxEnrollment": 30,
+        "faq": [
+            {
+                "question": "Do I need prior project management experience?",
+                "answer": "No, this course is designed for beginners."
+            },
+            {
+                "question": "Will I receive a certificate upon completion?",
+                "answer": "Yes, you'll receive a certificate of completion."
+            },
+            {
+                "question": "What materials will I need?",
+                "answer": "You'll need a laptop and internet access."
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Social Media Marketing Strategies",
+        "category": "Marketing",
+        "duration": "8 weeks",
+        "description": "Learn effective strategies for marketing your brand on social media platforms. Understand audience engagement and analytics.",
+        "instructor": {
+            "name": "Evelyn Brown",
+            "email": "evelyn@example.com",
+            "bio": "A social media strategist with experience in building brands online.",
+            "reviewIns": "4"
+        },
+        "img": "assets/images/teacher2.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Social Media Marketing",
+                "description": "Explore the landscape of social media marketing."
+            },
+            {
+                "week": 2,
+                "title": "Identifying Target Audiences",
+                "description": "Learn how to identify and understand your target audience."
+            },
+            {
+                "week": 3,
+                "title": "Content Creation Strategies",
+                "description": "Create engaging content that resonates with your audience."
+            },
+            {
+                "week": 4,
+                "title": "Social Media Advertising",
+                "description": "Understand how to run effective social media ad campaigns."
+            },
+            {
+                "week": 5,
+                "title": "Analyzing Metrics and KPIs",
+                "description": "Learn to track and analyze social media performance metrics."
+            },
+            {
+                "week": 6,
+                "title": "Building Brand Loyalty",
+                "description": "Explore strategies for fostering brand loyalty through social media."
+            },
+            {
+                "week": 7,
+                "title": "Managing Online Reputation",
+                "description": "Learn about managing and responding to online feedback."
+            },
+            {
+                "week": 8,
+                "title": "Final Campaign Project",
+                "description": "Develop and present a comprehensive social media marketing campaign."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [],
+        "level": "Beginner",
+        "language": "English",
+        "startDate": "2025-10-01",
+        "price": 249,
+        "maxEnrollment": 25,
+        "faq": [
+            {
+                "question": "Do I need prior marketing experience?",
+                "answer": "No, this course is suitable for beginners."
+            },
+            {
+                "question": "Will we work on real campaigns?",
+                "answer": "Yes, you'll create a marketing campaign based on a case study."
+            },
+            {
+                "question": "Is there a final project?",
+                "answer": "Yes, you'll present your marketing campaign at the end of the course."
+            }
+        ]
+    }
+]
