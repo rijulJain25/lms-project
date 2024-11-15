@@ -1,0 +1,92 @@
+<div class="container my-5">
+  <!-- Search Bar Section -->
+  <div class="mb-4 text-center">
+    <input type="text" placeholder="Search instructors..." class="form-control w-50 d-inline-block" />
+    <button class="btn btn-primary ms-2">Search</button>
+  </div>
+
+  <!-- Instructor Section -->
+  <div class="row">
+    <!-- Left Section: Instructor Cards -->
+    <div class="col-md-8">
+      <div class="row">
+        <!-- Instructor Card 1 -->
+        <div *ngFor="let inst of PagesInst" class="col-sm-6 col-md-4 mb-4">
+          <div class="card">
+            <img [src]="" alt="Instructor" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">John Doe</h5>
+              <p class="card-text">Data Science Expert</p>
+              <p><strong>Duration:</strong> 3 Years</p>
+              <p><strong>Lessons Taught:</strong> 150</p>
+              <p><strong>Experience:</strong> 5+ Years</p>
+              <p><strong>Reviews:</strong> 4.5 (250 Reviews)</p>
+              <p><strong>Specialization:</strong> Data Science</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructor Card 2 -->
+        <div class="col-sm-6 col-md-4 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Instructor" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Jane Smith</h5>
+              <p class="card-text">Full Stack Developer</p>
+              <p><strong>Duration:</strong> 2 Years</p>
+              <p><strong>Lessons Taught:</strong> 120</p>
+              <p><strong>Experience:</strong> 6+ Years</p>
+              <p><strong>Reviews:</strong> 4.8 (320 Reviews)</p>
+              <p><strong>Specialization:</strong> Web Development</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructor Card 3 -->
+        <div class="col-sm-6 col-md-4 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Instructor" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Michael Lee</h5>
+              <p class="card-text">UI/UX Designer</p>
+              <p><strong>Duration:</strong> 4 Years</p>
+              <p><strong>Lessons Taught:</strong> 80</p>
+              <p><strong>Experience:</strong> 7+ Years</p>
+              <p><strong>Reviews:</strong> 4.6 (200 Reviews)</p>
+              <p><strong>Specialization:</strong> Design</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Instructor Cards can be added here -->
+      </div>
+    </div>
+
+    <!-- Right Section: Filter by Specialization -->
+    <div class="col-md-4">
+      <div class="card p-4">
+        <h5>Filter By Specialization</h5>
+        <div>
+          <input type="checkbox" id="data-science" class="form-check-input">
+          <label for="data-science" class="form-check-label">Data Science</label>
+        </div>
+        <div>
+          <input type="checkbox" id="web-dev" class="form-check-input">
+          <label for="web-dev" class="form-check-label">Web Development</label>
+        </div>
+        <div>
+          <input type="checkbox" id="design" class="form-check-input">
+          <label for="design" class="form-check-label">Design</label>
+        </div>
+        <div>
+          <input type="checkbox" id="cybersecurity" class="form-check-input">
+          <label for="cybersecurity" class="form-check-label">Cybersecurity</label>
+        </div>
+        <div>
+          <input type="checkbox" id="marketing" class="form-check-input">
+          <label for="marketing" class="form-check-label">Marketing</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

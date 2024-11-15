@@ -1,0 +1,131 @@
+
+     
+          <!-- Step 1: Personal Information -->
+          <div *ngIf="currentStep === 1">
+            <h3>Register as Student</h3>
+            <form [formGroup]="step1Form" class="reg-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" formControlName="name" />
+                <div *ngIf="step1Controls.name.invalid && (step1Controls.name.dirty || step1Controls.name.touched)">
+                  <small *ngIf="step1Controls.name.errors?.required" class="text-danger">Name is required.</small>
+                  <small *ngIf="step1Controls.name.errors?.minlength" class="text-danger">Name must be at least 3 characters long.</small>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" formControlName="email" />
+                <div *ngIf="step1Controls.email.invalid && (step1Controls.email.dirty || step1Controls.email.touched)">
+                  <small *ngIf="step1Controls.email.errors?.required" class="text-danger">Email is required.</small>
+                  <small *ngIf="step1Controls.email.errors?.email" class="text-danger">Invalid email format.</small>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" id="dateOfBirth" class="form-control" formControlName="dateOfBirth" />
+                <div *ngIf="step1Controls.dateOfBirth.invalid && (step1Controls.dateOfBirth.dirty || step1Controls.dateOfBirth.touched)">
+                  <small *ngIf="step1Controls.dateOfBirth.errors?.required" class="text-danger">Date of Birth is required.</small>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" formControlName="password" />
+                <div *ngIf="step1Controls.password.invalid && (step1Controls.password.dirty || step1Controls.password.touched)">
+                  <small *ngIf="step1Controls.password.errors?.required" class="text-danger">Password is required.</small>
+                  <small *ngIf="step1Controls.password.errors?.minlength" class="text-danger">Password must be at least 8 characters long.</small>
+                  <small *ngIf="step1Controls.password.errors?.specialCharacter" class="text-danger">Password must contain at least one special character.</small>
+                </div>
+              </div>
+  
+              <button type="button" (click)="nextStep()" class="btn btn-primary">Next Step</button>
+            </form>
+          </div>
+  
+          <!-- Step 2: Gender, Interests, Bio, Role -->
+          <div *ngIf="currentStep === 2">
+            <h3>Step 2: Preferences</h3>
+            <form [formGroup]="step2Form" class="reg-form">
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" formControlName="gender" class="form-control">
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+  
+              <div class="form-group">
+                <label for="interests">Interests</label>
+                <select id="interests" formControlName="interests" class="form-control" (change)="onInterestChange($event)" multiple [attr.disabled]="step2Form.get('interests')?.disabled ? true : null">
+                  <option *ngFor="let interest of interestList" [value]="interest">{{ interest }}</option>
+                </select>
+                <div *ngIf="step2Controls.interests.invalid && (step2Controls.interests.dirty || step2Controls.interests.touched)">
+                  <small class="text-danger">Interests are required.</small>
+                </div>
+              </div>            
+              <div *ngIf="selectedOptions.length >= 5" class="text-warning">
+                You can select a maximum of 5 interests.
+              </div>
+  
+              <div class="selected-interests">
+                <div *ngFor="let interest of step2Form.controls['interests'].value" class="interest-tag">
+                  {{ interest }}
+                  <button type="button" class="remove-btn" (click)="removeInterest(interest)">x</button>
+                </div>
+              </div>
+              
+  
+              <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" formControlName="bio" class="form-control" rows="3"></textarea>
+              </div>
+  
+              <!-- <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" formControlName="role" class="form-control">
+                  <option value="">Select Role</option>
+                  <option value="student">Student</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+   -->
+              <div class="btn-section">
+              <button type="button" (click)="prevStep()" class="btn btn-secondary">Back</button>
+              <button type="button" (click)="nextStep()" class="btn btn-primary">Next Step</button>
+            </div>
+            </form>
+          </div>
+  
+          <!-- Step 3: Profile Photo, Institution, Contact Info -->
+          <div *ngIf="currentStep === 3">
+            <h3>Step 3: Profile</h3>
+            <form [formGroup]="step3Form" class="reg-form">
+              <div class="form-group">
+                <label for="currentInstitution">Current Institution</label>
+                <input type="text" id="currentInstitution" class="form-control" formControlName="currentInstitution" />
+              </div>
+  
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" class="form-control" formControlName="phoneNumber" />
+              </div>
+  
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" class="form-control" formControlName="location" />
+              </div>
+  
+              <div class="btn-section">
+                <button type="button" (click)="prevStep()" class="btn btn-secondary">Back</button>
+                <button type="button" (click)="submitForm()" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+          <div *ngIf="successMessage" class="alert alert-danger">{{ successMessage }}</div>
+      

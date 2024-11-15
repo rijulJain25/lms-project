@@ -1,0 +1,276 @@
+
+.header {
+    padding: 30px 73px;
+    background: rgb(255,203,215);
+    background: linear-gradient(61deg, rgba(255,203,215,1) 10%, rgba(214,255,239,1) 100%);        
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header h2 {
+    margin: 0;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .head-span{
+    font-size: 50px;
+    color: #3b295c;
+  }
+
+  .small-head{
+    font-size: 35px;
+  }
+
+  .my-courses-section{
+    padding: 40px 80px;
+    background-color: rgb(249, 249, 249);
+  }
+
+
+   .my-profile-card {
+    background-color: white;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-photo {
+    position: absolute;
+    top: 30px;
+    right: 36%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-name {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 40px;
+  }
+  
+  .profile-email {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  /* Data Card */
+  .my-data-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dash-btn-one {
+    width: 100%;
+    background-color: #f86c64;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .dash-btn-one:hover {
+    background-color: #ff4a40;
+  }
+  
+  /* Setting */
+  .setting {
+    margin-top: 15px;
+  }
+  
+  .setting i {
+    margin-right: 5px;
+  }
+  
+  .setting span {
+    display: block;
+    font-size: 14px;
+    color: #f86c64;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  
+  .setting span:hover {
+    text-decoration: underline;
+  }
+
+  .dash-my-courses{
+    padding: 50px 0;
+  }
+  
+  .dash-my-courses .col-md-6 {
+    margin-top: 0;
+  }
+
+  
+  .my-courses-section .col-md-6 {
+    margin-bottom: 1.1rem; /* Adds gap between rows */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .my-left-part {
+      margin-bottom: 20px;
+    }
+  
+    .my-left-part-sub {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .my-profile-card,
+    .my-data-card {
+      margin-bottom: 15px;
+    }
+  
+    .my-right-part {
+      padding-left: 0;
+    }
+
+  
+    .dash-my-courses .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .dash-my-courses .col-md-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .trending-my-course h3 {
+      font-size: 20px;
+    }
+
+    .trending-my-course .col-md-3 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .trending-my-course {
+    padding: 50px 80px;
+    background-color: rgb(249, 249, 249);
+  }
+  
+  .trending-my-course h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+ 
+  
+  .trending-my-course .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .trending-my-course .col-md-3 {
+    flex: 0 0 23%;
+    max-width: 23%;
+  }
+  
+
+  /* Recommended Courses Section */
+.recommended-courses {
+  margin-top: 50px;
+  padding: 10px 80px !important;
+}
+
+.recommended-courses h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.rec-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rec-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.rec-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.rec-card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.rec-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.rec-card-text {
+  font-size: 0.875rem;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.rec-card-footer {
+  font-size: 0.85rem;
+  color: #f86c64;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.rec-card-footer:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Responsive Design for Cards */
+@media (max-width: 768px) {
+  .recommended-courses h3 {
+    font-size: 1.5rem;
+  }
+
+  .rec-card {
+    margin-bottom: 20px;
+  }
+
+  .rec-card-body {
+    padding: 12px;
+  }
+
+  .rec-card-title {
+    font-size: 1.1rem;
+  }
+
+  .rec-card-text {
+    font-size: 0.75rem;
+  }
+}
+

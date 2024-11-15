@@ -14,7 +14,7 @@ export class HomeTrendingCourseComponent implements OnInit {
 
   courses: any[] = [
     {
-        title: 'Introduction to Angular Application',
+        name: 'Introduction to Angular Application',
         img: 'assets/images/angular.png',
         instructor: {
             name: 'John Doe',
@@ -29,7 +29,7 @@ export class HomeTrendingCourseComponent implements OnInit {
         price: 199.99
     },
     {
-        title: 'React JS- Begineer to Advanced',
+        name: 'React JS- Begineer to Advanced',
         img: 'assets/images/reactjs.png',
         instructor: {
             name: 'Jane Smith',
@@ -44,7 +44,7 @@ export class HomeTrendingCourseComponent implements OnInit {
         price: 149.99
     },
     {
-        title: 'Node.js Basics to Advanced Course',
+        name: 'Node.js Basics to Advanced Course',
         img: 'assets/images/node.png',
         instructor: {
             name: 'Alice Johnson',
@@ -59,7 +59,7 @@ export class HomeTrendingCourseComponent implements OnInit {
         price: 129.99
     },
     {
-        title: 'Mastering Python- with best practices',
+        name: 'Mastering Python- with best practices',
         img: 'assets/images/python.png',
         instructor: {
             name: 'Michael Brown',
@@ -74,7 +74,7 @@ export class HomeTrendingCourseComponent implements OnInit {
         price: 249.99
     },
     {
-        title: 'Data Science with R, Scripting and More',
+        name: 'Data Science with R, Scripting and More',
         img: 'assets/images/data.png',
         instructor: {
             name: 'Emily White',
@@ -89,7 +89,7 @@ export class HomeTrendingCourseComponent implements OnInit {
         price: 199.99
     },
     {
-        title: 'UI/UX Design Fundamentals',
+        name: 'UI/UX Design Fundamentals',
         img: 'assets/images/ui.png',
         instructor: {
             name: 'Chris Green',

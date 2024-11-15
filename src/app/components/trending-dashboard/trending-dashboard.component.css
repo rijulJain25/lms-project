@@ -1,0 +1,45 @@
+.trending-course-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .trending-course-card img {
+    border-radius: 8px 8px 0 0;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .trending-course-card .card-body {
+    padding: 15px;
+  }
+  
+  .trending-course-card .card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .trending-course-card .card-text {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .trending-course-card .btn {
+    background-color: #f86c64;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .trending-course-card .btn:hover {
+    background-color: #ff4a40;
+  }
+  
+  @media (max-width: 768px) {
+    .trending-course-card {
+      margin-bottom: 15px;
+    }
+  }
+  

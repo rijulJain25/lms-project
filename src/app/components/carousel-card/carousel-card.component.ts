@@ -9,13 +9,11 @@ export class CarouselCardComponent implements OnInit {
 
   constructor() { }
 
+  @Input() course: any;
+
+
   ngOnInit(): void {
+    console.log("my data", this.course);
+    
   }
-
-  @Input() imageSrc!: string;
-  @Input() title!: string;
-  @Input() expertise!: string;
-  @Input() experience!: number;
-  @Input() reviews!: number;
-
 }

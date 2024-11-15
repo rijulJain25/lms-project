@@ -1,0 +1,44 @@
+<div class="blog-detail-outer">
+    <div class="blog-detail-left">
+       <div class="blog-heading">
+        <h1 class="blog-title" style="padding-bottom: 30px; font-size: 50px;">{{blogPost?.title}}</h1>
+       </div>
+      <div class="blog-detail-image">
+        <img src="assets/images/angular.png" alt="Blog Image">
+      </div>
+      
+      <div class="blog-detail-header">
+        <div style="display: flex; gap: 20px;">
+        <div class="author-info">
+          <img [src]="blogPost?.authorImage" alt="Author" class="author-image">
+          <div class="author-details">
+            <p class="author-name">{{ blogPost?.author }}</p>
+            <p class="author-date">{{ blogPost?.date | date: 'mediumDate' }}</p>
+          </div>
+        </div>
+        <div class="blog-category">
+          <span>{{ blogPost?.category }}</span>
+        </div>
+    </div>
+        <div class="blog-like">
+            <i class="fa-regular fa-heart" style="color: #f86c64; font-size: 30px;"></i>
+          </div>
+      </div>
+
+      <div class="blog-description">
+        <h4>Blog Details</h4>
+        <p>{{ blogPost?.description }}</p>
+      </div>
+      
+      
+      <div class="blog-content">
+        <p>{{ blogPost?.content }}</p>
+      </div>
+    </div>
+    
+    <div class="blog-detail-right">
+      <!-- <app-search-bar></app-search-bar> -->
+      <app-recent-posts [recentPosts]="recentPosts"></app-recent-posts>
+    </div>
+  </div>
+  

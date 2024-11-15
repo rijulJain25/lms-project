@@ -1,0 +1,17 @@
+/* Ensure images scale correctly in cards */
+.card-img-top {
+  object-fit: cover;
+  height: 150px;
+}
+
+/* Optional: Customize the appearance of the filter checkboxes */
+.form-check-input {
+  margin-right: 10px;
+}
+
+/* Adjust the width of the search bar on small screens */
+@media (max-width: 768px) {
+  .form-control {
+    width: 100%;
+  }
+}

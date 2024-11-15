@@ -1,0 +1,109 @@
+
+          <!-- Step 1: Personal Information -->
+          <div *ngIf="currentStep === 1">
+            <h3>Register as Instructor</h3>
+            <form [formGroup]="step1Form" class="reg-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" formControlName="name" />
+                <div *ngIf="step1Controls.name.invalid && (step1Controls.name.dirty || step1Controls.name.touched)">
+                  <small *ngIf="step1Controls.name.errors?.required" class="text-danger">Name is required.</small>
+                  <small *ngIf="step1Controls.name.errors?.minlength" class="text-danger">Name must be at least 3 characters long.</small>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" formControlName="email" />
+                <div *ngIf="step1Controls.email.invalid && (step1Controls.email.dirty || step1Controls.email.touched)">
+                  <small *ngIf="step1Controls.email.errors?.required" class="text-danger">Email is required.</small>
+                  <small *ngIf="step1Controls.email.errors?.email" class="text-danger">Invalid email format.</small>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" formControlName="password" />
+                <div *ngIf="step1Controls.password.invalid && (step1Controls.password.dirty || step1Controls.password.touched)">
+                  <small *ngIf="step1Controls.password.errors?.required" class="text-danger">Password is required.</small>
+                  <small *ngIf="step1Controls.password.errors?.minlength" class="text-danger">Password must be at least 8 characters long.</small>
+                  <small *ngIf="step1Controls.password.errors?.specialCharacter" class="text-danger">Password must contain at least one special character.</small>
+                </div>
+              </div>
+  
+              <button type="button" (click)="nextStep()" class="btn btn-primary">Next Step</button>
+            </form>
+          </div>
+  
+          <!-- Step 2: Bio, Specialization, Experience, Social Links -->
+          <div *ngIf="currentStep === 2">
+            <h3>Step 2: Instructor Details</h3>
+            <form [formGroup]="step2Form" class="reg-form">
+              <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" formControlName="bio" class="form-control" rows="3"></textarea>
+              </div>
+  
+              <div class="form-group">
+                <label for="specialization">Specialization</label>
+                <input type="text" id="specialization" class="form-control" formControlName="specialization" />
+                <div *ngIf="step2Controls.email.invalid && (step2Controls.email.dirty || step2Controls.email.touched)">
+                    <small *ngIf="step2Controls.email.errors?.required" class="text-danger">Specialization is required.</small>
+                </div>
+            </div>
+  
+              <div class="form-group">
+                <label for="experience">Experience</label>
+                <input type="text" id="experience" class="form-control" formControlName="experience" />
+                <div *ngIf="step2Controls.email.invalid && (step2Controls.email.dirty || step2Controls.email.touched)">
+                    <small *ngIf="step2Controls.email.errors?.required" class="text-danger">Experience is required.</small>
+                </div>
+            </div>
+  <div class="btn-section">
+              <button type="button" (click)="prevStep()" class="btn btn-secondary">Back</button>
+              <button type="button" (click)="nextStep()" class="btn btn-primary">Next Step</button>
+            </div>
+            </form>
+          </div>
+  
+          <!-- Step 3: Username & Profile -->
+          <div *ngIf="currentStep === 3">
+            <h3>Step 3: Profile Information</h3>
+            <form [formGroup]="step3Form" class="reg-form">
+              <!-- <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" formControlName="username" class="form-control" />
+              </div> -->
+
+              <div formGroupName="socialLinks">
+                <div class="form-group">
+                  <label for="linkedin">LinkedIn</label>
+                  <input type="url" id="linkedin" class="form-control" formControlName="linkedin" />
+                </div>
+  
+                <div class="form-group">
+                  <label for="twitter">Twitter</label>
+                  <input type="url" id="twitter" class="form-control" formControlName="twitter" />
+                </div>
+              </div>
+  
+  
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" formControlName="location" class="form-control" />
+              </div>
+  
+              <!-- <div class="form-group">
+                <label for="profilePhoto">Profile Photo</label>
+                <input type="file" id="profilePhoto" formControlName="profilePhoto" class="form-control" />
+              </div> -->
+              <div class="btn-section">
+              <button type="button" (click)="prevStep()" class="btn btn-secondary">Back</button>
+              <button type="submit" (click)="submitForm()" [disabled]="isSubmitting" class="btn btn-success">Submit</button>
+            </div>
+            </form>
+          </div>
+  
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+          <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+        

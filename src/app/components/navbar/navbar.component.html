@@ -1,82 +1,83 @@
 <nav class="navbar navbar-expand-lg main-style-nav" data-bs-theme="light">
-    <div class="container-fluid d-flex">
-      <a class="navbar-brand" href=""><img src="assets/images/LMSlogo.png" width="160px"></a>
-      <button
-        class="navbar-toggler collapsed"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbar-content"
-      >
-        <div class="hamburger-toggle">
-          <div class="hamburger">
-            <span class="navbar-toggler-icon"></span>
-          </div>
+  <div class="container-fluid d-flex">
+    <a class="navbar-brand" href=""><img src="assets/images/LMSlogo.png" width="160px"></a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbar-content"
+    >
+      <div class="hamburger-toggle">
+        <div class="hamburger">
+          <span class="navbar-toggler-icon"></span>
         </div>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-content">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item align-chk">
-            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
-          </li>
-          <li class="nav-item align-chk">
-            <a class="nav-link active" routerLink="/contact">Instructor</a>
-          </li>
-          <li class="nav-item dropdown align-chk">
-            <a
-              class="nav-link dropdown-toggle active"
-              href="#"
-              data-bs-toggle="dropdown"
-              data-bs-auto-close="outside"
-            >Courses</a>
-            <ul class="dropdown-menu shadow">
-              <li><a class="dropdown-item" routerLink="/allcourses">All Courses</a></li>
-              <li><a class="dropdown-item" href="#">Popular Courses</a></li>
-              <li><a class="dropdown-item" href="blog.html">New Courses</a></li>
-              <li class="dropstart">
-                <a
-                  href="#"
-                  class="dropdown-item dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                >Combo Plans</a>
-                <ul class="dropdown-menu shadow">
-                  <li><a class="dropdown-item" href="">Individual</a></li>
-                  <li><a class="dropdown-item" href="">Team</a></li>
-                  <li><a class="dropdown-item" href="">Enterprise</a></li>
-                </ul>
-              </li>
-              <!-- <li class="dropend">
-                <a
-                  href="#"
-                  class="dropdown-item dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                >MEAN</a>
-                <ul class="dropdown-menu shadow">
-                  <li><a class="dropdown-item" href="">MongoDB</a></li>
-                  <li><a class="dropdown-item" href="">Angular</a></li>
-                  <li><a class="dropdown-item" href="">Express</a></li>
-                  <li><a class="dropdown-item" href="">Node</a></li>
-                </ul>
-              </li>
-               -->
-            </ul>
-          </li>
-          <li class="nav-item align-chk ">
-            <a class="nav-link active" routerLink="/contactus">Contact Us</a>
-          </li>
-          <li class="nav-item align-chk">
-            <a class="nav-link active" routerLink="/blogs" tabindex="-1">Blogs</a>
-          </li>
-          <div class="nav-item align-chk">
-          <li class="">
-            <a class="nav-link" routerLink="/register" tabindex="-1"><button class="classic-btn">Signin</button></a>
-          </li>
-          <li class="">
-            <a class="nav-link" routerLink="/login" tabindex="-1"><button class="classic-btn-two">Login</button></a>
-          </li>
-        </div>
-        </ul>
       </div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item align-chk" *ngIf="!currentUser">
+          <a class="nav-link active" routerLink="/home">Home</a>
+        </li>
+        
+        <li class="nav-item align-chk" *ngIf="currentUser && userRole === 'User' || userRole === 'Instructor' || userRole === 'Admin'">
+          <a class="nav-link active" routerLink="/dashboard">Dashboard</a>
+        </li>
+
+        <li class="nav-item align-chk">
+          <a class="nav-link active" routerLink="/instructor">Instructor</a>
+        </li>
+
+        <li class="nav-item dropdown align-chk" >
+          <a
+            class="nav-link dropdown-toggle active"
+            href="#"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+          >Courses</a>
+          <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" routerLink="/allcourses">All Courses</a></li>
+            <li><a class="dropdown-item" href="#">Popular Courses</a></li>
+            <li><a class="dropdown-item" href="blog.html">New Courses</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item align-chk" >
+          <a class="nav-link active" routerLink="/blogs" tabindex="-1">Blogs</a>
+        </li>
+
+        <li class="nav-item align-chk">
+          <a class="nav-link active" routerLink="/contactus">Contact Us</a>
+        </li>
+
+        <li *ngIf="currentUser" class="nav-item align-chk">
+          <div class="dropdown dropdown-profile">
+            <button
+              class="btn btn-link"
+              id="profileDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div class="profile-circle" style="padding-top: 6px;" >
+                <img [src]="'assets/images/teacher3.png'" alt="Profile"class="profile-img"/>
+              </div>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" (click)="goToProfile()">Profile</a></li>
+              <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- SignIn and Login buttons for non-logged-in users -->
+         <div class="btn-classs">
+        <li class="nav-item align-chk login-btnss" *ngIf="!currentUser">
+          <a class="nav-link signin-btn" routerLink="/register"><button class="classic-btn ">Signin</button></a>
+        </li>
+        <li class="nav-item align-chk login-btnss" *ngIf="!currentUser">
+          <a class="nav-link signin-btn" routerLink="/login"><button class="classic-btn-two ">Login</button></a>
+        </li>
+      </div>
+      </ul>
     </div>
-  </nav>
-  
+  </div>
+</nav>

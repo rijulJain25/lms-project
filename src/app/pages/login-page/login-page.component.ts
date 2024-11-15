@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-login-page',
@@ -10,8 +12,15 @@ export class LoginPageComponent implements OnInit {
 
   loginForm: FormGroup;
   errorMessage: string = '';
+  isSubmitting: boolean = false; 
+  loginType: string = 'user'; // Default to 'user'
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService, 
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -20,19 +29,49 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onToggleChange() {
+    console.log('Login Type Changed:', this.loginType);
+  }
+
   submitForm() {
     if (this.loginForm.invalid) {
-      this.showErrorMessage();
+      this.showErrorMessage('Please fill in all required fields correctly.');
       return;
     }
+
+    this.isSubmitting = true;
+    this.errorMessage = '';
+
+    const { email, password } = this.loginForm.value;
+
+    const loginEndpoint = this.loginType === 'user' ? 'users' : 'instructors';
+
+    console.log("Thsi is the type", loginEndpoint);
     
-    const formData = this.loginForm.value;
-    console.log(formData);
-    // Handle form submission logic here
+    this.authService.login(email, password, loginEndpoint).subscribe(
+      (user) => {
+        console.log(user);
+        
+        if (user) {
+          this.authService.saveUserToLocalStorage(user);
+          console.log('Login successful', user);
+          location.replace('/dashboard');
+
+          // this.router.navigate(['/dashboard']);    
+          
+        } else {
+          this.showErrorMessage('Invalid email or password. Please try again.');
+        }
+        this.isSubmitting = false; 
+      },
+      (error) => {
+        this.showErrorMessage('An error occurred. Please try again later.');
+        this.isSubmitting = false; 
+      }
+    );
   }
 
-  showErrorMessage() {
-    this.errorMessage = 'Please fill in all required fields correctly.';
+  showErrorMessage(message: string) {
+    this.errorMessage = message;
   }
-
 }

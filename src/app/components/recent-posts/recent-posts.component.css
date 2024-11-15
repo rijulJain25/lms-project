@@ -1,0 +1,12 @@
+.recent-post-card {
+    margin-bottom: 16px;
+  }
+  
+  .recent-post-card mat-card-title {
+    font-weight: bold;
+  }
+  
+  .recent-post-card mat-card-subtitle {
+    color: #757575;
+  }
+  

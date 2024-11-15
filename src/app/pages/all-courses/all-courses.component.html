@@ -1,14 +1,31 @@
 <div class="all-courses-head">
   <h1 class="all-cour-heading">ALL COURSES</h1>
-  <p class="para-cour">Explore our wide range of courses designed to help you learn and grow in your chosen field, offering valuable skills and knowledge tailored to your goals. Join us to enhance your expertise and connect with industry professionals on your journey to success!</p>
-  <a class="button-cour" (click)="scrollToCourses()">Start Exploring</a>
+  <p class="para-cour">
+    Explore our wide range of courses designed to help you learn and grow in
+    your chosen field, offering valuable skills and knowledge tailored to your
+    goals. Join us to enhance your expertise and connect with industry
+    professionals on your journey to success!
+  </p>
+  <a class="button-cour classic-btn-new" (click)="scrollToCourses()">Start Exploring</a>
 </div>
 
 <div class="container-cour" id="container-cour">
-  <div style="width: 100%; display: flex; justify-content: center; padding-bottom: 30px;"> 
-    <input class="input-cour" type="text" [(ngModel)]="searchTerm" (input)="filterCourses()" placeholder="Search courses..." />
-  
-    <select class="select-cour" [(ngModel)]="selectedCategory" (change)="filterCourses()">
+  <div class="filters" style="width: 100%; display: flex; justify-content: center; padding-bottom: 30px;">
+    <!-- Search Courses -->
+    <input
+      class="input-cour"
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="filterCourses()"
+      placeholder="Search courses..."
+    />
+    
+    <!-- Category Filter -->
+    <select
+      class="select-cour"
+      [(ngModel)]="selectedCategory"
+      (change)="filterCourses()"
+    >
       <option value="">All Categories</option>
       <option value="Computer Science">Computer Science</option>
       <option value="Web Development">Web Development</option>
@@ -23,15 +40,89 @@
       <option value="Cloud Computing">Cloud Computing</option>
       <option value="Programming">Programming</option>
     </select>
+  
+    <!-- Teacher Name Filter -->
+    <input
+      class="input-cour"
+      type="text"
+      [(ngModel)]="teacherName"
+      (input)="filterCourses()"
+      placeholder="Filter by teacher name..."
+    />
   </div>
-  <div class="card-container">
-    <div *ngFor="let course of filteredCourses" class="card">
-      <img [src]="course.img || 'assets/images/intoPro.png'" alt="{{ course.name }}">
-      <h2>{{ course.name }}</h2>
-      <p>Category: {{ course.category }}</p>
-      <p>Instructor: {{ course.instructor.name }}</p>
-      <p>Price: ${{ course.price }}</p>
-      <p>Rating: {{ course.reviews[0]?.rating }}</p>
+  
+
+  <div class="row">
+    <div
+      *ngFor="let course of pagedCourses"
+      class="col-md-4 col-lg-4 col-sm-6 mb-4"
+    >
+      <div class="card h-100 card-trend">
+        <img
+          [src]="course.img || 'assets/images/intoPro.png'"
+          class="img-trending-cr"
+          alt="{{ course.name }}"
+        />
+        <div class="card-body carddd">
+          <div class="instructor-home-outer">
+            <div style="display: flex; gap: 20px">
+              <img
+                [src]="course.instructor.image"
+                class="instructor-home-img"
+                alt="{{ course.instructor.name }}"
+                style="width: 55px; height: 55px; border-radius: 50px"
+              />
+              <div
+                class="inst-desc"
+                style="display: flex; flex-direction: column; justify-content: start;"
+              >
+                <p class="inst-name" style="margin-bottom: 2px">{{ course.instructor.name }}</p>
+                <p class="inst-title" style="font-size: 15px">Instructor</p>
+              </div>
+            </div>
+            <span><i class="fa-regular fa-heart" style="color: #f86c64"></i></span>
+          </div>
+
+          <div style="padding: 0px 10px 10px 10px">
+            <h4 class="card-title">{{ course.name }}</h4>
+            <div class="data-course">
+              <p style="margin: 0">
+                <i class="fa-solid fa-book-open-reader" style="color: #f86c64"></i>+ {{ course.category }}
+              </p>
+              <p style="margin: 0">
+                <i class="fa-solid fa-clock" style="color: #f86c64"></i> {{ course.duration }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center">
+          <div class="reviews-wrapper">
+            <p style="margin: 0">
+              <i class="fa-solid fa-star" style="color: #f86c64"></i> {{ course.reviews[0]?.rating }} Reviews ({{ course.reviews.length }})
+            </p>
+          </div>
+          <button class="classic-btn-new">Enroll Now</button>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination" style="text-align: center; margin-top: 20px;">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  
+    <!-- Page Number Buttons -->
+    <ng-container *ngIf="totalPages > 1">
+      <button
+        *ngFor="let page of pageNumbers()"
+        (click)="goToPage(page)"
+        [class.active]="currentPage === page"
+      >
+        {{ page }}
+      </button>
+    </ng-container>
+  
+    <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">Next</button>
+  </div>
+  
 </div>

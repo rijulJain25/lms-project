@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogsService } from './blogs.service';
 
-interface BlogPost {
+export interface BlogPost {
+  blog_id: string;
   title: string;
   content: string;
   author: string;
-  date: Date;
+  authorImage: string;
+  date: string;
   description: string;
+  category: string;
   images: string[];
 }
 
@@ -35,7 +38,7 @@ export class BlogsPageComponent implements OnInit {
         this.isLoading = false;
         this.filterRecentPosts();
       });
-    }, 3000); 
+    }, 2000); 
   }
 
   filterRecentPosts(): void {
@@ -69,3 +72,4 @@ export class BlogsPageComponent implements OnInit {
     this.pageSize = event.pageSize;
   }
 }
+  

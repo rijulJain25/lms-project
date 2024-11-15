@@ -1,0 +1,210 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "bio": "John is a passionate web developer with expertise in front-end technologies like React, HTML, CSS, and JavaScript. He loves teaching and helping students build real-world applications.",
+    "reviewIns": 4,
+    "image": "assets/images/teacher3.png",
+    "specialization": "Web Development",
+    "experience": "5 years in Web Development",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/johndoe",
+      "twitter": "https://twitter.com/johndoe"
+    },
+    "location": "New York, USA",
+    "username": "default_name",
+    "password": "encryptedPassword123"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "bio": "Jane has a strong background in statistics and machine learning. She enjoys creating innovative solutions using data and teaching her students how to solve complex problems with Python.",
+    "reviewIns": 5,
+    "image": "assets/images/teacher2.png",
+    "specialization": "Data Science",
+    "experience": "Expert in Data Science and Machine Learning",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/janesmith",
+      "twitter": "https://twitter.com/janesmith"
+    },
+    "location": "San Francisco, USA",
+    "username": "default_name",
+    "password": "encryptedPassword456"
+  },
+  {
+    "name": "Michael Johnson",
+    "email": "michael.johnson@example.com",
+    "bio": "Michael is a mobile development expert with over 4 years of experience in building cross-platform apps using Flutter. He is passionate about mobile development and loves teaching students how to create high-quality mobile apps.",
+    "reviewIns": 4,
+    "image": "assets/images/teacher5.png",
+    "specialization": "Mobile Development",
+    "experience": "Specialized in Mobile Development with Flutter",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/michaeljohnson",
+      "twitter": "https://twitter.com/michaeljohnson"
+    },
+    "location": "Austin, USA",
+    "username": "default_name",
+    "password": "encryptedPassword789"
+  },
+  {
+    "name": "Sarah Lee",
+    "email": "sarah.lee@example.com",
+    "bio": "Sarah is a passionate UI/UX designer with a keen eye for detail. She focuses on designing intuitive and aesthetically pleasing user interfaces for web and mobile applications.",
+    "reviewIns": 3,
+    "image": "assets/images/teacher1.png",
+    "specialization": "Design",
+    "experience": "2 years in UI/UX Design",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/sarahlee",
+      "twitter": "https://twitter.com/sarahlee"
+    },
+    "location": "London, UK",
+    "username": "default_name",
+    "password": "encryptedPassword012"
+  },
+  {
+    "name": "David Green",
+    "email": "david.green@example.com",
+    "bio": "David is a cybersecurity expert with a background in ethical hacking, penetration testing, and network security. He helps organizations protect their digital infrastructure.",
+    "reviewIns": 4,
+    "image": "assets/images/teacher5.png",
+    "specialization": "Cybersecurity",
+    "experience": "7 years in Cybersecurity",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/davidgreen",
+      "twitter": "https://twitter.com/davidgreen"
+    },
+    "location": "Los Angeles, USA",
+    "username": "default_name",
+    "password": "encryptedPassword345"
+  },
+  {
+    "name": "Emma Watson",
+    "email": "emma.watson@example.com",
+    "bio": "Emma is a game development expert with experience in Unreal Engine and Unity. She helps students learn the art of creating games, from concept to execution.",
+    "reviewIns": 5,
+    "image": "assets/images/teacher3.png",
+    "specialization": "Game Development",
+    "experience": "10 years in Game Development",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/emmawatson",
+      "twitter": "https://twitter.com/emmawatson"
+    },
+    "location": "Toronto, Canada",
+    "username": "default_name",
+    "password": "encryptedPassword678"
+  },
+  {
+    "name": "James Brown",
+    "email": "james.brown@example.com",
+    "bio": "James specializes in modern web technologies like React and Node.js. He loves creating dynamic, scalable web apps and teaching students the nuances of full-stack development.",
+    "reviewIns": 4,
+    "image": "assets/images/teacher1.png",
+    "specialization": "Web Development",
+    "experience": "6 years in Web Development and React",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/jamesbrown",
+      "twitter": "https://twitter.com/jamesbrown"
+    },
+    "location": "Berlin, Germany",
+    "username": "default_name",
+    "password": "encryptedPassword910"
+  },
+  {
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "bio": "Alice is a Cloud Architect with extensive experience in AWS, Azure, and Google Cloud. She helps organizations migrate and manage their infrastructure in the cloud.",
+    "reviewIns": 5,
+    "image": "assets/images/teacher4.png",
+    "specialization": "Cloud Computing",
+    "experience": "8 years in Cloud Computing",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/alicejohnson",
+      "twitter": "https://twitter.com/alicejohnson"
+    },
+    "location": "Sydney, Australia",
+    "username": "default_name",
+    "password": "encryptedPassword12345"
+  },
+  {
+    "name": "Robert Miller",
+    "email": "robert.miller@example.com",
+    "bio": "Robert is an expert in Blockchain development with a strong understanding of decentralized applications and smart contracts. He enjoys explaining complex concepts in a simple way.",
+    "reviewIns": 4,
+    "image": "assets/images/teacher5.png",
+    "specialization": "Blockchain",
+    "experience": "4 years in Blockchain Development",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/robertmiller",
+      "twitter": "https://twitter.com/robertmiller"
+    },
+    "location": "Vancouver, Canada",
+    "username": "default_name",
+    "password": "encryptedPassword54321"
+  },
+  {
+    "name": "Sophia Davis",
+    "email": "sophia.davis@example.com",
+    "bio": "Sophia has helped numerous companies enhance their online presence. She specializes in social media marketing, SEO, and content strategy. She loves empowering students to build their brands online.",
+    "reviewIns": 5,
+    "image": "assets/images/teacher3.png",
+    "specialization": "Marketing",
+    "experience": "5 years in Digital Marketing",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/sophiadavis",
+      "twitter": "https://twitter.com/sophiadavis"
+    },
+    "location": "Chicago, USA",
+    "username": "default_name",
+    "password": "encryptedPassword1122"
+  },
+  {
+    "name": "Ethan Wilson",
+    "email": "ethan.wilson@example.com",
+    "bio": "Ethan specializes in teaching Python programming to beginners and intermediate learners. He enjoys helping students build strong programming foundations and solve real-world problems with code.",
+    "reviewIns": 4,
+    "image": "assets/images/teacher4.png",
+    "specialization": "Programming",
+    "experience": "3 years in Programming and Python",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/ethanwilson",
+      "twitter": "https://twitter.com/ethanwilson"
+    },
+    "location": "Boston, USA",
+    "username": "default_name",
+    "password": "encryptedPassword67890"
+  },
+  {
+    "name": "Charlotte Harris",
+    "email": "charlotte.harris@example.com",
+    "bio": "Charlotte is an expert graphic designer with a strong portfolio of branding, advertising, and UI design projects. She loves mentoring students to become proficient in design software and creative techniques.",
+    "reviewIns": 5,
+    "image": "assets/images/teacher2.png",
+    "specialization": "Design",
+    "experience": "12 years in Graphic Design",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/charlotteharris",
+      "twitter": "https://twitter.com/charlotteharris"
+    },
+    "location": "Los Angeles, USA",
+    "username": "default_name",
+    "password": "encryptedPassword9090"
+  },
+  {
+    "name": "Henry Clark",
+    "email": "henry.clark@example.com",
+    "bio": "Henry is a cloud computing enthusiast and an AWS certified professional. He helps students learn the basics of cloud infrastructure and deployment.",
+    "reviewIns": 3,
+    "image": "assets/images/teacher1.png",
+    "specialization": "Cloud Computing",
+    "experience": "4 years in Cloud Technologies",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/henryclark",
+      "twitter": "https://twitter.com/henryclark"
+    },
+    "location": "Seattle, USA",
+    "username": "default_name",
+    "password": "encryptedPassword0000"
+  }
+]

@@ -1,3 +1,4 @@
+
 .container-cour {
     width: 80%;
     margin: auto;
@@ -28,15 +29,10 @@
 
   .button-cour{
     padding: 12px 20px;
-    background-color: #f86c64;
-    text-decoration: none !important;
-    color: white;
-    border-radius: 30px;
+    border-radius: 30px;color: white !important;
+
   }
 
-  .button-cour:hover{
-    background-color: #ff584f;
-  }
 
   .input-cour{
     width: 70%;
@@ -54,25 +50,143 @@
     color: white !important;
   }
 
-
-  .card-container {
+  .instructor-home-outer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
   }
-  
-  .card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 10px;
-    width: 250px;
-    text-align: center;
-  }
-  
-  .card img {
+
+.card-trend:hover {
+  background-color: #3b295c;
+  color: white !important;
+}
+
+
+.data-course {
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-trending-cr {
+  width: 80%;
+  border-radius: 5px !important;
+  margin-top: 10px;
+  align-self: center;
+}
+
+
+@media (min-width: 768px) and (max-width: 1112px) {
+  .container-cour {
+    padding: 20px;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+  }
+}
+
+/* General Styles for the Filtering Section */
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 25px;
+  border: 2px solid #f86c64;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 250px;
+}
+
+/* Hover and Focus Effects */
+.filters input:hover,
+.filters select:hover,
+.filters input:focus,
+.filters select:focus {
+  border-color: #f07347; /* Darker shade of orange */
+  box-shadow: 0 0 10px rgba(248, 103, 100, 0.3);
+}
+
+/* Make the input and select fields match */
+.filters input::placeholder,
+.filters select option {
+  color: #888;
+}
+
+/* Add some spacing to the placeholder text */
+.filters input::placeholder {
+  font-style: italic;
+}
+
+/* Responsive Layout for Filters (Stack filters on small screens) */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    gap: 15px;
   }
   
+  .filters input,
+  .filters select {
+    width: 100%;
+    max-width: 400px;  /* Set a max-width for large screens */
+  }
+}
+
+/* Style the "Start Exploring" Button */
+.button-cour {
+  background-color: #f86c64;
+  color: white;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.button-cour:hover {
+  background-color: #f07347;
+  transform: translateY(-3px);
+}
+
+/* Pagination Section Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #f86c64;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f07347;
+  transform: translateY(-2px);
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #333;
+}

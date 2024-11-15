@@ -1,0 +1,130 @@
+.right-reg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stack form elements vertically */
+    padding: 20px; /* Padding around the form */
+}
+
+.form-group {
+    width: 100%; /* Full width for form groups */
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea, 
+.mat-form-field{
+    width: 100% !important;
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #80bdff; 
+    outline: none; 
+}
+
+.btn-primary {
+    background-color: #f86c64; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 5px;  
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #ff544b;
+}
+
+.btn-section {
+    display: flex;
+    gap: 10px;  
+}
+
+.btn-secondary {
+    background-color: #bfa1f8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.reg-form {
+    width: 300px !important;
+}
+
+.selected-interests {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .interest-tag {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #495057;
+  }
+  
+  .remove-btn {
+    background: none;
+    border: none;
+    color: red;
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .remove-btn:hover {
+    text-decoration: underline;
+  }
+  
+  select.form-control {
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+  }
+  
+  select.form-control:focus {
+    border-color: #80bdff;
+    outline: none;
+  }
+  
+  
+
+/* Additional responsiveness for tags */
+@media (max-width: 767px) {
+    .container-fluid {
+        margin: 15px; /* Adjust margin for smaller screens */
+    }
+    .right-reg {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+    .form-group {
+        margin-bottom: 10px; /* Reduced space between form groups */
+    }
+
+}
+
+.btn-secondary:hover {
+    background-color: rgb(37, 85, 121); /* Darker shade on hover */
+}
+

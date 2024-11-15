@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,19 @@ import { BlogsPageComponent } from './pages/blogs-page/blogs-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AllCoursesComponent } from './pages/all-courses/all-courses.component';
 import { SharedmaterialModule } from './sharedmaterial/sharedmaterial.module';
+import { RecentPostsComponent } from './components/recent-posts/recent-posts.component';
+import { BlogDetailPageComponent } from './pages/blog-detail-page/blog-detail-page.component';
+import { InstructorPageComponent } from './pages/instructor-page/instructor-page.component';
+import { InstCardComponent } from './components/inst-card/inst-card.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { TrendingDashboardComponent } from './components/trending-dashboard/trending-dashboard.component';
+import { StudentRegistrationComponent } from './components/student-registration/student-registration.component';
+import { IntructorRegistrationComponent } from './components/intructor-registration/intructor-registration.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { roleReducer } from './store/role.reducer';
 
 
 @NgModule({
@@ -49,6 +62,15 @@ import { SharedmaterialModule } from './sharedmaterial/sharedmaterial.module';
     LoginPageComponent,
     BlogsPageComponent,
     AllCoursesComponent,
+    RecentPostsComponent,
+    BlogDetailPageComponent,
+    InstructorPageComponent,
+    InstCardComponent,
+    ForgotPasswordComponent,
+    DashboardPageComponent,
+    TrendingDashboardComponent,
+    StudentRegistrationComponent,
+    IntructorRegistrationComponent,
     
   ],
   imports: [
@@ -57,7 +79,10 @@ import { SharedmaterialModule } from './sharedmaterial/sharedmaterial.module';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    SharedmaterialModule
+    SharedmaterialModule,
+    StoreModule.forRoot({ role: roleReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

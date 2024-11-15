@@ -1,48 +1,29 @@
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column; 
-    height: 440px;
-    width: 250px; 
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-img-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 300px; /* Fixed height for uniformity */
-    object-fit: cover; /* Maintain aspect ratio */
-    width: 250px;
-  }
-  
-  .card-body {
-    flex: 1; /* Allow card body to take up remaining space */
-    display: flex;
-    flex-direction: column; /* Stack title and text vertically */
-    justify-content: space-between; /* Distribute space evenly */
-    align-items: center; /* Center align items */
-    text-align: center; /* Center text */
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .card-text {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 0.5rem; /* Space between text elements */
-  }
-  
-  .fa-star {
-    color: #f86c64; /* Star color for reviews */
-  }
-  
+.instructor-home-outer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card-trend:hover {
+  background-color: #3b295c;
+  color: white !important;
+}
+
+
+.data-course {
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-trending-cr {
+  width: 80%;
+  border-radius: 5px !important;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.carddd {
+  height: 220px;
+}

@@ -1,16 +1,10 @@
 [
     {
-        "id": 1,
         "name": "Introduction to Programming",
         "category": "Computer Science",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "This course provides a comprehensive introduction to programming, ideal for beginners. Students will learn the fundamentals of programming using Python, one of the most popular and versatile programming languages today. The course covers essential concepts such as variables, control structures, data structures, and basic algorithms through hands-on projects. Each week builds on the previous one, ensuring a gradual and thorough understanding of programming principles.",
-        "instructor": {
-            "name": "Frank Miller",
-            "email": "frank@example.com",
-            "bio": "An experienced software developer with over 10 years of teaching experience in programming and software engineering.",
-            "reviewIns": "5"
-        },
+        "instructor_id": 3,
         "img": "assets/images/intoPro.png",
         "courseContent": [
             {
@@ -70,8 +64,6 @@
             }
         ],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2024-01-15",
         "price": 299,
         "maxEnrollment": 30,
         "faq": [
@@ -90,17 +82,11 @@
         ]
     },
     {
-        "id": 2,
         "name": "Web Development Bootcamp",
         "category": "Web Development",
-        "duration": "12 weeks",
+        "duration": 9,
         "description": "This intensive bootcamp is designed to equip students with the skills needed to become a proficient web developer. The curriculum covers HTML, CSS, and JavaScript, along with popular frameworks like React. Students will work on real-world projects that reinforce their learning and culminate in a portfolio that showcases their capabilities as web developers.",
-        "instructor": {
-            "name": "Grace Lee",
-            "email": "grace@example.com",
-            "bio": "A web developer with over 8 years of experience in full-stack development and teaching web technologies.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 3,
         "img": "assets/images/webd.png",
         "courseContent": [
             {
@@ -180,8 +166,6 @@
             }
         ],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2024-03-01",
         "price": 599,
         "maxEnrollment": 25,
         "faq": [
@@ -200,17 +184,11 @@
         ]
     },
     {
-        "id": 3,
         "name": "Data Science and Machine Learning",
         "category": "Data Science",
-        "duration": "10 weeks",
+        "duration": 7,
         "description": "This course introduces students to the fascinating world of data science and machine learning. Using Python and libraries like Pandas, NumPy, and Scikit-learn, students will learn to analyze complex datasets, build predictive models, and apply machine learning algorithms to solve real-world problems. The course includes a capstone project that allows students to showcase their skills on a real dataset.",
-        "instructor": {
-            "name": "Emily Davis",
-            "email": "emily@example.com",
-            "bio": "A data scientist with extensive experience in analytics and teaching data science courses at various institutions.",
-            "reviewIns": "5"
-        },
+        "instructor_id": 5,
         "img": "assets/images/data.png",
         "courseContent": [
             {
@@ -281,8 +259,6 @@
             }
         ],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2024-04-10",
         "price": 499,
         "maxEnrollment": 20,
         "faq": [
@@ -301,17 +277,11 @@
         ]
     },
     {
-        "id": 4,
         "name": "Digital Marketing Masterclass",
         "category": "Marketing",
-        "duration": "10 weeks",
+        "duration": 5,
         "description": "This comprehensive course covers all aspects of digital marketing, from SEO and content marketing to social media and analytics. Learn how to create effective digital marketing strategies that drive traffic and conversions.",
-        "instructor": {
-            "name": "Lisa Chang",
-            "email": "lisa@example.com",
-            "bio": "A digital marketing expert with over 12 years of experience, specializing in SEO and content marketing.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 3,
         "img": "assets/images/businessAna.png",
         "courseContent": [
             {
@@ -370,8 +340,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2024-05-15",
         "price": 399,
         "maxEnrollment": 30,
         "faq": [
@@ -390,17 +358,11 @@
         ]
     },
     {
-        "id": 5,
         "name": "Graphic Design Fundamentals",
         "category": "Design",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "This course introduces the principles of graphic design. Students will learn about typography, color theory, and layout design, using software tools like Adobe Illustrator and Photoshop.",
-        "instructor": {
-            "name": "Tom Green",
-            "email": "tom@example.com",
-            "bio": "A professional graphic designer with over 15 years of experience in various design fields.",
-            "reviewIns": "3"
-        },
+        "instructor_id": 9,
         "img": "assets/images/graphicInto.png",
         "courseContent": [
             {
@@ -449,8 +411,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2024-06-01",
         "price": 299,
         "maxEnrollment": 25,
         "faq": [
@@ -469,17 +429,11 @@
         ]
     },
     {
-        "id": 6,
         "name": "Python for Data Analysis",
         "category": "Data Science",
-        "duration": "6 weeks",
+        "duration": 9,
         "description": "This course focuses on using Python for data analysis. Students will learn how to manipulate data with Pandas, visualize data with Matplotlib, and perform statistical analysis.",
-        "instructor": {
-            "name": "James White",
-            "email": "james@example.com",
-            "bio": "A data analyst with expertise in Python, statistics, and data visualization.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 9,
         "img": "assets/images/python.png",
         "courseContent": [
             {
@@ -518,8 +472,6 @@
         ],
         "reviews": [],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2024-07-15",
         "price": 399,
         "maxEnrollment": 20,
         "faq": [
@@ -538,17 +490,11 @@
         ]
     },
     {
-        "id": 7,
         "name": "Mobile App Development with Flutter",
         "category": "Mobile Development",
-        "duration": "10 weeks",
+        "duration": 4,
         "description": "This course teaches students how to develop mobile applications using Flutter. Learn how to build cross-platform apps for iOS and Android with a single codebase.",
-        "instructor": {
-            "name": "Anna Kim",
-            "email": "anna@example.com",
-            "bio": "A mobile developer with extensive experience in Flutter and cross-platform development.",
-            "reviewIns": "5"
-        },
+        "instructor_id": 9,
         "img": "assets/images/mobile.png",
         "courseContent": [
             {
@@ -607,8 +553,6 @@
         ],
         "reviews": [],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2024-08-01",
         "price": 499,
         "maxEnrollment": 25,
         "faq": [
@@ -627,17 +571,11 @@
         ]
     },
     {
-        "id": 8,
         "name": "Cybersecurity Fundamentals",
         "category": "Cybersecurity",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "This course introduces the basics of cybersecurity. Students will learn about common threats, vulnerabilities, and protective measures to secure networks and data.",
-        "instructor": {
-            "name": "Michael Brown",
-            "email": "michael@example.com",
-            "bio": "A cybersecurity professional with over 10 years of experience in protecting networks and data.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 9,
         "img": "assets/images/cybersecurity.png",
         "courseContent": [
             {
@@ -686,8 +624,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2024-09-01",
         "price": 349,
         "maxEnrollment": 30,
         "faq": [
@@ -706,17 +642,11 @@
         ]
     },
     {
-        "id": 9,
         "name": "Game Development with Unity",
         "category": "Game Development",
-        "duration": "12 weeks",
+        "duration": 8,
         "description": "Learn how to develop video games using Unity, a powerful game development platform. This course covers 2D and 3D game design, scripting, and deployment.",
-        "instructor": {
-            "name": "Sarah Wilson",
-            "email": "sarah@example.com",
-            "bio": "A game developer with over 7 years of experience in creating immersive gaming experiences.",
-            "reviewIns": "2"
-        },
+        "instructor_id": 9,
         "img": "assets/images/gameDev.png",
         "courseContent": [
             {
@@ -785,8 +715,6 @@
         ],
         "reviews": [],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2024-10-01",
         "price": 599,
         "maxEnrollment": 20,
         "faq": [
@@ -805,17 +733,11 @@
         ]
     },
     {
-        "id": 10,
         "name": "Business Analytics with Excel",
         "category": "Business",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "This course teaches students how to leverage Excel for business analytics. Learn data analysis techniques, visualization methods, and decision-making skills using Excel.",
-        "instructor": {
-            "name": "David Taylor",
-            "email": "david@example.com",
-            "bio": "A business analyst with expertise in data analytics and Excel.",
-            "reviewIns": "5"
-        },
+        "instructor_id": 5,
         "img": "assets/images/businessAna.png",
         "courseContent": [
             {
@@ -864,8 +786,6 @@
         ],
         "reviews": [],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2024-11-01",
         "price": 299,
         "maxEnrollment": 30,
         "faq": [
@@ -884,19 +804,12 @@
         ]
     },
     {
-        "id": 11,
         "name": "Blockchain Basics",
         "category": "Blockchain",
-        "duration": "6 weeks",
+        "duration": 9,
         "description": "This course introduces the fundamentals of blockchain technology. Learn about its applications, potential impacts, and how to develop basic blockchain solutions.",
-        "instructor": {
-            "name": "Emma Smith",
-            "email": "emma@example.com",
-            "bio": "A blockchain consultant with years of experience in technology implementation and training.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 5,
         "img": "assets/images/blockchain.png",
-
         "courseContent": [
             {
                 "week": 1,
@@ -934,8 +847,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2024-12-01",
         "price": 249,
         "maxEnrollment": 40,
         "faq": [
@@ -954,17 +865,11 @@
         ]
     },
     {
-        "id": 12,
         "name": "Web Development Bootcamp",
         "category": "Web Development",
-        "duration": "12 weeks",
+        "duration": 6,
         "description": "A comprehensive bootcamp covering front-end and back-end web development. Learn HTML, CSS, JavaScript, Node.js, and more.",
-        "instructor": {
-            "name": "Mark Johnson",
-            "email": "mark@example.com",
-            "bio": "A full-stack developer with extensive experience in building web applications.",
-            "reviewIns": "2"
-        },
+        "instructor_id": 5,
         "img": "assets/images/ui.png",
         "courseContent": [
             {
@@ -1033,8 +938,6 @@
         ],
         "reviews": [],
         "level": "Beginner to Intermediate",
-        "language": "English",
-        "startDate": "2025-01-01",
         "price": 699,
         "maxEnrollment": 20,
         "faq": [
@@ -1053,17 +956,11 @@
         ]
     },
     {
-        "id": 13,
         "name": "Introduction to Data Science",
         "category": "Data Science",
-        "duration": "10 weeks",
+        "duration": 6,
         "description": "This course provides an introduction to data science. Learn about data manipulation, analysis, visualization, and machine learning concepts.",
-        "instructor": {
-            "name": "Olivia Martin",
-            "email": "olivia@example.com",
-            "bio": "A data scientist with experience in machine learning and statistical analysis.",
-            "reviewIns": "3"
-        },
+        "instructor_id": 5,
         "img": "assets/images/teacher1.png",
         "courseContent": [
             {
@@ -1122,8 +1019,6 @@
         ],
         "reviews": [],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2025-02-01",
         "price": 499,
         "maxEnrollment": 20,
         "faq": [
@@ -1142,19 +1037,12 @@
         ]
     },
     {
-        "id": 14,
         "name": "Cloud Computing Basics",
         "category": "Cloud Computing",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "This course introduces cloud computing concepts, services, and deployment models. Learn about major cloud platforms and their functionalities.",
-        "instructor": {
-            "name": "Nathan Lee",
-            "email": "nathan@example.com",
-            "bio": "A cloud architect with extensive experience in cloud technologies and implementations.",
-            "reviewIns": "5"
-        },
+        "instructor_id": 5,
         "img": "assets/images/cloud.png",
-
         "courseContent": [
             {
                 "week": 1,
@@ -1202,8 +1090,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2025-03-01",
         "price": 299,
         "maxEnrollment": 40,
         "faq": [
@@ -1222,17 +1108,11 @@
         ]
     },
     {
-        "id": 15,
         "name": "Digital Marketing Essentials",
         "category": "Marketing",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "Learn the fundamentals of digital marketing, including SEO, social media, email marketing, and analytics.",
-        "instructor": {
-            "name": "Laura Green",
-            "email": "laura@example.com",
-            "bio": "A digital marketing strategist with over 8 years of experience in various industries.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 5,
         "img": "assets/images/teacher4.png",
         "courseContent": [
             {
@@ -1281,8 +1161,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2025-04-01",
         "price": 249,
         "maxEnrollment": 35,
         "faq": [
@@ -1301,17 +1179,11 @@
         ]
     },
     {
-        "id": 16,
         "name": "Advanced Python Programming",
         "category": "Programming",
-        "duration": "10 weeks",
+        "duration": 8,
         "description": "This course dives deep into advanced Python concepts such as decorators, generators, and web frameworks. Enhance your programming skills to develop complex applications.",
-        "instructor": {
-            "name": "Alice Thompson",
-            "email": "alice@example.com",
-            "bio": "An experienced software engineer with a passion for teaching Python and software development.",
-            "reviewIns": "2"
-        },
+        "instructor_id": 5,
         "img": "assets/images/intoPro.png",
         "courseContent": [
             {
@@ -1370,8 +1242,6 @@
         ],
         "reviews": [],
         "level": "Advanced",
-        "language": "English",
-        "startDate": "2025-05-01",
         "price": 399,
         "maxEnrollment": 20,
         "faq": [
@@ -1390,17 +1260,11 @@
         ]
     },
     {
-        "id": 17,
         "name": "Introduction to Graphic Design",
         "category": "Design",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "Learn the fundamentals of graphic design, including typography, color theory, and composition. Create visually compelling designs using industry-standard tools.",
-        "instructor": {
-            "name": "Jake Anderson",
-            "email": "jake@example.com",
-            "bio": "A graphic designer with over 5 years of experience in branding and visual communication.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 3,
         "img": "assets/images/graphicFunda.png",
         "courseContent": [
             {
@@ -1449,8 +1313,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2025-06-01",
         "price": 249,
         "maxEnrollment": 25,
         "faq": [
@@ -1469,17 +1331,11 @@
         ]
     },
     {
-        "id": 18,
         "name": "Introduction to Machine Learning",
         "category": "Data Science",
-        "duration": "10 weeks",
+        "duration": 10,
         "description": "This course covers the basics of machine learning, including supervised and unsupervised learning, and practical implementations using Python.",
-        "instructor": {
-            "name": "Daniel Harris",
-            "email": "daniel@example.com",
-            "bio": "A machine learning engineer with experience in developing predictive models.",
-            "reviewIns": "5"
-        },
+        "instructor_id": 3,
         "img": "assets/images/introData.png",
         "courseContent": [
             {
@@ -1538,8 +1394,6 @@
         ],
         "reviews": [],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2025-07-01",
         "price": 499,
         "maxEnrollment": 20,
         "faq": [
@@ -1558,17 +1412,11 @@
         ]
     },
     {
-        "id": 19,
         "name": "Foundations of Web Security",
         "category": "Cybersecurity",
-        "duration": "6 weeks",
+        "duration": 9,
         "description": "This course introduces essential web security concepts, including vulnerabilities, threat modeling, and secure coding practices.",
-        "instructor": {
-            "name": "Sophia White",
-            "email": "sophia@example.com",
-            "bio": "A cybersecurity expert with a focus on web application security.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 3,
         "img": "assets/images/cybersecurity.png",
         "courseContent": [
             {
@@ -1607,8 +1455,6 @@
         ],
         "reviews": [],
         "level": "Intermediate",
-        "language": "English",
-        "startDate": "2025-08-01",
         "price": 349,
         "maxEnrollment": 30,
         "faq": [
@@ -1627,17 +1473,11 @@
         ]
     },
     {
-        "id": 20,
         "name": "Project Management Fundamentals",
         "category": "Business",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "Learn the basics of project management, including planning, executing, and closing projects effectively.",
-        "instructor": {
-            "name": "Henry Clark",
-            "email": "henry@example.com",
-            "bio": "A project manager with over a decade of experience leading projects in various industries.",
-            "reviewIns": "3"
-        },
+        "instructor_id": 3,
         "img": "assets/images/businessAna.png",
         "courseContent": [
             {
@@ -1686,8 +1526,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2025-09-01",
         "price": 299,
         "maxEnrollment": 30,
         "faq": [
@@ -1706,17 +1544,11 @@
         ]
     },
     {
-        "id": 21,
         "name": "Social Media Marketing Strategies",
         "category": "Marketing",
-        "duration": "8 weeks",
+        "duration": 9,
         "description": "Learn effective strategies for marketing your brand on social media platforms. Understand audience engagement and analytics.",
-        "instructor": {
-            "name": "Evelyn Brown",
-            "email": "evelyn@example.com",
-            "bio": "A social media strategist with experience in building brands online.",
-            "reviewIns": "4"
-        },
+        "instructor_id": 3,
         "img": "assets/images/teacher2.png",
         "courseContent": [
             {
@@ -1765,8 +1597,6 @@
         ],
         "reviews": [],
         "level": "Beginner",
-        "language": "English",
-        "startDate": "2025-10-01",
         "price": 249,
         "maxEnrollment": 25,
         "faq": [
@@ -1781,6 +1611,591 @@
             {
                 "question": "Is there a final project?",
                 "answer": "Yes, you'll present your marketing campaign at the end of the course."
+            }
+        ]
+    },
+    {
+        "name": "Web Development Basics",
+        "category": "Web Development",
+        "duration": 9,
+        "description": "This course introduces web development from the ground up. Students will learn how to create websites using HTML, CSS, and JavaScript. Emphasis will be on building responsive layouts and understanding the fundamentals of front-end development.",
+        "instructor_id": 9,
+        "img": "assets/images/webDevBasics.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "HTML Fundamentals",
+                "description": "Learn how to structure web pages using HTML."
+            },
+            {
+                "week": 2,
+                "title": "CSS Styling",
+                "description": "Understand how to style your web pages and make them visually appealing."
+            },
+            {
+                "week": 3,
+                "title": "Responsive Design",
+                "description": "Make websites that adapt to different screen sizes using media queries."
+            },
+            {
+                "week": 4,
+                "title": "Introduction to JavaScript",
+                "description": "Learn the basics of JavaScript and how it brings websites to life."
+            },
+            {
+                "week": 5,
+                "title": "DOM Manipulation",
+                "description": "Explore how to dynamically interact with HTML elements using JavaScript."
+            },
+            {
+                "week": 6,
+                "title": "Final Project",
+                "description": "Apply what you’ve learned to create a fully functional webpage."
+            }
+        ],
+        "prerequisites": [
+            "Basic computer literacy"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Emily Davis",
+                "rating": 5,
+                "comment": "Perfect for beginners! Easy to follow and the final project was really fun."
+            },
+            {
+                "reviewer": "John Lee",
+                "rating": 4,
+                "comment": "Great course, but I wish there was more focus on JavaScript."
+            }
+        ],
+        "level": "Beginner",
+        "price": 199,
+        "maxEnrollment": 50,
+        "faq": [
+            {
+                "question": "Do I need prior experience?",
+                "answer": "No, this course is designed for beginners."
+            },
+            {
+                "question": "Will I receive a certificate?",
+                "answer": "Yes, you will receive a certificate upon completing the course."
+            }
+        ]
+    },
+    {
+        "name": "Advanced Data Science with Python",
+        "category": "Data Science",
+        "duration": 10,
+        "description": "This advanced course dives deeper into data science techniques using Python. Students will learn about machine learning algorithms, data visualization, and how to process and analyze large datasets.",
+        "instructor_id": 3,
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Data Preprocessing",
+                "description": "Learn how to clean and preprocess data for analysis."
+            },
+            {
+                "week": 2,
+                "title": "Exploratory Data Analysis",
+                "description": "Discover insights from data using visualizations and statistics."
+            },
+            {
+                "week": 3,
+                "title": "Supervised Learning Algorithms",
+                "description": "Master techniques like linear regression and decision trees."
+            },
+            {
+                "week": 4,
+                "title": "Unsupervised Learning",
+                "description": "Explore clustering and dimensionality reduction techniques."
+            },
+            {
+                "week": 5,
+                "title": "Model Evaluation",
+                "description": "Learn how to evaluate the performance of machine learning models."
+            },
+            {
+                "week": 6,
+                "title": "Time Series Analysis",
+                "description": "Understand how to analyze and forecast time series data."
+            },
+            {
+                "week": 7,
+                "title": "Deep Learning Fundamentals",
+                "description": "Get started with neural networks and deep learning models."
+            },
+            {
+                "week": 8,
+                "title": "Natural Language Processing",
+                "description": "Dive into text data analysis and sentiment analysis."
+            },
+            {
+                "week": 9,
+                "title": "Capstone Project",
+                "description": "Complete a hands-on project where you apply all your skills."
+            },
+            {
+                "week": 10,
+                "title": "Course Wrap-Up",
+                "description": "Review your project and learn how to apply your knowledge in real-world scenarios."
+            }
+        ],
+        "prerequisites": [
+            "Intro to Python",
+            "Basic understanding of statistics"
+        ],
+        "reviews": [
+            {
+                "reviewer": "David Wang",
+                "rating": 5,
+                "comment": "Absolutely amazing! The course covered everything I needed to know about advanced data science."
+            },
+            {
+                "reviewer": "Sophia Martin",
+                "rating": 4,
+                "comment": "Great content but some topics went too fast for me."
+            }
+        ],
+        "level": "Advanced",
+        "price": 499,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "What are the prerequisites?",
+                "answer": "You need to know basic Python and statistics."
+            },
+            {
+                "question": "Can I access the materials after the course ends?",
+                "answer": "Yes, you will have lifetime access to the course materials."
+            }
+        ]
+    },
+    {
+        "name": "Mobile App Development with Flutter",
+        "category": "Mobile Development",
+        "duration": 9,
+        "description": "Learn how to build cross-platform mobile apps using Flutter. This course covers both the basics of mobile app development and the advanced features offered by Flutter, helping you create native-like experiences on both Android and iOS.",
+        "instructor_id": 3,
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Flutter",
+                "description": "Set up your development environment and learn the basics of Flutter."
+            },
+            {
+                "week": 2,
+                "title": "Dart Programming Language",
+                "description": "Learn the Dart language, which powers Flutter."
+            },
+            {
+                "week": 3,
+                "title": "Building Your First App",
+                "description": "Create a simple mobile app and explore the Flutter framework."
+            },
+            {
+                "week": 4,
+                "title": "Widgets and Layouts",
+                "description": "Master Flutter’s widget-based structure to design beautiful UIs."
+            },
+            {
+                "week": 5,
+                "title": "Handling User Input",
+                "description": "Learn how to capture and process user inputs within your app."
+            },
+            {
+                "week": 6,
+                "title": "State Management",
+                "description": "Understand different methods of managing app state in Flutter."
+            },
+            {
+                "week": 7,
+                "title": "Navigation and Routes",
+                "description": "Learn how to navigate between screens and manage routes in Flutter."
+            },
+            {
+                "week": 8,
+                "title": "Final App Project",
+                "description": "Build a fully functional mobile app using the concepts you’ve learned."
+            }
+        ],
+        "prerequisites": [
+            "Basic programming knowledge"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Emma Roberts",
+                "rating": 5,
+                "comment": "Best course for learning Flutter! The instructor was clear and concise."
+            },
+            {
+                "reviewer": "Chris Evans",
+                "rating": 4,
+                "comment": "Good course but could have covered more advanced topics."
+            }
+        ],
+        "level": "Intermediate",
+        "price": 399,
+        "maxEnrollment": 25,
+        "faq": [
+            {
+                "question": "What is Flutter?",
+                "answer": "Flutter is an open-source UI software development toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase."
+            },
+            {
+                "question": "Do I need a Mac to develop for iOS?",
+                "answer": "No, you can develop for both Android and iOS on any operating system."
+            }
+        ]
+    },
+    {
+        "name": "Blockchain and Cryptocurrency Fundamentals",
+        "category": "Blockchain",
+        "duration": 9,
+        "description": "Get started with blockchain technology and cryptocurrencies. Learn how blockchain works, explore different types of cryptocurrencies, and understand how to invest in them securely.",
+        "instructor_id": 3,
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Blockchain",
+                "description": "Learn what blockchain is and how it works."
+            },
+            {
+                "week": 2,
+                "title": "Cryptocurrency Basics",
+                "description": "Understand the fundamentals of digital currencies like Bitcoin and Ethereum."
+            },
+            {
+                "week": 3,
+                "title": "Smart Contracts",
+                "description": "Learn about the concept of smart contracts and how they power decentralized applications."
+            },
+            {
+                "week": 4,
+                "title": "Blockchain Use Cases",
+                "description": "Explore real-world applications of blockchain technology in finance, supply chains, and more."
+            },
+            {
+                "week": 5,
+                "title": "How to Buy and Secure Cryptocurrencies",
+                "description": "Understand how to safely buy, store, and secure your digital assets."
+            },
+            {
+                "week": 6,
+                "title": "The Future of Blockchain",
+                "description": "Discuss the potential future developments and applications of blockchain technology."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Olivia Harris",
+                "rating": 5,
+                "comment": "This course was fantastic for someone completely new to blockchain. I now understand how everything works."
+            },
+            {
+                "reviewer": "Henry Kim",
+                "rating": 4,
+                "comment": "Good introduction, but more technical content would have been helpful."
+            }
+        ],
+        "level": "Beginner",
+        "price": 299,
+        "maxEnrollment": 30,
+        "faq": [
+            {
+                "question": "What is cryptocurrency?",
+                "answer": "Cryptocurrency is a form of digital or virtual currency that uses cryptography for security."
+            },
+            {
+                "question": "Do I need a background in finance?",
+                "answer": "No, this course is suitable for beginners."
+            }
+        ]
+    },
+    {
+        "name": "UX/UI Design Mastery",
+        "category": "Design",
+        "duration": 9,
+        "description": "Learn the art of user experience (UX) and user interface (UI) design. This course covers everything from wireframing and prototyping to creating beautiful and functional designs.",
+        "instructor_id": 3,
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to UX/UI Design",
+                "description": "Learn the principles of user-centered design and how to approach design problems."
+            },
+            {
+                "week": 2,
+                "title": "Wireframing and Prototyping",
+                "description": "Master the art of designing wireframes and prototypes to plan your user interface."
+            },
+            {
+                "week": 3,
+                "title": "Designing for Mobile",
+                "description": "Understand how to create responsive and mobile-friendly interfaces."
+            },
+            {
+                "week": 4,
+                "title": "Typography and Color Theory",
+                "description": "Learn how to choose typography and color schemes that improve usability."
+            },
+            {
+                "week": 5,
+                "title": "Usability Testing",
+                "description": "Learn how to conduct usability tests and gather feedback for improvement."
+            },
+            {
+                "week": 6,
+                "title": "User Research",
+                "description": "Learn how to conduct research to better understand users and their needs."
+            },
+            {
+                "week": 7,
+                "title": "UI Design Tools",
+                "description": "Learn about popular design tools like Figma, Sketch, and Adobe XD."
+            },
+            {
+                "week": 8,
+                "title": "Final Project",
+                "description": "Build your own user interface and showcase your skills in a final project."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Charlotte Harris",
+                "rating": 5,
+                "comment": "Incredible course! I now feel confident in designing my own interfaces."
+            },
+            {
+                "reviewer": "Benjamin Clark",
+                "rating": 4,
+                "comment": "Great content, but some of the tools covered were a bit advanced for a beginner."
+            }
+        ],
+        "level": "Beginner",
+        "price": 350,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "Do I need any prior experience?",
+                "answer": "No, this course is perfect for beginners."
+            },
+            {
+                "question": "What tools do I need?",
+                "answer": "You will need access to design tools like Figma or Sketch."
+            }
+        ]
+    },
+    {
+        "name": "Digital Marketing Essentials",
+        "category": "Marketing",
+        "duration": 9,
+        "description": "This course teaches the fundamentals of digital marketing, including SEO, social media marketing, email marketing, and online advertising. Learn how to build an effective digital marketing strategy.",
+        "instructor_id": 3,
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Digital Marketing",
+                "description": "Learn the fundamentals of digital marketing and its various channels."
+            },
+            {
+                "week": 2,
+                "title": "Search Engine Optimization (SEO)",
+                "description": "Learn how to optimize your website to rank higher in search engines."
+            },
+            {
+                "week": 3,
+                "title": "Social Media Marketing",
+                "description": "Understand how to build effective marketing campaigns on social media platforms."
+            },
+            {
+                "week": 4,
+                "title": "Email Marketing",
+                "description": "Master the art of creating effective email marketing campaigns."
+            },
+            {
+                "week": 5,
+                "title": "Paid Advertising",
+                "description": "Learn how to run successful paid advertising campaigns on platforms like Google Ads and Facebook."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Liam Scott",
+                "rating": 5,
+                "comment": "This course gave me all the tools I needed to start my own digital marketing business."
+            },
+            {
+                "reviewer": "Zoe Adams",
+                "rating": 4,
+                "comment": "Great introduction to digital marketing, but I would have liked more in-depth content."
+            }
+        ],
+        "level": "Beginner",
+        "price": 250,
+        "maxEnrollment": 30,
+        "faq": [
+            {
+                "question": "Do I need experience in marketing?",
+                "answer": "No, this course is designed for beginners."
+            },
+            {
+                "question": "Will I get a certificate?",
+                "answer": "Yes, you will receive a certificate after completing the course."
+            }
+        ]
+    },
+    {
+        "name": "Cloud Computing with AWS",
+        "category": "Cloud Computing",
+        "duration": 9,
+        "description": "Learn how to deploy and manage applications in the cloud using Amazon Web Services (AWS). This course covers core AWS services and best practices for cloud architecture.",
+        "instructor_id": 3,
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Cloud Computing",
+                "description": "Understand the basics of cloud computing and AWS."
+            },
+            {
+                "week": 2,
+                "title": "AWS EC2 and S3",
+                "description": "Learn how to launch virtual servers and store data on AWS."
+            },
+            {
+                "week": 3,
+                "title": "AWS Networking",
+                "description": "Master the networking services provided by AWS."
+            },
+            {
+                "week": 4,
+                "title": "AWS IAM",
+                "description": "Learn how to manage identities and permissions in AWS."
+            },
+            {
+                "week": 5,
+                "title": "AWS Lambda",
+                "description": "Explore serverless computing with AWS Lambda."
+            },
+            {
+                "week": 6,
+                "title": "Building Highly Available Systems",
+                "description": "Learn to design and deploy fault-tolerant, highly available systems on AWS."
+            },
+            {
+                "week": 7,
+                "title": "Final Project",
+                "description": "Complete a hands-on project deploying an application in AWS."
+            }
+        ],
+        "prerequisites": [
+            "Basic knowledge of networking"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Ryan Lee",
+                "rating": 5,
+                "comment": "Excellent course! The instructor explained each concept clearly."
+            },
+            {
+                "reviewer": "Natalie Brown",
+                "rating": 4,
+                "comment": "Great course, but I wish it included more about AWS certifications."
+            }
+        ],
+        "level": "Intermediate",
+        "price": 450,
+        "maxEnrollment": 20,
+        "faq": [
+            {
+                "question": "Do I need prior AWS experience?",
+                "answer": "No, but basic networking knowledge is recommended."
+            },
+            {
+                "question": "Will I get AWS certification?",
+                "answer": "This course will help you prepare for AWS certifications, but it does not provide certification directly."
+            }
+        ]
+    },
+    {
+        "name": "Intro to Cybersecurity",
+        "category": "Cybersecurity",
+        "duration": 9,
+        "description": "Gain a foundational understanding of cybersecurity concepts. Learn about network security, encryption, threat detection, and how to protect data from cyber threats.",
+        "instructor_id": 3,
+        "img": "assets/images/cybersecurity.png",
+        "courseContent": [
+            {
+                "week": 1,
+                "title": "Introduction to Cybersecurity",
+                "description": "Learn the basics of cybersecurity and why it's important."
+            },
+            {
+                "week": 2,
+                "title": "Network Security Basics",
+                "description": "Understand how to secure computer networks and prevent unauthorized access."
+            },
+            {
+                "week": 3,
+                "title": "Cryptography",
+                "description": "Learn the basics of encryption and how to protect data using cryptographic techniques."
+            },
+            {
+                "week": 4,
+                "title": "Threats and Attacks",
+                "description": "Study different types of cyber threats and how to defend against them."
+            },
+            {
+                "week": 5,
+                "title": "Cybersecurity Tools",
+                "description": "Learn about common tools used for penetration testing and vulnerability assessments."
+            },
+            {
+                "week": 6,
+                "title": "Final Project",
+                "description": "Work on a project to demonstrate your understanding of cybersecurity practices."
+            }
+        ],
+        "prerequisites": [
+            "None"
+        ],
+        "reviews": [
+            {
+                "reviewer": "Michael Young",
+                "rating": 5,
+                "comment": "Incredibly informative and easy to follow. Highly recommend this course!"
+            },
+            {
+                "reviewer": "Sophia Taylor",
+                "rating": 4,
+                "comment": "Good course for beginners, but I would have liked more hands-on practice."
+            }
+        ],
+        "level": "Beginner",
+        "price": 350,
+        "maxEnrollment": 40,
+        "faq": [
+            {
+                "question": "Do I need a background in IT?",
+                "answer": "No, this course is designed for beginners."
+            },
+            {
+                "question": "Is this course suitable for a career in cybersecurity?",
+                "answer": "Yes, it provides a strong foundation for starting a career in cybersecurity."
             }
         ]
     }

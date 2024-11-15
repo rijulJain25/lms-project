@@ -1,156 +1,48 @@
 <div class="reg-outer">
   <div class="container-fluid">
     <div class="row">
-      <!-- Left Part: Carousel -->
       <div class="col-md-6 d-none d-md-block left-reg">
         <div id="loginCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img
-                src="assets/images/reg1.png"
-                class="d-block w-100"
-                alt="Login Illustration 1"
-              />
+              <img src="assets/images/reg1.png" class="d-block w-100" alt="Login Illustration 1" />
             </div>
             <div class="carousel-item">
-              <img
-                src="assets/images/reg2.png"
-                class="d-block w-100"
-                alt="Login Illustration 2"
-              />
+              <img src="assets/images/reg2.png" class="d-block w-100" alt="Login Illustration 2" />
             </div>
             <div class="carousel-item">
-              <img
-                src="assets/images/reg3.png"
-                class="d-block w-100"
-                alt="Login Illustration 3"
-              />
+              <img src="assets/images/reg3.png" class="d-block w-100" alt="Login Illustration 3" />
             </div>
           </div>
-          <a
-            class="carousel-control-prev"
-            href="#loginCarousel"
-            role="button"
-            data-slide="prev"
-          >
+          <a class="carousel-control-prev" href="#loginCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a
-            class="carousel-control-next"
-            href="#loginCarousel"
-            role="button"
-            data-slide="next"
-          >
+          <a class="carousel-control-next" href="#loginCarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
         </div>
       </div>
 
-      <!-- Right Part: Registration Form -->
-      <!-- Right Part: Registration Form -->
-<div class="col-md-6 right-reg">
-    <div *ngIf="currentStep === 1">
-      <h3>Register Here</h3>
-      <form [formGroup]="step1Form" class="reg-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" class="form-control" formControlName="name" />
-          <div *ngIf="step1Controls.name.invalid && (step1Controls.name.dirty || step1Controls.name.touched)">
-            <small *ngIf="step1Controls.name.errors?.required" class="text-danger">Name is required.</small>
-            <small *ngIf="step1Controls.name.errors?.minlength" class="text-danger">Name must be at least 3 characters long.</small>
-          </div>
+      <div class="col-md-6 right-reg">
+        <div class="toggle-form">
+          <button (click)="toggleForm()" [ngClass]="{'btn-active': isInstructor$ | async}">
+            Switch to {{ (isInstructor$ | async) ? 'Student' : 'Instructor' }} Registration
+          </button>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" class="form-control" formControlName="email" />
-          <div *ngIf="step1Controls.email.invalid && (step1Controls.email.dirty || step1Controls.email.touched)">
-            <small *ngIf="step1Controls.email.errors?.required" class="text-danger">Email is required.</small>
-            <small *ngIf="step1Controls.email.errors?.email" class="text-danger">Invalid email format.</small>
-          </div>
+      
+        <div *ngIf="!(isInstructor$ | async)">
+          <app-student-registration></app-student-registration>
         </div>
-        <div class="form-group">
-          <label for="dob">Date of Birth</label>
-          <input type="date" id="dob" class="form-control" formControlName="dob" />
-          <div *ngIf="step1Controls.dob.invalid && (step1Controls.dob.dirty || step1Controls.dob.touched)">
-            <small *ngIf="step1Controls.dob.errors?.required" class="text-danger">Date of Birth is required.</small>
-          </div>
+      
+        <div *ngIf="isInstructor$ | async">
+          <app-intructor-registration></app-intructor-registration>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" class="form-control" formControlName="password" />
-          <div *ngIf="step1Controls.password.invalid && (step1Controls.password.dirty || step1Controls.password.touched)">
-            <small *ngIf="step1Controls.password.errors?.required" class="text-danger">Password is required.</small>
-            <small *ngIf="step1Controls.password.errors?.minlength" class="text-danger">Password must be at least 8 characters long.</small>
-            <small *ngIf="step1Controls.password.errors?.specialCharacter" class="text-danger">Password must contain at least one special character.</small>
-          </div>
-        </div>
-        <div class="form-group">
-          <button type="button" class="btn btn-primary" (click)="nextStep()">Next</button>
-        </div>
-      </form>
-      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
-    </div>
-  
-    <!-- Step 2 -->
-    <div *ngIf="currentStep === 2">
-      <form [formGroup]="step2Form" class="reg-form" (ngSubmit)="submitForm()">
-        <div class="form-group">
-          <label>Gender</label>
-          <div>
-            <input type="radio" id="male" formControlName="gender" value="Male" />
-            <label for="male">Male</label>
-            <input type="radio" id="female" formControlName="gender" value="Female" />
-            <label for="female">Female</label>
-          </div>
-          <div *ngIf="step2Controls.gender.invalid && (step2Controls.gender.dirty || step2Controls.gender.touched)">
-            <small class="text-danger">Gender is required.</small>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="designation">Current Designation</label>
-          <select id="designation" class="form-control" formControlName="designation">
-            <option value="" disabled selected>Select your option</option>
-            <option value="Developer">Developer</option>
-            <option value="Designer">Designer</option>
-            <option value="Manager">Manager</option>
-          </select>
-          <div *ngIf="step2Controls.designation.invalid && (step2Controls.designation.dirty || step2Controls.designation.touched)">
-            <small class="text-danger">Designation is required.</small>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="interest">Interest</label>
-          <select id="interest" class="form-control" formControlName="interest">
-            <option value="" disabled selected>Select your option</option>
-            <option value="Tech">Tech</option>
-            <option value="Art">Art</option>
-            <option value="Science">Science</option>
-          </select>
-          <div *ngIf="step2Controls.interest.invalid && (step2Controls.interest.dirty || step2Controls.interest.touched)">
-            <small class="text-danger">Interest is required.</small>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="bio">Bio</label>
-          <textarea id="bio" class="form-control" formControlName="bio"></textarea>
-          <div *ngIf="step2Controls.bio.invalid && (step2Controls.bio.dirty || step2Controls.bio.touched)">
-            <small class="text-danger">Bio is required.</small>
-          </div>
-        </div>
-        <div style="display: flex; gap: 10px">
-          <button type="button" class="btn btn-secondary" (click)="prevStep()">Back</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
-      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
-    </div>
-  
-    <span class="new-user" style="padding-top: 20px;">
-      Already have an Account? <strong style="color: #f86c64;" routerLink="/login">Login</strong>
-    </span>
-  </div>
+        <span class="old-user" style="padding-top: 20px; cursor: pointer; ">
+          Already Have an Account? <strong style="color: #f86c64;" routerLink="/login">Login</strong>
+        </span>
       </div>
+    </div>
   </div>
 </div>

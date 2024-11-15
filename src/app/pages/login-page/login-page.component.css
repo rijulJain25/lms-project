@@ -87,3 +87,72 @@ input[type="password"]:focus {
         margin-bottom: 10px; /* Reduced space between form groups */
     }
 }
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin: 0;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #f86c64;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+
+.forgot-password-link {
+    color: #f86c64;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .forgot-password-link:hover {
+    text-decoration: underline;
+  }
+  

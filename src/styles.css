@@ -36,3 +36,17 @@ html{
     border: 3.5px solid #f86c64;
     color: white;
 }
+
+.classic-btn-new{
+    padding: 7px 24px;
+    border: 3.5px solid #f86c64;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #f86c64;
+}
+
+.classic-btn-new:hover{
+    background-color: #ff584f;
+    border: 3.5px solid #ff584f;
+}

@@ -9,20 +9,20 @@
     
       <mat-card *ngFor="let post of paginatedPosts" class="blog-card" >
         <div>
-          <img [src]="post.images[0]" alt="{{ post.title }}" class="imageblog">
+          <img src="assets/images/angular.png" alt="{{ post.title }}" class="imageblog">
         </div>
         <div>
-        <mat-card-header>
-          <mat-card-title style="color: #f86c64; font-weight: bold;" >{{ post.title }}</mat-card-title>
-          <mat-card-subtitle>By {{ post.author }} on {{ post.date | date: 'mediumDate' }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ post.description }}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button style="color: #f86c64;">Read More</button>
-        </mat-card-actions>
-      </div>
+          <mat-card-header>
+            <mat-card-title style="color: #f86c64; font-weight: bold;" >{{ post.title }}</mat-card-title>
+            <mat-card-subtitle>By {{ post.author }} on {{ post.date | date: 'mediumDate' }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ post.description }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button style="color: #f86c64;" [routerLink]="['/blog', post.blog_id]">Read More</button>
+          </mat-card-actions>
+        </div>
       </mat-card>
     
       <mat-paginator [length]="filteredPosts.length"
@@ -37,25 +37,13 @@
     <div class="search-container" >
       <mat-form-field appearance="fill" class="form-blog">
         <input matInput [(ngModel)]="searchTerm" (input)="searchPosts()" class="blog-search" placeholder="Search Blogs..">
-        <button style="background-color: #f86c64; border: 2px solid #f86c64; padding: 8px 13px; border-radius: 0px 10px 10px 0px; width: 30%; color: white;
-"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button style="background-color: #f86c64; border: 2px solid #f86c64; padding: 8px 13px; border-radius: 0px 10px 10px 0px; width: 30%; color: white;">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </mat-form-field>
     </div>
 
-    <div class="blog-recent">
-      <h3 style="color: #f86c64;">Recent Posts</h3>
-      <mat-card *ngFor="let post of recentPosts" class="recent-post-card">
-        <mat-card-header>
-          <mat-card-title>{{ post.title }}</mat-card-title>
-          <mat-card-subtitle>By {{ post.author }} on {{ post.date | date: 'mediumDate' }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ post.description }}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button style="color: #f86c64;">Read More</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+    <!-- Include the RecentPosts Component -->
+    <app-recent-posts [recentPosts]="recentPosts"></app-recent-posts>
   </div>
 </div>

@@ -14,3 +14,4 @@ export class AllCoursesService {
     return this.http.get<any>(this.apiUrl);
   }
 }
+

@@ -39,8 +39,9 @@ input[type="email"],
 input[type="password"],
 input[type="date"],
 select,
-textarea {
-    width: 100%;
+textarea, 
+.mat-form-field{
+    width: 100% !important;
     padding: 10px; /* Padding inside inputs */
     border: 1px solid #ced4da; /* Light border */
     border-radius: 5px; /* Slightly rounded corners */
@@ -70,29 +71,74 @@ textarea:focus {
     background-color: #ff544b;
 }
 
+.btn-section {
+    display: flex;
+    gap: 10px;  
+}
+
 .btn-secondary {
-    background-color: #bfa1f8; /* Bootstrap secondary color */
+    background-color: #bfa1f8;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-.reg-form{
+.reg-form {
     width: 300px !important;
 }
 
-.left-reg{
+.left-reg {
     background-color: #ffdcf2;
     border-radius: 20px;
 }
+.selected-interests {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .interest-tag {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #495057;
+  }
+  
+  .remove-btn {
+    background: none;
+    border: none;
+    color: red;
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .remove-btn:hover {
+    text-decoration: underline;
+  }
+  
+  select.form-control {
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+  }
+  
+  select.form-control:focus {
+    border-color: #80bdff;
+    outline: none;
+  }
+  
+  
 
-
-.btn-secondary:hover {
-    background-color: rgb(37, 85, 121); /* Darker shade on hover */
-}
-
-@media (max-width: 767.98px) {
+/* Additional responsiveness for tags */
+@media (max-width: 767px) {
     .carousel {
         display: none;
     }
@@ -105,4 +151,61 @@ textarea:focus {
     .form-group {
         margin-bottom: 10px; /* Reduced space between form groups */
     }
+
 }
+
+.btn-secondary:hover {
+    background-color: rgb(37, 85, 121); /* Darker shade on hover */
+}
+
+.toggle-form {
+    text-align: center;
+    margin: 20px 0px;
+
+}
+
+button {
+    padding: 12px 30px; /* Increase button padding for a larger button */
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px; /* Make the button rounded */
+    background: linear-gradient(135deg, #f86c64, #ff544b); /* Gradient background */
+    color: white;
+    border: none; /* Remove the default border */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for background, border, and transform */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a 3D effect */
+    text-transform: uppercase; /* Capitalize the text */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff544b, #f86c64); /* Reverse gradient on hover */
+    transform: translateY(-4px); /* Slightly lift the button on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(255, 118, 89, 0.5); /* Custom focus outline */
+}
+
+button:active {
+    transform: translateY(2px); /* Button presses down slightly on click */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Normal shadow on click */
+}
+
+/* Active button state when toggling */
+.btn-active {
+    background: linear-gradient(135deg, #2e2c97, #3d3bb6); /* Green gradient for active state */
+    border-color: #2e2c97; /* Change border color when active */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for active state */
+}
+
+/* Text color for active button */
+.btn-active:hover {
+    background: linear-gradient(135deg, #2a28a1, #3f3dc9); /* Green gradient for active state */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+
+
