@@ -1,8 +1,9 @@
 [
     {
-        "id": 1,
+        "userId": 1,
         "name": "Alice Johnson",
         "email": "alice@example.com",
+        "username": "default",
         "password": "hashed_password_1",
         "profilePhoto": "/images/alice.jpg",
         "phoneNumber": "123-456-7890",
@@ -19,9 +20,10 @@
         "location": "New York, NY"
     },
     {
-        "id": 2,
+        "userId": 2,
         "name": "Bob Smith",
         "email": "bob@example.com",
+        "username": "default",
         "password": "hashed_password_2",
         "profilePhoto": "/images/bob.jpg",
         "phoneNumber": "987-654-3210",
@@ -38,16 +40,17 @@
         "location": "Los Angeles, CA"
     },
     {
-        "id": 3,
+        "userId": 3,
         "name": "Carol White",
         "email": "carol@example.com",
+        "username": "default",
         "password": "hashed_password_3",
         "profilePhoto": "/images/carol.jpg",
         "phoneNumber": "456-789-1234",
         "purchasedCourses": ["Course A", "Course D", "Course E"],
         "currentInstitution": "ABC University",
         "gender": "Female",
-        "role": "Student",
+        "role": "Instructor",
         "dateOfBirth": "1998-03-15",
         "enrollmentDate": "2023-03-10",
         "lastLoginDate": "2024-10-22",
@@ -57,9 +60,10 @@
         "location": "Chicago, IL"
     },
     {
-        "id": 4,
+        "userId": 4,
         "name": "David Brown",
         "email": "david@example.com",
+        "username": "default",
         "password": "hashed_password_4",
         "profilePhoto": "/images/david.jpg",
         "phoneNumber": "321-654-9870",
@@ -76,16 +80,17 @@
         "location": "Houston, TX"
     },
     {
-        "id": 5,
+        "userId": 5,
         "name": "Emily Davis",
         "email": "emily@example.com",
+        "username": "default",
         "password": "hashed_password_5",
         "profilePhoto": "/images/emily.jpg",
         "phoneNumber": "654-321-0987",
         "purchasedCourses": ["Course G", "Course H"],
         "currentInstitution": "XYZ College",
         "gender": "Female",
-        "role": "Student",
+        "role": "Instructor",
         "dateOfBirth": "1993-07-22",
         "enrollmentDate": "2023-05-05",
         "lastLoginDate": "2024-10-19",
@@ -95,16 +100,17 @@
         "location": "Miami, FL"
     },
     {
-        "id": 6,
+        "userId": 6,
         "name": "Frank Miller",
         "email": "frank@example.com",
+        "username": "default",
         "password": "hashed_password_6",
         "profilePhoto": "/images/frank.jpg",
         "phoneNumber": "789-012-3456",
         "purchasedCourses": ["Course B", "Course I"],
         "currentInstitution": "ABC University",
         "gender": "Male",
-        "role": "Instructor",
+        "role": "Student",
         "dateOfBirth": "1985-11-30",
         "enrollmentDate": "2022-10-20",
         "lastLoginDate": "2024-10-21",
@@ -114,16 +120,17 @@
         "location": "Seattle, WA"
     },
     {
-        "id": 7,
+        "userId": 7,
         "name": "Grace Lee",
         "email": "grace@example.com",
+        "username": "default",
         "password": "hashed_password_7",
         "profilePhoto": "/images/grace.jpg",
         "phoneNumber": "012-345-6789",
         "purchasedCourses": ["Course J"],
         "currentInstitution": "GHI Academy",
         "gender": "Female",
-        "role": "Instructor",
+        "role": "Student",
         "dateOfBirth": "1988-04-12",
         "enrollmentDate": "2022-12-15",
         "lastLoginDate": "2024-10-20",
@@ -133,9 +140,10 @@
         "location": "Denver, CO"
     },
     {
-        "id": 8,
+        "userId": 8,
         "name": "Henry Wilson",
         "email": "henry@example.com",
+        "username": "default",
         "password": "hashed_password_8",
         "profilePhoto": "/images/henry.jpg",
         "phoneNumber": "234-567-8901",
@@ -152,16 +160,17 @@
         "location": "Boston, MA"
     },
     {
-        "id": 9,
+        "userId": 9,
         "name": "Isabella Martin",
         "email": "isabella@example.com",
+        "username": "default",
         "password": "hashed_password_9",
         "profilePhoto": "/images/isabella.jpg",
         "phoneNumber": "345-678-9012",
         "purchasedCourses": ["Course N", "Course O"],
         "currentInstitution": "LMN University",
         "gender": "Female",
-        "role": "Student",
+        "role": "Instructor",
         "dateOfBirth": "1996-01-14",
         "enrollmentDate": "2023-06-20",
         "lastLoginDate": "2024-10-19",
@@ -171,9 +180,10 @@
         "location": "Austin, TX"
     },
     {
-        "id": 10,
+        "userId": 10,
         "name": "James Taylor",
         "email": "james@example.com",
+        "username": "default",
         "password": "hashed_password_10",
         "profilePhoto": "/images/james.jpg",
         "phoneNumber": "456-789-0123",
@@ -190,9 +200,10 @@
         "location": "Phoenix, AZ"
     },
     {
-        "id": 11,
+        "userId": 11,
         "name": "Laura Johnson",
         "email": "laura@example.com",
+        "username": "default",
         "password": "hashed_password_11",
         "profilePhoto": "/images/laura.jpg",
         "phoneNumber": "567-890-1234",
@@ -209,16 +220,17 @@
         "location": "San Diego, CA"
     },
     {
-        "id": 12,
+        "userId": 12,
         "name": "Michael Brown",
         "email": "michael@example.com",
+        "username": "default",
         "password": "hashed_password_12",
         "profilePhoto": "/images/michael.jpg",
         "phoneNumber": "678-901-2345",
         "purchasedCourses": ["Course S"],
         "currentInstitution": "UVW Academy",
         "gender": "Male",
-        "role": "Instructor",
+        "role": "Student",
         "dateOfBirth": "1980-10-12",
         "enrollmentDate": "2022-01-25",
         "lastLoginDate": "2024-10-22",
@@ -228,9 +240,10 @@
         "location": "Orlando, FL"
     },
     {
-        "id": 13,
+        "userId": 13,
         "name": "Olivia Wilson",
         "email": "olivia@example.com",
+        "username": "default",
         "password": "hashed_password_13",
         "profilePhoto": "/images/olivia.jpg",
         "phoneNumber": "789-012-3456",
@@ -247,9 +260,10 @@
         "location": "Nashville, TN"
     },
     {
-        "id": 14,
+        "userId": 14,
         "name": "Daniel Harris",
         "email": "daniel@example.com",
+        "username": "default",
         "password": "hashed_password_14",
         "profilePhoto": "/images/daniel.jpg",
         "phoneNumber": "890-123-4567",
@@ -266,9 +280,10 @@
         "location": "Baltimore, MD"
     },
     {
-        "id": 15,
+        "userId": 15,
         "name": "Sophia Garcia",
         "email": "sophia@example.com",
+        "username": "default",
         "password": "hashed_password_15",
         "profilePhoto": "/images/sophia.jpg",
         "phoneNumber": "901-234-5678",
@@ -285,9 +300,10 @@
         "location": "Atlanta, GA"
     },
     {
-        "id": 16,
+        "userId": 16,
         "name": "Liam Clark",
         "email": "liam@example.com",
+        "username": "default",
         "password": "hashed_password_16",
         "profilePhoto": "/images/liam.jpg",
         "phoneNumber": "012-345-6789",
@@ -304,9 +320,10 @@
         "location": "Minneapolis, MN"
     },
     {
-        "id": 17,
+        "userId": 17,
         "name": "Ava Young",
         "email": "ava@example.com",
+        "username": "default",
         "password": "hashed_password_17",
         "profilePhoto": "/images/ava.jpg",
         "phoneNumber": "123-456-7890",
@@ -323,9 +340,10 @@
         "location": "Philadelphia, PA"
     },
     {
-        "id": 18,
+        "userId": 18,
         "name": "Ethan Scott",
         "email": "ethan@example.com",
+        "username": "default",
         "password": "hashed_password_18",
         "profilePhoto": "/images/ethan.jpg",
         "phoneNumber": "234-567-8901",
@@ -342,9 +360,10 @@
         "location": "Sacramento, CA"
     },
     {
-        "id": 19,
+        "userId": 19,
         "name": "Mia Taylor",
         "email": "mia@example.com",
+        "username": "default",
         "password": "hashed_password_19",
         "profilePhoto": "/images/mia.jpg",
         "phoneNumber": "345-678-9012",
@@ -361,9 +380,10 @@
         "location": "Las Vegas, NV"
     },
     {
-        "id": 20,
+        "userId": 20,
         "name": "Noah Rodriguez",
         "email": "noah@example.com",
+        "username": "default",
         "password": "hashed_password_20",
         "profilePhoto": "/images/noah.jpg",
         "phoneNumber": "456-789-0123",
@@ -380,9 +400,10 @@
         "location": "Columbus, OH"
     },
     {
-        "id": 21,
+        "userId": 21,
         "name": "Chloe Martinez",
         "email": "chloe@example.com",
+        "username": "default",
         "password": "hashed_password_21",
         "profilePhoto": "/images/chloe.jpg",
         "phoneNumber": "567-890-1234",
@@ -399,9 +420,10 @@
         "location": "San Jose, CA"
     },
     {
-        "id": 22,
+        "userId": 22,
         "name": "William Harris",
         "email": "william@example.com",
+        "username": "default",
         "password": "hashed_password_22",
         "profilePhoto": "/images/william.jpg",
         "phoneNumber": "678-901-2345",
@@ -418,9 +440,10 @@
         "location": "Fresno, CA"
     },
     {
-        "id": 23,
+        "userId": 23,
         "name": "Ella Perez",
         "email": "ella@example.com",
+        "username": "default",
         "password": "hashed_password_23",
         "profilePhoto": "/images/ella.jpg",
         "phoneNumber": "789-012-3456",
