@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Instructor } from '../components/intructor-registration/intructor-registration.component';
 
 export interface User {
-  user_id: string,
+  userId: string,
   name: string,
   email: string,
   password: string,
@@ -26,12 +26,12 @@ export interface User {
 }
 
 export interface Course {
-    course_id:  number,
+    course_id:  string,
     name: string,
     category: string,
     duration:  Number,
     description:  string,
-    instructor: any,
+    instructor_id: any,
     img:  string,
     courseContent: [
       {
@@ -49,7 +49,7 @@ export interface Course {
       }
     ],
     level: string,
-    price:Number
+    price:Number | any,
     faq: [
       {
         question:  string,
@@ -81,12 +81,9 @@ export class AuthService {
   }
 
   login(email: string, password: string, endPointChk: string): Observable<any> {
-    // if(endPointChk === "users"){
-    //   const url = "";
-    // }else{
-    //   const url = "";
-    // }
-    return this.http.get<any[]>(`${this.apiUrl}users`).pipe(
+    console.log(`${this.apiUrl}${endPointChk}`);
+    
+    return this.http.get<any[]>(`${this.apiUrl}${endPointChk}`).pipe(
       catchError(this.handleError),
       map(users => users.find(user => user.email === email && user.password === password))
     );
@@ -131,10 +128,10 @@ export class AuthService {
   
         if (user) {
           user.password = newPassword;
-          console.log(user.user_id);
+          console.log(user.userId);
           console.log(user);
   
-          return this.http.put<User>(`${this.apiUrl}users/${user.user_id}`, user).pipe(
+          return this.http.put<User>(`${this.apiUrl}users/${user.userId}`, user).pipe(
             map(res => res),
             catchError(err => {
               console.error('API Error: ', err);
@@ -163,4 +160,6 @@ export class AuthService {
     );
   }
 
+
+  
 }

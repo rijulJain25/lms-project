@@ -1,0 +1,36 @@
+<div *ngIf="!loading" class="enrolled-courses-page">
+    <!-- Search Bar -->
+  
+    <h2 class="page-title">Your Enrolled Courses</h2>
+
+    <div class="search-bar">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search courses by name or category..."
+          [(ngModel)]="searchQuery"
+          (input)="filterCourses()" 
+        />
+      </div>
+  
+    <div *ngIf="filteredCourses.length > 0" class="courses-list">
+      <div class="row">
+        <div *ngFor="let course of filteredCourses" class="col-md-4 col-sm-6 col-12">
+            <app-carousel-card [course]="course"></app-carousel-card>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="filteredCourses.length === 0" class="courses-list">
+        <div class="my-empty">
+          <h3>No course enrolled</h3>
+          <button class="exp-btn">Explore courses</button>
+        </div>
+      </div>
+    
+  
+    <div *ngIf="filteredCourses.length === 0">
+      <p>No courses found matching your search.</p>
+    </div>
+  </div>
+  

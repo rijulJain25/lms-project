@@ -43,26 +43,30 @@
                 <label for="bio">Bio</label>
                 <textarea id="bio" formControlName="bio" class="form-control" rows="3"></textarea>
               </div>
-  
+          
               <div class="form-group">
                 <label for="specialization">Specialization</label>
-                <input type="text" id="specialization" class="form-control" formControlName="specialization" />
-                <div *ngIf="step2Controls.email.invalid && (step2Controls.email.dirty || step2Controls.email.touched)">
-                    <small *ngIf="step2Controls.email.errors?.required" class="text-danger">Specialization is required.</small>
+                <select id="specialization" formControlName="specialization" class="form-control">
+                  <option value="" disabled>Select Category</option>
+                  <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                </select>
+                <div *ngIf="step2Controls.specialization.invalid && (step2Controls.specialization.dirty || step2Controls.specialization.touched)">
+                  <small *ngIf="step2Controls.specialization.errors?.required" class="text-danger">Specialization is required.</small>
                 </div>
-            </div>
-  
+              </div>
+          
               <div class="form-group">
                 <label for="experience">Experience</label>
                 <input type="text" id="experience" class="form-control" formControlName="experience" />
-                <div *ngIf="step2Controls.email.invalid && (step2Controls.email.dirty || step2Controls.email.touched)">
-                    <small *ngIf="step2Controls.email.errors?.required" class="text-danger">Experience is required.</small>
+                <div *ngIf="step2Controls.experience.invalid && (step2Controls.experience.dirty || step2Controls.experience.touched)">
+                  <small *ngIf="step2Controls.experience.errors?.required" class="text-danger">Experience is required.</small>
                 </div>
-            </div>
-  <div class="btn-section">
-              <button type="button" (click)="prevStep()" class="btn btn-secondary">Back</button>
-              <button type="button" (click)="nextStep()" class="btn btn-primary">Next Step</button>
-            </div>
+              </div>
+          
+              <div class="btn-section">
+                <button type="button" (click)="prevStep()" class="btn btn-secondary">Back</button>
+                <button type="button" (click)="nextStep()" class="btn btn-primary">Next Step</button>
+              </div>
             </form>
           </div>
   

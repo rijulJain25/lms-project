@@ -1,0 +1,87 @@
+<div class="editt-outer">
+<div class="edit-student-container">
+    <div class="my-head-edit">
+    <h2>Edit Student</h2>
+    </div>
+    <form [formGroup]="editStudentForm" (ngSubmit)="updateStudent()" class="edit-st-form">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" type="text" [value]="studentData.name"/>
+        <div *ngIf="formControls.name.touched && formControls.name.invalid" class="error-message">
+          Name is required
+        </div>
+      </div>
+  
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" />
+        <div *ngIf="formControls.email.touched && formControls.email.invalid" class="error-message">
+          Valid email is required
+        </div>
+      </div>
+  
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" type="text" />
+        <div *ngIf="formControls.username.touched && formControls.username.invalid" class="error-message">
+          Username is required
+        </div>
+      </div>
+  
+      <div class="input-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="text" />
+        <div *ngIf="formControls.phoneNumber.touched && formControls.phoneNumber.invalid" class="error-message">
+          Phone number is required
+        </div>
+      </div>
+  
+      <div class="input-group">
+        <label for="currentInstitution">Current Institution</label>
+        <input id="currentInstitution" formControlName="currentInstitution" type="text" />
+        <div *ngIf="formControls.currentInstitution.touched && formControls.currentInstitution.invalid" class="error-message">
+          Current institution is required
+        </div>
+      </div>
+  
+      <div class="input-group">
+        <label for="gender">Gender</label>
+        <select id="gender" formControlName="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+  
+      <div class="input-group">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input id="dateOfBirth" formControlName="dateOfBirth" type="date" />
+      </div>
+  
+      <div class="input-group">
+        <label for="bio">Bio</label>
+        <textarea id="bio" formControlName="bio"></textarea>
+      </div>
+  
+      <div class="input-group">
+        <label for="interests">Interests</label>
+        <textarea id="interests" formControlName="interests"></textarea>
+      </div>
+  
+      <div class="input-group">
+        <label for="location">Location</label>
+        <input id="location" formControlName="location" type="text" />
+      </div>
+  
+      <div class="input-group">
+        <label for="subscription">Subscription</label>
+        <select id="subscription" formControlName="subscription">
+          <option value="Free">Free</option>
+          <option value="Premium">Premium</option>
+        </select>
+      </div>
+  
+      <button type="submit" [disabled]="editStudentForm.invalid" class="submit-btn">Save Changes</button>
+    </form>
+  </div>
+</div>

@@ -4,7 +4,7 @@
         <h1 class="blog-title" style="padding-bottom: 30px; font-size: 50px;">{{blogPost?.title}}</h1>
        </div>
       <div class="blog-detail-image">
-        <img src="assets/images/angular.png" alt="Blog Image">
+        <img [src]="blogPost?.images![1]" alt="Blog Image">
       </div>
       
       <div class="blog-detail-header">

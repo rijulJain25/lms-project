@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { BlogsService } from './blogs.service';
+import { SnackbarService } from 'src/app/components/snackbar.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { BlogModalComponent } from 'src/app/components/blog-modal/blog-modal.component';
+import { DeleteModalComponent } from 'src/app/components/delete-modal/delete-modal.component';
 
 export interface BlogPost {
   blog_id: string;
@@ -27,10 +32,14 @@ export class BlogsPageComponent implements OnInit {
   pageIndex: number = 0;
   pageSize: number = 5; 
   isLoading: boolean = true;
+  currentUser: String = '';
+  BlogToDelete: any;
 
-  constructor(private blogService: BlogsService) { }
+  constructor(private blogService: BlogsService, private authService: AuthService, public dialog: MatDialog, private snackbarService: SnackbarService) { }
 
   ngOnInit(): void {
+    this.currentUser = this.authService.getCurrentUser().role;
+
     setTimeout(() => {
       this.blogService.getBlogs().subscribe(posts => {
         this.posts = posts;
@@ -40,6 +49,53 @@ export class BlogsPageComponent implements OnInit {
       });
     }, 2000); 
   }
+
+  openAddBlogModal(blog?: BlogPost): void {
+    const dialogRef = this.dialog.open(BlogModalComponent, {
+      width: '800px',
+      data: { blog: blog || null } 
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.blogService.getBlogs().subscribe(posts => {
+          this.posts = posts;
+          this.filteredPosts = posts;
+          this.filterRecentPosts();
+        });
+      }
+    });
+  }
+  
+  
+    openDeleteModal(post: any) {
+      this.BlogToDelete = post;
+    }
+
+    closeModal() {
+      this.BlogToDelete = null;
+    }
+  
+
+  deleteBlog(blog: any): void {
+    console.log(blog);
+    
+    this.blogService.deleteBlog(blog.blog_id).subscribe({
+      next: (response) => {
+        this.snackbarService.showSuccess('Blog deleted successfully!');
+        // Refresh the blog list after deletion
+        this.blogService.getBlogs().subscribe(posts => {
+          this.posts = posts;
+          this.filteredPosts = posts;
+          this.closeModal();
+        });
+      },
+      error: (error) => {
+        this.snackbarService.showError('Error deleting blog');
+      }
+    });
+  }
+  
 
   filterRecentPosts(): void {
     const oneMonthAgo = new Date();
@@ -72,4 +128,3 @@ export class BlogsPageComponent implements OnInit {
     this.pageSize = event.pageSize;
   }
 }
-  

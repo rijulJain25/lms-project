@@ -1,0 +1,69 @@
+.container {
+    padding-top: 20px;
+  }
+  
+  .custom-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    padding: 0 !important;
+  }
+
+  .card-header {
+    padding: 20px 30px;
+    background-color: #f86c64;
+    color: white;
+    text-align: center;
+  }
+
+  .add-formm{
+    padding: 20px 30px 40px 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  .custom-input {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 7px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+  }
+  
+  .custom-input:focus {
+    border-color: #f86c64;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .custom-button {
+    background-color: #f86c64;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .custom-button:hover {
+    background-color: #e85b48;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-danger {
+    font-size: 0.9rem;
+    color: #e85b48;
+  }
+  

@@ -49,6 +49,10 @@
           <a class="nav-link active" routerLink="/contactus">Contact Us</a>
         </li>
 
+        <li class="nav-item align-chk" *ngIf="currentUser && userRole=='User'">
+          <a class="nav-link active" routerLink="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </li>
+
         <li *ngIf="currentUser" class="nav-item align-chk">
           <div class="dropdown dropdown-profile">
             <button
@@ -71,7 +75,7 @@
         <!-- SignIn and Login buttons for non-logged-in users -->
          <div class="btn-classs">
         <li class="nav-item align-chk login-btnss" *ngIf="!currentUser">
-          <a class="nav-link signin-btn" routerLink="/register"><button class="classic-btn ">Signin</button></a>
+          <a class="nav-link signin-btn" routerLink="/register"><button class="classic-btn ">Signup</button></a>
         </li>
         <li class="nav-item align-chk login-btnss" *ngIf="!currentUser">
           <a class="nav-link signin-btn" routerLink="/login"><button class="classic-btn-two ">Login</button></a>

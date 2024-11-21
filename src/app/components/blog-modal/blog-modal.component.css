@@ -1,0 +1,12 @@
+.full-width {
+    width: 100%;
+  }
+  mat-form-field {
+    margin-bottom: 15px;
+  }
+  
+
+  .add-blog-form{
+    display: flex;
+    flex-direction: column;
+  }

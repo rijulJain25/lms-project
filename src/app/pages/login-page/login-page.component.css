@@ -115,7 +115,7 @@ input[type="password"]:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #301886;
     transition: 0.4s;
     border-radius: 34px;
   }

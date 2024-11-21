@@ -1,0 +1,58 @@
+
+  <ng-template #cartContent>
+    <h2 style="padding: 30px;">Cart items:</h2>
+  
+    <div *ngIf="cartData.length === 0; else cartItems">
+      <p>Your cart is empty. Add courses to your cart to get started!</p>
+    </div>
+  
+    <ng-template #cartItems>
+      <div class="cart-container">
+        <div class="cart-item-card" *ngFor="let item of cartData">
+          <div class="card-image">
+            <img [src]="item.courseDetails.img" alt="{{ item.courseDetails.name }}" />
+          </div>
+          <div class="card-body">
+            <h3>{{ item.courseDetails.name }}</h3>
+            <p>{{ item.courseDetails.category }}</p>
+            <p>{{ item.courseDetails.duration }} Hours</p>
+            <div class="price">
+              <span class="price-value">{{ item.courseDetails.price | currency }}</span>
+            </div>
+            <button class="remove-button" (click)="removeFromCart(item.courseDetails.course_id)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <div *ngIf="cartData.length > 0">
+        <button class="buy-btn empty-btn" (click)="buyCourses()">Buy All Courses</button>
+      </div>
+    </ng-template>
+  </ng-template>
+  
+  <div *ngIf="loading$ | async" class="loading-overlay">
+    <div class="spinner"></div>
+    <p>Loading your cart...</p>
+  </div>
+  
+  <ng-container *ngIf="cartData.length > 0; else emptyCartContent">
+    <ng-container *ngTemplateOutlet="cartContent"></ng-container>
+  </ng-container>
+  
+  <ng-template #loadingContent>
+    <div class="loading-message">
+      <p>Loading your cart items...</p>
+    </div>
+  </ng-template>
+  
+  <ng-template #emptyCartContent >
+
+    <div class="empty-cart-message not-avai" >
+        <i class="fa-solid fa-cart-arrow-down" style="color: #f86c64; font-size: 40px;"></i>
+        <h4>Your cart is empty</h4>
+        <button class="empty-btn" routerLink="/allcourses">Explore courses</button>
+    </div>
+  </ng-template>
+  

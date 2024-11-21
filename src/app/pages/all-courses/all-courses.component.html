@@ -57,61 +57,13 @@
       *ngFor="let course of pagedCourses"
       class="col-md-4 col-lg-4 col-sm-6 mb-4"
     >
-      <div class="card h-100 card-trend">
-        <img
-          [src]="course.img || 'assets/images/intoPro.png'"
-          class="img-trending-cr"
-          alt="{{ course.name }}"
-        />
-        <div class="card-body carddd">
-          <div class="instructor-home-outer">
-            <div style="display: flex; gap: 20px">
-              <img
-                [src]="course.instructor.image"
-                class="instructor-home-img"
-                alt="{{ course.instructor.name }}"
-                style="width: 55px; height: 55px; border-radius: 50px"
-              />
-              <div
-                class="inst-desc"
-                style="display: flex; flex-direction: column; justify-content: start;"
-              >
-                <p class="inst-name" style="margin-bottom: 2px">{{ course.instructor.name }}</p>
-                <p class="inst-title" style="font-size: 15px">Instructor</p>
-              </div>
-            </div>
-            <span><i class="fa-regular fa-heart" style="color: #f86c64"></i></span>
-          </div>
-
-          <div style="padding: 0px 10px 10px 10px">
-            <h4 class="card-title">{{ course.name }}</h4>
-            <div class="data-course">
-              <p style="margin: 0">
-                <i class="fa-solid fa-book-open-reader" style="color: #f86c64"></i>+ {{ course.category }}
-              </p>
-              <p style="margin: 0">
-                <i class="fa-solid fa-clock" style="color: #f86c64"></i> {{ course.duration }}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center">
-          <div class="reviews-wrapper">
-            <p style="margin: 0">
-              <i class="fa-solid fa-star" style="color: #f86c64"></i> {{ course.reviews[0]?.rating }} Reviews ({{ course.reviews.length }})
-            </p>
-          </div>
-          <button class="classic-btn-new">Enroll Now</button>
-        </div>
-      </div>
+      <app-carousel-card [course]="course"></app-carousel-card>
     </div>
   </div>
 
-  <!-- Pagination Controls -->
   <div class="pagination" style="text-align: center; margin-top: 20px;">
     <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
   
-    <!-- Page Number Buttons -->
     <ng-container *ngIf="totalPages > 1">
       <button
         *ngFor="let page of pageNumbers()"

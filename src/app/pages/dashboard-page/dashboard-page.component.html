@@ -4,7 +4,7 @@
     <h2>
       Welcome
       <span class="head-span">
-        {{ role === "User" ? currentUser.name : "Welcome, Instructor!" }}
+        {{ currentUser.name }}
       </span>
       <br />
       <span class="small-head">to your Dashboard</span>
@@ -20,8 +20,19 @@
           <div class="my-left-part-sub">
             <!-- Profile Card -->
             <div class="my-profile-card">
-              <div style="background-color: #f86c64; padding: 10px; border-radius: 8px; height: 100px;">
-                <img src="assets/images/teacher3.png" alt="User Photo" class="profile-photo" />
+              <div
+                style="
+                  background-color: #f86c64;
+                  padding: 10px;
+                  border-radius: 8px;
+                  height: 100px;
+                "
+              >
+                <img
+                  src="assets/images/teacher3.png"
+                  alt="User Photo"
+                  class="profile-photo"
+                />
               </div>
               <h5 class="profile-name">{{ currentUser.name }}</h5>
               <p class="profile-email">{{ currentUser.role }}</p>
@@ -29,14 +40,56 @@
 
             <!-- Data Card -->
             <div class="my-data-card">
-              <button class="dash-btn-one" *ngIf="role === 'Student'">Enrolled Courses</button>
-              <button class="dash-btn-one" *ngIf="role === 'Instructor'">Create Courses</button>
-              <button class="dash-btn-one">All Course</button>
-              <button class="dash-btn-one">Buy Subscription</button>
+              <button
+                class="dash-btn-one"
+                *ngIf="role === 'User'"
+                routerLink="/enrolled-courses"
+              >
+                Purchased Courses
+              </button>
+              <button
+                class="dash-btn-one"
+                *ngIf="role === 'Instructor'"
+                routerLink="/allcourses"
+              >
+                My Courses
+              </button>
+              <button
+                class="dash-btn-one"
+                *ngIf="role === 'User' || 'Instructor'"
+                routerLink="/allcourses"
+              >
+                All Courses
+              </button>
+              <button class="dash-btn-one" *ngIf="role === 'Instructor'">
+                Create Courses
+              </button>
+              <button
+                class="dash-btn-one"
+                routerLink="/add-instructor"
+                *ngIf="role === 'Admin'"
+              >
+                Add Instructor
+              </button>
+              <button
+                class="dash-btn-one"
+                routerLink="/manage-students"
+                *ngIf="role === 'Admin'"
+              >
+                Manage Students
+              </button>
+              <button class="dash-btn-one" *ngIf="role === 'User'">
+                Buy Subscription
+              </button>
+              <button class="dash-btn-one" *ngIf="role === 'Admin'">
+                Add Blogs
+              </button>
               <div class="setting">
                 <h6>Manage Account</h6>
                 <span><i class="fa-solid fa-gear"></i> Setting</span>
-                <span><i class="fa-solid fa-right-from-bracket"></i> Logout</span>
+                <span
+                  ><i class="fa-solid fa-right-from-bracket"></i> Logout</span
+                >
               </div>
             </div>
           </div>
@@ -51,24 +104,108 @@
               <div class="col-md-4">
                 <div class="card">
                   <div class="card-body">
-                    <h6 class="card-text" style="margin-bottom: 0px;">Enrolled Courses</h6>
-                    <h1 class="card-text">{{currentUser.purchasedCourses.length}}</h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'User'"
+                      style="margin-bottom: 0px"
+                    >
+                      Enrolled Courses
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'User'">
+                      {{ currentUser.purchasedCourses.length }}
+                    </h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Instructor'"
+                      style="margin-bottom: 0px"
+                    >
+                      My Course Count
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Instructor'">
+                      {{ currentUser.purchasedCourses.length }}
+                    </h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Admin'"
+                      style="margin-bottom: 0px"
+                    >
+                      Total Instructor
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Admin'">
+                      {{ instructorAll.length }}
+                    </h1>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card">
                   <div class="card-body">
-                    <h6 class="card-text" style="margin-bottom: 0px;">Total Interest</h6>
-                    <h1 class="card-text">{{currentUser.interests.length}}</h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'User'"
+                      style="margin-bottom: 0px"
+                    >
+                      Total Interest
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'User'">
+                      {{ currentUser.interests.length }}
+                    </h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Instructor'"
+                      style="margin-bottom: 0px"
+                    >
+                      My Students
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Instructor'">
+                      {{ currentUser.interests.length }}
+                    </h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Admin'"
+                      style="margin-bottom: 0px"
+                    >
+                      Total Students
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Admin'">
+                      {{ student.length }}
+                    </h1>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card">
                   <div class="card-body">
-                    <h6 class="card-text" style="margin-bottom: 0px;">Enrolled Courses</h6>
-                    <h1 class="card-text">{{currentUser.purchasedCourses.length}}</h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'User'"
+                      style="margin-bottom: 0px"
+                    >
+                      Profile Views
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'User'">
+                      {{ currentUser.purchasedCourses.length }}
+                    </h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Instructor'"
+                      style="margin-bottom: 0px"
+                    >
+                      Total Interest
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Instructor'">
+                      {{ currentUser.interests.length }}
+                    </h1>
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Admin'"
+                      style="margin-bottom: 0px"
+                    >
+                      Total Courses
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Admin'">
+                      {{ allCourses.length }}
+                    </h1>
                   </div>
                 </div>
               </div>
@@ -87,18 +224,28 @@
             <div *ngIf="role === 'Instructor'">
               <h3>My Uploaded Courses</h3>
               <div class="row mt-4 g-4">
-                <div *ngFor="let course of userCourses" class="col-md-4">
+                <div *ngFor="let course of instructorCourses" class="col-md-4">
                   <div class="card">
-                    <img [src]="course.image" class="card-img-top" alt="Course Image" />
+                    <img
+                      [src]="course.img"
+                      class="card-img-top"
+                      alt="Course Image"
+                    />
                     <div class="card-body">
                       <h5 class="card-title">{{ course.name }}</h5>
                       <p class="card-text">Category: {{ course.category }}</p>
-                      <p class="card-text">Duration: {{ course.duration }} hours</p>
+                      <p class="card-text">
+                        Duration: {{ course.duration }} hours
+                      </p>
                       <p class="card-text">Level: {{ course.level }}</p>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div *ngIf="role === 'Admin'">
+              <app-top-categories-chart></app-top-categories-chart>
             </div>
           </div>
         </div>
@@ -106,13 +253,178 @@
     </div>
   </div>
 
-  <div class="trending-my-course">
-    <h3>Trending Courses</h3>
-    <div class="row mt-4 g-4">
-      <div *ngFor="let course of trendingCourses" class="col-md-3">
-        <app-trending-dashboard [course]="course"></app-trending-dashboard>
+  <div class="trending-my-course" *ngIf="role === 'User'">
+    <h2>Our Personalised Recommendations</h2>
+    <div *ngIf="recommendedCourses.length > 0" class="row mt-4 g-4">
+      <div *ngFor="let cr of recommendedCourses" class="col-md-3">
+        <app-trending-dashboard [course]="cr"></app-trending-dashboard>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- instructor -->
+<div *ngIf="currentInst" class="dash-outer">
+  <!-- Header remains the same -->
+  <div class="header">
+    <h2>
+      Welcome
+      <span class="head-span">
+        {{ currentInst.name }}
+      </span>
+      <br />
+      <span class="small-head">to your Dashboard</span>
+    </h2>
+  </div>
+
+  <!-- My Courses Section -->
+  <div class="my-courses-section">
+    <div class="row row-head">
+      <!-- Left part (Profile and Data Cards) -->
+      <div class="col-md-4">
+        <div class="my-left-part">
+          <div class="my-left-part-sub">
+            <!-- Profile Card -->
+            <div class="my-profile-card">
+              <div
+                style="
+                  background-color: #f86c64;
+                  padding: 10px;
+                  border-radius: 8px;
+                  height: 100px;
+                "
+              >
+                <img
+                  src="assets/images/teacher3.png"
+                  alt="User Photo"
+                  class="profile-photo"
+                />
+              </div>
+              <h5 class="profile-name">{{ currentInst.name }}</h5>
+              <p class="profile-email">{{ currentInst.role }}</p>
+            </div>
+
+            <!-- Data Card -->
+            <div class="my-data-card">
+              <button
+                class="dash-btn-one"
+                *ngIf="role === 'Instructor'"
+                routerLink="/allcourses"
+              >
+                My Courses
+              </button>
+              <button
+                class="dash-btn-one"
+                *ngIf="role === 'User' || 'Instructor'"
+                routerLink="/allcourses"
+              >
+                All Courses
+              </button>
+              <button class="dash-btn-one" *ngIf="role === 'Instructor'">
+                Create Courses
+              </button>
+              <div class="setting">
+                <h6>Manage Account</h6>
+                <span><i class="fa-solid fa-gear"></i> Setting</span>
+                <span
+                  ><i class="fa-solid fa-right-from-bracket"></i> Logout</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right part (Dashboard Content) -->
+      <div class="col-md-8">
+        <div class="my-right-part">
+          <div class="dash-card">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                  
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Instructor'"
+                      style="margin-bottom: 0px"
+                    >
+                      My Course Count
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Instructor'">
+                      {{ instructorCourses.length }}
+                    </h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Instructor'"
+                      style="margin-bottom: 0px"
+                    >
+                      My Students
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Instructor'">
+                      3
+                    </h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                
+                    <h6
+                      class="card-text"
+                      *ngIf="role === 'Instructor'"
+                      style="margin-bottom: 0px"
+                    >
+                      Ratings
+                    </h6>
+                    <h1 class="card-text" *ngIf="role === 'Instructor'">
+                      4
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dash-my-courses">
+
+            <div *ngIf="role === 'Instructor'">
+              <h3>My Uploaded Courses</h3>
+              <div class="row mt-4 g-4">
+                <div *ngFor="let course of instructorCourses" class="col-md-6">
+                  <app-carousel-card [course]="course"></app-carousel-card>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="role === 'Admin'">
+              <app-top-categories-chart></app-top-categories-chart>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div *ngIf="recommendedCourses.length > 0" class="recommended-courses">
+  <div class="trending-my-course" *ngIf="role === 'User'">
+    <h2>Our Personalised Recommendations</h2>
+    <div *ngIf="recommendedCourses.length > 0" class="row mt-4 g-4">
+      <div *ngFor="let cr of recommendedCourses" class="col-md-3">
+        <app-trending-dashboard [course]="cr"></app-trending-dashboard>
+      </div>
+    </div>
+  </div>
+</div>

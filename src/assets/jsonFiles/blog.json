@@ -24,7 +24,7 @@
         "category": "UI Design",
         "images": [
             "assets/images/angularblog.png",
-            "assets/images/angularblog2.png"
+            "assets/images/material.png"
         ]
     },
     {
@@ -38,7 +38,7 @@
         "category": "Advanced",
         "images": [
             "assets/images/teacher1.png",
-            "assets/images/angularblog2.png"
+            "assets/images/samplee.png"
         ]
     },
     {
@@ -52,7 +52,7 @@
         "category": "Responsive Design",
         "images": [
             "assets/images/python.png",
-            "assets/images/angularblog2.png"
+            "assets/images/responsive.png"
         ]
     },
     {
@@ -66,7 +66,7 @@
         "category": "State Management",
         "images": [
             "assets/images/ui.png",
-            "assets/images/angularblog2.png"
+            "assets/images/statemanage.png"
         ]
     },
     {
@@ -80,7 +80,7 @@
         "category": "Directives",
         "images": [
             "assets/images/angularblog.png",
-            "assets/images/angularblog2.png"
+            "assets/images/custom-dir.png"
         ]
     },
     {
@@ -108,7 +108,7 @@
         "category": "Deployment",
         "images": [
             "assets/images/angularblog.png",
-            "assets/images/angularblog2.png"
+            "assets/images/responsive.png"
         ]
     }
 ]

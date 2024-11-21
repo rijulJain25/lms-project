@@ -11,6 +11,13 @@ import { InstructorPageComponent } from './pages/instructor-page/instructor-page
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { AuthGuard } from './auth/auth.guard';
+import { CourseDetailComponent } from './pages/course-detail/course-detail.component';
+import { AddInstructorComponent } from './pages/add-instructor/add-instructor.component';
+import { EditInstructorComponent } from './pages/edit-instructor/edit-instructor.component';
+import { ManageStudentsComponent } from './pages/manage-students/manage-students.component';
+import { EditStudentComponent } from './pages/edit-student/edit-student.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { EnrolledCoursesComponent } from './pages/enrolled-courses/enrolled-courses.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -23,7 +30,15 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogDetailPageComponent},
   {path: 'instructor', component: InstructorPageComponent}, 
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]}
+  {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
+  { path: 'course/:id', component: CourseDetailComponent, canActivate: [AuthGuard] },
+  { path: 'add-instructor', component: AddInstructorComponent },
+  { path: 'edit-instructor/:id', component: EditInstructorComponent },
+  { path: 'manage-students', component: ManageStudentsComponent },
+  { path: 'edit-student/:id', component: EditStudentComponent },
+  { path: 'cart', component: CartPageComponent },
+  { path: 'enrolled-courses', component: EnrolledCoursesComponent },
+
 
 ];
 

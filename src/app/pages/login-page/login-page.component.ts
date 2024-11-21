@@ -13,7 +13,7 @@ export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   errorMessage: string = '';
   isSubmitting: boolean = false; 
-  loginType: string = 'user'; // Default to 'user'
+  loginType: string = 'instructors';
 
   constructor(
     private fb: FormBuilder,
@@ -30,6 +30,8 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {}
 
   onToggleChange() {
+    this.loginType = this.loginType === 'users'? 'instructors' : 'users';
+    console.log(this.loginType);
     console.log('Login Type Changed:', this.loginType);
   }
 
@@ -43,8 +45,11 @@ export class LoginPageComponent implements OnInit {
     this.errorMessage = '';
 
     const { email, password } = this.loginForm.value;
+    console.log("sdjoij", this.loginType);
+    
 
-    const loginEndpoint = this.loginType === 'user' ? 'users' : 'instructors';
+    const loginEndpoint = this.loginType === 'instructors' ? 'instructors' :  'users';
+    
 
     console.log("Thsi is the type", loginEndpoint);
     

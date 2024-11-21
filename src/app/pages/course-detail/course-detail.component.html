@@ -1,0 +1,173 @@
+<div class="outer-container">
+  <div class="container-detail">
+    <div class="row mb-4 detail-sec-one">
+      <div class="col-md-8 this-class">
+        <div class="course-name">
+          <div class="course-status mb-3">
+            <div class="upper-data d-flex">
+              <div class="upper_one">
+                <span class="spannn">Join the best and extensive course for</span>
+              </div>
+            </div>
+            <div class="course-title mb-4">
+              <h1 class="title-heading">{{ course.name }}</h1>
+            </div>
+          </div>
+
+          <div class="course-prices mb-4">
+            <h2 class="prices">{{ course.price | currency }}</h2>
+<button
+(click)="handleEnrollButton()"
+class="button-custum btn btn-primary"
+>
+{{ !isPurchased ? "Add to Cart" : "Resume" }}
+</button>
+
+          </div>
+
+          <div class="col-md-12 my-target">
+            <div class="row extion-card">
+              <div class="col-md-4 card-this">
+                <div class="course-card-one p-3 mb-4 shadow">
+                  <i
+                    class="fa-solid fa-people-group"
+                    style="color: #f86c64; font-size: 30px"
+                  ></i>
+                  <h4 class="course-card-head mt-3">Target Audience</h4>
+                  <span>
+                    {{ course.level }}
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4 card-this">
+                <div class="course-card-one p-3 mb-4 shadow">
+                  <i class="fa-solid fa-layer-group"  style="color: #f86c64; font-size: 30px"></i>
+                  <h4 class="course-card-head mt-3">Category</h4>
+                  <span>{{
+                    course.category
+                  }}</span>
+                </div>
+              </div>
+              <div class="col-md-4 card-this">
+                <div class="course-card-one p-3 mb-4 shadow">
+                  <i
+                  class="fa-solid fa-clock"
+                    style="color: #f86c64; font-size: 30px"
+                  ></i>
+                  <h4 class="course-card-head mt-3">Duration</h4>
+                  <span>{{
+                    course.duration
+                  }} Weeks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="course-image">
+          <img
+            class="imageee img-fluid"
+            [src]="course.img"
+            alt="Course Image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="course_sec_two mb-5">
+      <div class="course-dec">
+        <h3 class="course-dec-head">Course Description</h3>
+        <p class="course-dec-data">{{ course.description }}</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="">
+            <h1 style="color: #f86c64;">What you will learn in this course</h1>
+            <span>Topic-wise distribution of the course content is carefully designed to provide a comprehensive understanding of the subject.</span>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="course-card-one p-3 mb-4 shadow">
+            <ul style="margin-top: 20px;">
+              <li *ngFor="let topic of course.courseContent" style="padding-bottom: 10px;">
+                {{ topic.title }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Course Content Section -->
+    <div class="course-content mb-5">
+      <h2>Course Content</h2>
+      <ul class="ul-list">
+        <li *ngFor="let content of course.courseContent" class="listing">
+          <strong style="color: #f86c64;">Week {{ content.week }}:</strong> {{ content.title }} -
+          {{ content.description }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Instructor Section -->
+    <div class="course-insturctor mb-5">
+      <h4 class="course-insturctor-heading">Course Instructor</h4>
+
+      <div class="cour-out">
+      <div class="course-insturctor-image flex-shrink-0">
+        <img
+          class="imageeeeee img-fluid"
+          [src]="instructor.image"
+          alt="Instructor Image"
+        />
+      </div>
+      <div class="course-insturctor-detail ms-4">
+        <h3 class="course-insturctor-name" style="color: #f86c64; cursor: pointer;" routerLink="/instructor">{{ instructor.name }}</h3>
+        <h5 class="course-insturctor-role">{{ instructor.specialization }}</h5>
+        <p>{{ instructor.bio }}</p>
+      </div>
+    </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <!-- FAQ Section -->
+
+    <!-- FAQ Section -->
+<div class="course-ques" style="padding: 40px 0px">
+  <h3>Frequently Asked Questions</h3>
+  <div class="accordion" id="accordionExample">
+    <div *ngFor="let question of course.faq; let i = index" class="accordion-item">
+      <h2 class="accordion-header" id="heading{{i}}">
+        <button
+          class="accordion-button"
+          type="button"
+          data-bs-toggle="collapse"
+          [attr.data-bs-target]="'#collapse' + i"
+          [attr.aria-expanded]="i === 0 ? 'true' : 'false'" 
+          [attr.aria-controls]="'collapse' + i"
+        >
+          {{ question.question }}
+        </button>
+      </h2>
+      <div
+        [attr.id]="'collapse' + i"
+        class="accordion-collapse collapse"
+        [attr.aria-labelledby]="'heading' + i"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          {{ question.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>

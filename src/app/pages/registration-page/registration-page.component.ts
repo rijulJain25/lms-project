@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { toggleRole } from 'src/app/store/role.actions';
+import { toggleRole } from 'src/app/store/role.action';
 import { selectIsInstructor } from 'src/app/store/role.selectors';
 
 @Component({

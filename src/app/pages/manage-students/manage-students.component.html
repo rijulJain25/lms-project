@@ -1,0 +1,79 @@
+<div class="manage-students-container">
+  <h2 class="page-title">Manage Students</h2>
+
+  <app-delete-modal 
+        *ngIf="studentToDel" 
+        [instructorToDelete]="studentToDel"
+        (deleteConfirmed)="deleteStudent($event)"
+        (closeModal)="closeModal()">
+      </app-delete-modal>
+
+  <div class="student-actions">
+    <div class="search-filter-container">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Search by name, email, or username"
+        class="search-input"
+        (input)="filterData()"
+      />
+
+      <select [(ngModel)]="genderFilter" class="filter-select" (change)="filterData()">
+        <option value="">All Genders</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <select [(ngModel)]="subscriptionFilter" class="filter-select" (change)="filterData()">
+        <option value="">All Subscriptions</option>
+        <option value="Free">Free</option>
+        <option value="Premium">Premium</option>
+      </select>
+
+      <button class="add-student-btn" (click)="toggleAddStudentForm()">Add Student</button>
+    </div>
+  </div>
+
+  <div *ngIf="showAddStudentForm" class="add-student-form-container">
+    <app-add-student (studentAdded)="addStudent($event)"></app-add-student>
+  </div>
+
+  <div class="student-cards-container">
+    <div *ngFor="let student of pagedStudent" class="student-card">
+      <div class="card-header">
+        <img [src]="student.profilePhoto" alt="User Icon" class="user-icon" />
+        <div class="head-title">
+        <h3 style="color: #f86c64 ;">{{ student.name }}</h3>
+        <p>{{ student.username }}</p>
+      </div>
+      </div>
+      <div class="card-body">
+        <p><strong>Email:</strong> {{ student.email }}</p>
+        <p><strong>Gender:</strong> {{ student.gender }}</p>
+        <p><strong>Subscription:</strong> {{ student.subscription }}</p>
+      </div>
+      <div class="card-footer">
+        <button class="edit-btn" (click)="editStudent(student)"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="delete-btn" (click)="openDeleteModal(student)"><i class="fa-solid fa-trash"></i></button>
+      </div>
+    </div>
+  </div>
+  
+  <p *ngIf="filteredStudents.length === 0">No students found.</p>
+  
+  <div class="pagination" style="text-align: center; margin-top: 20px;">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  
+    <ng-container *ngIf="totalPages > 1">
+      <button
+        *ngFor="let page of pageNumbers()"
+        (click)="goToPage(page)"
+        [class.active]="currentPage === page"
+      >
+        {{ page }}
+      </button>
+    </ng-container>
+  
+    <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">Next</button>
+  </div>
+</div>

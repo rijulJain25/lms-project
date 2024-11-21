@@ -13,61 +13,75 @@ export class DashboardPageComponent implements OnInit {
 
   currentUser: any;
   role: string = ''; 
+  allCourses: any;
   courses: any[] = []; 
-  userCourses: any[] = []; 
+  currentInst: any;
+  student: any;
+  instructorAll : any;
+  instCourses: any[] = []; 
   purchasedCourses: Course[] = [];
   loading: boolean = true;
   error: string = '';
   recommendedCourses: Course[] = [];
-
-  // Trending Courses Data
-  trendingCourses = [
-    {
-      name: 'Angular for Beginners',
-      category: 'Web Development',
-      level: 'Beginner',
-      duration: 8,
-      image: 'assets/images/angular.png'
-    },
-    {
-      name: 'Mastering Python',
-      category: 'Programming',
-      level: 'Intermediate',
-      duration: 12,
-      image: 'assets/images/angular.png'
-    },
-    {
-      name: 'Data Science with R',
-      category: 'Data Science',
-      level: 'Advanced',
-      duration: 15,
-      image: 'assets/images/angular.png'
-    },
-    {
-      name: 'Advanced JavaScript',
-      category: 'Web Development',
-      level: 'Advanced',
-      duration: 10,
-      image: 'assets/images/angular.png'
-    }
-  ];
+  instructorCourses: Course[] = [];
+  chkInst: any;
 
   constructor(private dash: DashboardService, private router: Router) {}
 
   ngOnInit(): void {
+    this.dash.getCourses().subscribe((crs) =>{
+      this.allCourses = crs;
+    })
+
+    this.dash.getStudent().subscribe((st) =>{
+      this.student = st;
+    })
+
+    this.dash.getInstructor().subscribe((inst) =>{
+      this.instructorAll = inst;
+    })
     this.loadUserData();
   }
 
-  loadUserData() {
-    this.currentUser = this.dash.getCurrentUser();
-    if (!this.currentUser || !this.currentUser.role) {
-      this.router.navigate(['/login']); 
-      return;
-    }
+  loadInstructorCourses(){
+    this.dash.getCourses().subscribe((crs) =>{
+      this.instCourses = crs;
+      this.instructorCourses = this.instCourses.filter(cour => cour.instructor_id === this.currentInst.instructorId);
+      console.log("cour",this.instructorCourses);
+    })
+  }
 
-    this.role = this.currentUser.role;
-    this.loadCourses(this.currentUser.purchasedCourses);
-    this.loadRecommendedCourses(this.currentUser.interests);
+  loadUserData() {
+    this.dash.getCurrentUserData().subscribe((data) =>{
+      this.chkInst = data;
+      console.log(this.chkInst);
+      
+      if(this.chkInst.role === 'User' || this.chkInst.role === 'Admin'){
+        console.log("i'm user");
+        
+        this.currentUser = data;
+        if (!this.currentUser || !this.currentUser.role) {
+          this.router.navigate(['/login']); 
+          return;
+        }
+    
+        this.role = this.currentUser.role;
+        this.loadCourses(this.currentUser.purchasedCourses);
+        this.loadRecommendedCourses(this.currentUser.interests);
+      }else{
+        console.log("i'm inst");
+        this.currentInst = data;
+        console.log("dataaa",this.currentInst);
+        
+        if (!this.currentInst || !this.currentInst.role) {
+          this.router.navigate(['/login']); 
+          return;
+        }
+    
+        this.role = this.currentInst.role;
+        this.loadInstructorCourses();
+      }
+    });
   }
 
   loadCourses(courseIds: string[]): void {
@@ -100,7 +114,7 @@ export class DashboardPageComponent implements OnInit {
 
       forkJoin(courseObservables).subscribe({
         next: (coursesArrays: any[]) => {  
-          this.recommendedCourses = [].concat(...coursesArrays);
+          this.recommendedCourses = [].concat(...coursesArrays);          
           console.log("Recommended Courses: ", this.recommendedCourses);
         },
         error: (err) => {

@@ -23,8 +23,10 @@ export class BlogDetailPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSub = this.route.paramMap.subscribe(params => {
-      console.log(+params.get('id')! + "");
-      const blogId: string = +params.get('id')! + "";
+      console.log(params);
+      
+      console.log(params.get('id')! + "");
+      const blogId: string = params.get('id')! + "";
       this.fetchBlogPostData(blogId);
     });
   }

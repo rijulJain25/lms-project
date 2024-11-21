@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
-
 
 export interface Instructor {
   name: string;
@@ -26,7 +25,7 @@ export interface Instructor {
   templateUrl: './intructor-registration.component.html',
   styleUrls: ['./intructor-registration.component.css']
 })
-export class IntructorRegistrationComponent {
+export class IntructorRegistrationComponent implements OnInit {
   step1Form: FormGroup;
   step2Form: FormGroup;
   step3Form: FormGroup;
@@ -34,8 +33,13 @@ export class IntructorRegistrationComponent {
   errorMessage: string = '';
   successMessage: string = '';
   isSubmitting: boolean = false;
+  categories: string[] = [];  // Store unique categories here
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+  ) {
     this.step1Form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -60,7 +64,9 @@ export class IntructorRegistrationComponent {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadCategories();
+  }
 
   passwordValidator(control: any) {
     const value = control.value;
@@ -141,6 +147,12 @@ export class IntructorRegistrationComponent {
   get step3Controls() {
     return this.step3Form.controls;
   }
+
+  loadCategories() {
+    this.authService.getCourses().subscribe(courses => {
+      // Extract unique categories from the course data
+      const allCategories = courses.map(course => course.category);
+      this.categories = [...new Set(allCategories)];  // Remove duplicates
+    });
+  }
 }
-
-

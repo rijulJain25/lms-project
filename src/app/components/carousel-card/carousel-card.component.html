@@ -7,10 +7,10 @@
   <div class="card-body carddd">
     <div class="instructor-home-outer">
       <div style="display: flex; gap: 20px">
-        <!-- <img
-          [src]="course.instructor.image"
+        <img
+          [src]="instructorData.image"
           class="instructor-home-img"
-          alt="{{ course.instructor.name }}"
+          alt="{{ instructorData.name }}"
           style="width: 55px; height: 55px; border-radius: 50px"
         />
         <div
@@ -22,12 +22,12 @@
           "
         >
           <p class="inst-name" style="margin-bottom: 2px">
-            {{ course.instructor.name }}
+            {{ instructorData.name }}
           </p>
           <p class="inst-title" style="font-size: 15px">Instructor</p>
         </div>
-      </div> -->
-      <!-- <span><i class="fa-regular fa-heart" style="color: #f86c64"></i></span> -->
+      </div>
+      <span><i class="fa-regular fa-heart" style="color: #f86c64"></i></span>
     </div>
 
     <div style="padding: 0px 10px 10px 10px">
@@ -39,7 +39,7 @@
         </p>
         <p style="margin: 0">
           <i class="fa-solid fa-clock" style="color: #f86c64"></i>
-          {{ course.duration }}
+          {{ course.duration }} weeks
         </p>
       </div>
     </div>
@@ -55,9 +55,17 @@
     <div class="reviews-wrapper">
       <p style="margin: 0">
         <i class="fa-solid fa-star" style="color: #f86c64"></i>
-        {{ course.reviews.rating }} Reviews ({{ course.reviews.length }})
+        {{calculateAverageRating(course.reviews)}} Rating
       </p>
     </div>
-    <button class="classic-btn-new">Enroll Now</button>
+
+    <!-- Conditionally render "Enroll Now" or "Open" based on if the user has purchased the course -->
+    <button *ngIf="currentUser.role === 'User'" class="classic-btn-new" (click)="onCourseButtonClick()">
+      {{ hasPurchased(course.course_id) ? 'Resume' : 'Enroll Now' }}
+    </button>
+
+    <button class="classic-btn-new" *ngIf="currentUser.role === 'Instructor' || currentUser.role == 'Admin'" (click)="onCourseButtonClick()">
+      View
+    </button>
   </div>
 </div>

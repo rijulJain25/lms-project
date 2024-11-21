@@ -1,0 +1,44 @@
+<mat-dialog-content>
+    <h3>Add New Blog</h3>
+  <form [formGroup]="blogForm" (ngSubmit)="onSubmit()" class="add-blog-form">
+    <mat-form-field class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required />
+      <mat-error *ngIf="blogForm.controls.title.invalid && blogForm.controls.title.touched">Title is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Content</mat-label>
+      <textarea matInput formControlName="content" required rows="4"></textarea>
+      <mat-error *ngIf="blogForm.controls.content.invalid && blogForm.controls.content.touched">Content is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Author</mat-label>
+      <input matInput formControlName="author" required />
+      <mat-error *ngIf="blogForm.controls.author.invalid && blogForm.controls.author.touched">Author is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" required rows="3"></textarea>
+      <mat-error *ngIf="blogForm.controls.description.invalid && blogForm.controls.description.touched">Description is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Category</mat-label>
+      <input matInput formControlName="category" required />
+      <mat-error *ngIf="blogForm.controls.category.invalid && blogForm.controls.category.touched">Category is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Images (Optional)</mat-label>
+      <input matInput formControlName="images" />
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-button type="button" (click)="onClose()">Cancel</button>
+      <button mat-button type="submit" [disabled]="blogForm.invalid">Save</button>
+    </div>
+  </form>
+</mat-dialog-content>

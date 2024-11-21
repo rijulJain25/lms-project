@@ -1,0 +1,71 @@
+/* Edit Instructor Form Styles */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #f86c64;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  label{
+    font-weight: bold;
+  }
+
+  .card-body {
+    padding: 20px 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input.form-control, textarea.form-control {
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+  
+  button.btn {
+    background-color: #f86c64 !important;
+    color: white;
+    border: none;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.btn:hover {
+    background-color: #e85b48;
+  }
+  
+  .invalid-feedback {
+    display: block;
+    font-size: 0.875rem;
+    color: #dc3545;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .card {
+      margin-top: 20px;
+    }
+    .card-header {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .form-group {
+      margin-bottom: 10px;
+    }
+    button.btn {
+      padding: 12px;
+    }
+  }
+  

@@ -1,7 +1,14 @@
 <div class="blog-outer">
+  <app-delete-modal 
+        *ngIf="BlogToDelete" 
+        [instructorToDelete]="BlogToDelete"
+        (deleteConfirmed)="deleteBlog($event)"
+        (closeModal)="closeModal()">
+      </app-delete-modal>
   <div class="blog-left">
     <div class="blog-toolbar">
       <h2 style="color: #f86c64;">Explore Our Blogs</h2>
+      <button type="button" class="btn btn-add-blog" *ngIf="currentUser=== 'Admin'" (click)="openAddBlogModal()">Add Blog</button>
     </div>
     
     <div class="blog-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
@@ -9,7 +16,7 @@
     
       <mat-card *ngFor="let post of paginatedPosts" class="blog-card" >
         <div>
-          <img src="assets/images/angular.png" alt="{{ post.title }}" class="imageblog">
+          <img [src]="post.images[0]" alt="{{ post.title }}" class="imageblog">
         </div>
         <div>
           <mat-card-header>
@@ -21,6 +28,8 @@
           </mat-card-content>
           <mat-card-actions>
             <button mat-button style="color: #f86c64;" [routerLink]="['/blog', post.blog_id]">Read More</button>
+            <button *ngIf="currentUser==='Admin'" mat-button style="color: #331083;" [routerLink]="['/blog-edit', post.blog_id]" (click)="openAddBlogModal(post)"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button *ngIf="currentUser==='Admin'" mat-button style="color: #f86c64;" (click)="openDeleteModal(post)"><i class="fa-solid fa-trash"></i></button>
           </mat-card-actions>
         </div>
       </mat-card>

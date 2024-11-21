@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { toggleRole } from "./role.actions";
+import { toggleRole } from "./role.action";
 
 
 export interface RoleState{

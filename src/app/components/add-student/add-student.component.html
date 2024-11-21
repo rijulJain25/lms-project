@@ -1,0 +1,129 @@
+<h2>Add New Student</h2>
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" type="text" />
+    <div *ngIf="f.name.invalid && f.name.touched" class="error-message">
+      Name is required (min. 3 characters).
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" type="email" />
+    <div *ngIf="f.email.invalid && f.email.touched" class="error-message">
+      Please enter a valid email address.
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" formControlName="password" type="password" />
+    <div *ngIf="f.password.invalid && f.password.touched" class="error-message">
+      Password is required (min. 6 characters).
+    </div>
+  </div>
+
+  <div>
+    <label for="phoneNumber">Phone Number</label>
+    <input id="phoneNumber" formControlName="phoneNumber" type="text" />
+    <div
+      *ngIf="f.phoneNumber.invalid && f.phoneNumber.touched"
+      class="error-message"
+    >
+      Please enter a valid phone number (10 digits).
+    </div>
+  </div>
+
+  <div>
+    <label for="currentInstitution">Current Institution</label>
+    <input
+      id="currentInstitution"
+      formControlName="currentInstitution"
+      type="text"
+    />
+    <div
+      *ngIf="f.currentInstitution.invalid && f.currentInstitution.touched"
+      class="error-message"
+    >
+      Institution name is required.
+    </div>
+  </div>
+
+  <div>
+    <label>Gender</label>
+    <div class="gender-options" style="display: flex;">
+      <div>
+        <input id="male" type="radio" formControlName="gender" value="Male" />
+        <label for="male">Male</label>
+      </div>
+      <div>
+        <input
+          id="female"
+          type="radio"
+          formControlName="gender"
+          value="Female"
+        />
+        <label for="female">Female</label>
+      </div>
+    </div>
+    <div *ngIf="f.gender.invalid && f.gender.touched" class="error-message">
+      Gender is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="dateOfBirth">Date of Birth</label>
+    <input id="dateOfBirth" formControlName="dateOfBirth" type="date" />
+    <div
+      *ngIf="f.dateOfBirth.invalid && f.dateOfBirth.touched"
+      class="error-message"
+    >
+      Date of birth is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="bio">Bio</label>
+    <textarea id="bio" formControlName="bio"></textarea>
+    <div *ngIf="f.bio.invalid && f.bio.touched" class="error-message">
+      Bio is required (min. 10 characters).
+    </div>
+  </div>
+
+  <div>
+    <label for="interests">Interests</label>
+    <input id="interests" formControlName="interests" type="text" />
+    <div
+      *ngIf="f.interests.invalid && f.interests.touched"
+      class="error-message"
+    >
+      Interests are required.
+    </div>
+  </div>
+
+  <div>
+    <label for="location">Location</label>
+    <input id="location" formControlName="location" type="text" />
+    <div *ngIf="f.location.invalid && f.location.touched" class="error-message">
+      Location is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="subscription">Subscription</label>
+    <select id="subscription" formControlName="subscription">
+      <option *ngFor="let option of subscriptionOptions" [value]="option">
+        {{ option }}
+      </option>
+    </select>
+    <div
+      *ngIf="f.subscription.invalid && f.subscription.touched"
+      class="error-message"
+    >
+      Please select a subscription plan.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="studentForm.invalid">Submit</button>
+</form>

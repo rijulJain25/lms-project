@@ -1,90 +1,97 @@
 <div class="container my-5">
-  <!-- Search Bar Section -->
-  <div class="mb-4 text-center">
-    <input type="text" placeholder="Search instructors..." class="form-control w-50 d-inline-block" />
-    <button class="btn btn-primary ms-2">Search</button>
-  </div>
-
-  <!-- Instructor Section -->
-  <div class="row">
-    <!-- Left Section: Instructor Cards -->
-    <div class="col-md-8">
-      <div class="row">
-        <!-- Instructor Card 1 -->
-        <div *ngFor="let inst of PagesInst" class="col-sm-6 col-md-4 mb-4">
-          <div class="card">
-            <img [src]="" alt="Instructor" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">John Doe</h5>
-              <p class="card-text">Data Science Expert</p>
-              <p><strong>Duration:</strong> 3 Years</p>
-              <p><strong>Lessons Taught:</strong> 150</p>
-              <p><strong>Experience:</strong> 5+ Years</p>
-              <p><strong>Reviews:</strong> 4.5 (250 Reviews)</p>
-              <p><strong>Specialization:</strong> Data Science</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Instructor Card 2 -->
-        <div class="col-sm-6 col-md-4 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Instructor" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Jane Smith</h5>
-              <p class="card-text">Full Stack Developer</p>
-              <p><strong>Duration:</strong> 2 Years</p>
-              <p><strong>Lessons Taught:</strong> 120</p>
-              <p><strong>Experience:</strong> 6+ Years</p>
-              <p><strong>Reviews:</strong> 4.8 (320 Reviews)</p>
-              <p><strong>Specialization:</strong> Web Development</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Instructor Card 3 -->
-        <div class="col-sm-6 col-md-4 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Instructor" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Michael Lee</h5>
-              <p class="card-text">UI/UX Designer</p>
-              <p><strong>Duration:</strong> 4 Years</p>
-              <p><strong>Lessons Taught:</strong> 80</p>
-              <p><strong>Experience:</strong> 7+ Years</p>
-              <p><strong>Reviews:</strong> 4.6 (200 Reviews)</p>
-              <p><strong>Specialization:</strong> Design</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- More Instructor Cards can be added here -->
+  <!-- Instructor Cards Section -->
+  <div class="row my-inst-row">
+    <div class="col-md-9">
+      <app-delete-modal 
+        *ngIf="instructorToDelete" 
+        [instructorToDelete]="instructorToDelete"
+        (deleteConfirmed)="deleteInstructor($event)"
+        (closeModal)="closeModal()">
+      </app-delete-modal>
+      <div class="mb-4 search-out ">
+        <div class="serach-opt">
+        <input 
+          type="text" 
+          placeholder="Search instructors..." 
+          class="form-control d-inline-block" 
+          [(ngModel)]="searchTerm" 
+          (ngModelChange)="filterInstructorList()" />
+        <button class="btn btn-search " (click)="filterInstructorList()">Search</button>
       </div>
+      <button class="btn btn-add" *ngIf="currentUser === 'Admin'" routerLink="/add-instructor">Add Instructor</button>
+      </div>
+    
+      <div class="row">
+        <div *ngFor="let inst of PagesInst" class="col-sm-6 col-md-4 mb-4">
+          <div class="card instructor-card">
+            <!-- Instructor Image -->
+            <img [src]="inst.image || 'https://via.placeholder.com/150'" alt="Instructor" class="card-img-top instructor-img" />
+            <div class="card-body">
+              <!-- Instructor Name -->
+              <h5 class="card-title">{{ inst.name }}</h5>
+              <h6>Instructor</h6>
+              <!-- Instructor Lessons and Experience -->
+              <p class="card-text">
+                <strong><i class="fa-solid fa-person-chalkboard" style="color: #f86c64;"></i> &nbsp; {{ countLessons(inst.instructorId) }} Lessons Taught</strong>
+                <br />
+                <strong><i class="fa-solid fa-user-clock" style="color: #f86c64;"></i>&nbsp; {{ inst.experience }} years Experience</strong> 
+              </p>
+              <!-- Star Rating for Reviews -->
+              <div class="stars">
+                <span *ngFor="let star of [].constructor(getRoundedReviews(inst.reviewIns)); let i = index">
+                  <i class="fa fa-star" [ngClass]="{'star-filled': i < getRoundedReviews(inst.reviewIns)}"></i>
+                </span>
+                <span class="reviews-count">{{ inst.reviews }} ({{ CalNumReview() }} Reviews)</span>
+              </div>
+              <!-- Specialization -->
+              <p><strong>Specialization:</strong> {{ inst.specialization }}</p>
+              <div class="change-button" style="display: flex; justify-content: space-between;">
+                <button class="btn btn-primary edit-btn"  *ngIf="currentUser === 'Admin'" [routerLink]="['/edit-instructor', inst.instructorId]"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="btn btn-danger del-btn" *ngIf="currentUser === 'Admin'" (click)="openDeleteModal(inst)"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination Section -->
+      <!-- Pagination Section -->
+<div class="text-center mt-4 pagination-out">
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link pagination-btn" (click)="prevPage()">Previous</button>
+      </li>
+      <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index">
+        <button 
+          class="page-link pagination-btn" 
+          [class.active]="currentPage === (i + 1)"
+          (click)="goToPage(i + 1)">
+          {{ i + 1 }}
+        </button>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <button class="page-link pagination-btn" (click)="nextPage()">Next</button>
+      </li>
+    </ul>
+  </nav>
+</div>
+
     </div>
 
-    <!-- Right Section: Filter by Specialization -->
-    <div class="col-md-4">
-      <div class="card p-4">
-        <h5>Filter By Specialization</h5>
-        <div>
-          <input type="checkbox" id="data-science" class="form-check-input">
-          <label for="data-science" class="form-check-label">Data Science</label>
-        </div>
-        <div>
-          <input type="checkbox" id="web-dev" class="form-check-input">
-          <label for="web-dev" class="form-check-label">Web Development</label>
-        </div>
-        <div>
-          <input type="checkbox" id="design" class="form-check-input">
-          <label for="design" class="form-check-label">Design</label>
-        </div>
-        <div>
-          <input type="checkbox" id="cybersecurity" class="form-check-input">
-          <label for="cybersecurity" class="form-check-label">Cybersecurity</label>
-        </div>
-        <div>
-          <input type="checkbox" id="marketing" class="form-check-input">
-          <label for="marketing" class="form-check-label">Marketing</label>
+    <!-- Filters Section -->
+    <div class="col-md-3">
+      <div class="card p-4 filter-card">
+        <h5 style="color: #f86c64;">Filter By Specialization</h5>
+        <div *ngFor="let spec of allSpecializations">
+          <div class="inside-class">
+            <input 
+              type="checkbox" 
+              class="form-check-input" 
+              (change)="onFilterChange(spec)" 
+              [checked]="selectedSpecializations.includes(spec)">
+            <label class="form-check-label" for="form-check-input">{{ spec }}</label>
+          </div>
         </div>
       </div>
     </div>
