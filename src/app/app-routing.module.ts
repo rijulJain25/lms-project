@@ -18,6 +18,11 @@ import { ManageStudentsComponent } from './pages/manage-students/manage-students
 import { EditStudentComponent } from './pages/edit-student/edit-student.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { EnrolledCoursesComponent } from './pages/enrolled-courses/enrolled-courses.component';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
+import { InstructorCoursesComponent } from './pages/instructor-courses/instructor-courses.component';
+import { AddCoursesComponent } from './pages/add-courses/add-courses.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SubscriptionComponent } from './pages/subscription/subscription.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -38,8 +43,11 @@ const routes: Routes = [
   { path: 'edit-student/:id', component: EditStudentComponent },
   { path: 'cart', component: CartPageComponent },
   { path: 'enrolled-courses', component: EnrolledCoursesComponent },
-
-
+  { path: 'edit-course/:id', component: EditCourseComponent },
+  { path: 'created-courses', component: InstructorCoursesComponent },
+  { path: 'add-course', component: AddCoursesComponent },
+  { path: 'subscription', component: SubscriptionComponent },
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

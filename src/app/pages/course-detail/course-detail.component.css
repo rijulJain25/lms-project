@@ -57,6 +57,11 @@
     height: 100%;
     
   }
+
+  .manage-btn{
+    display: flex;
+    gap: 20px;
+  }
   
   .course-card-head {
     font-size: 22px;
@@ -180,6 +185,10 @@
 
     .course-ques{
       padding: 30px 20px !important;
+    }
+
+    .manage-btn{
+      justify-content: space-around;
     }
   }
   

@@ -53,6 +53,14 @@ import { CartEffects } from './store/cart.effects';
 import { EnrolledCoursesComponent } from './pages/enrolled-courses/enrolled-courses.component';
 import { InstDashComponent } from './components/inst-dash/inst-dash.component';
 import { UserDashComponent } from './components/user-dash/user-dash.component';
+import { TopSpecializationComponent } from './components/top-specialization/top-specialization.component';
+import { TopReviewInstComponent } from './components/top-review-inst/top-review-inst.component';
+import { StudentSubscriptionComponent } from './components/student-subscription/student-subscription.component';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
+import { InstructorCoursesComponent } from './pages/instructor-courses/instructor-courses.component';
+import { AddCoursesComponent } from './pages/add-courses/add-courses.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SubscriptionComponent } from './pages/subscription/subscription.component';
 
 
 @NgModule({
@@ -99,7 +107,14 @@ import { UserDashComponent } from './components/user-dash/user-dash.component';
     EnrolledCoursesComponent,
     InstDashComponent,
     UserDashComponent,
-    
+    TopSpecializationComponent,
+    TopReviewInstComponent,
+    StudentSubscriptionComponent,
+    EditCourseComponent,
+    InstructorCoursesComponent,
+    AddCoursesComponent,
+    NotFoundComponent,
+    SubscriptionComponent,
   ],
   imports: [
     BrowserModule,

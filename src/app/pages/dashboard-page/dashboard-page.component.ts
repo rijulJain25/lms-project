@@ -25,6 +25,7 @@ export class DashboardPageComponent implements OnInit {
   recommendedCourses: Course[] = [];
   instructorCourses: Course[] = [];
   chkInst: any;
+  selectedSection: string = 'instructors';
 
   constructor(private dash: DashboardService, private router: Router) {}
 
@@ -54,10 +55,10 @@ export class DashboardPageComponent implements OnInit {
   loadUserData() {
     this.dash.getCurrentUserData().subscribe((data) =>{
       this.chkInst = data;
-      console.log(this.chkInst);
+      // console.log(this.chkInst);
       
       if(this.chkInst.role === 'User' || this.chkInst.role === 'Admin'){
-        console.log("i'm user");
+        // console.log("i'm user");
         
         this.currentUser = data;
         if (!this.currentUser || !this.currentUser.role) {
@@ -69,7 +70,7 @@ export class DashboardPageComponent implements OnInit {
         this.loadCourses(this.currentUser.purchasedCourses);
         this.loadRecommendedCourses(this.currentUser.interests);
       }else{
-        console.log("i'm inst");
+        // console.log("i'm inst");
         this.currentInst = data;
         console.log("dataaa",this.currentInst);
         
@@ -123,4 +124,9 @@ export class DashboardPageComponent implements OnInit {
       });
     }
   }
+
+  selectSection(section: string): void {
+    this.selectedSection = section;
+  }
+
 }

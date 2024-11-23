@@ -1,0 +1,63 @@
+/* subscription.component.css */
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .btn-outline-primary, .btn-outline-success, .btn-outline-danger {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .changee{
+    background-color: #f86c64;
+    border-color: #f86c64;
+    color: white!important;
+  }
+
+  .changee:hover{
+    background-color: #fa5c54;
+    border-color: #fa5c54;
+    color: white!important;
+
+
+  }
+
+  .mySub{
+    background-color: #f86c64;
+    border-color: #f86c64;
+    color: white !important;
+  }
+
+  .prior-data{
+    background: rgb(255,203,215);
+    background: linear-gradient(61deg, rgba(255,203,215,1) 10%, rgba(214,255,239,1) 100%); 
+    border: none;
+    color: rgb(9, 5, 73);       
+  }
+  
+  @media (max-width: 767px) {
+    .card {
+      margin-bottom: 20px;
+    }
+  }
+  

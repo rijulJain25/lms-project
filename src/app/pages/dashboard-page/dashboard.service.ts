@@ -81,4 +81,8 @@ export class DashboardService {
     console.error('API Error: ', error);
     throw error;
   }
+
+  addCourse(course: any): Observable<any> {
+    return this.http.post<any>(`${this.coursesApiUrl}`, course);
+  }
 }

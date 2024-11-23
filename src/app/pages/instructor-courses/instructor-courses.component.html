@@ -1,0 +1,35 @@
+<div class="instructor-courses-container">
+  <div class="search-filter">
+    <div class="search-bar">
+        <input
+          type="text"
+          [(ngModel)]="searchItem"
+          (input)="filterOnSearch()"
+          placeholder="Search by course title or category"
+          class="search-input"
+        />
+        <button class="search-cour">Search</button>
+      </div>
+
+      <div class="Add-btn-cour">
+        <button class="btn-cour-in" (click)="goToAddCoursePage()">
+          Add Course
+        </button>
+      </div>
+
+  </div>
+
+  <div class="course-list">
+    <div *ngIf="filterInstCourses.length === 0" class="no-courses-message">
+      <p>No courses found!</p>
+    </div>
+    <div class="row">
+      <div
+        *ngFor="let course of filterInstCourses"
+        class="course-card col-md-4 col-sm-6 col-12"
+      >
+        <app-carousel-card [course]="course"></app-carousel-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="add-cout-outer">
+    <div class="add-course-container">
+        <div style="padding: 30px; background-color: #f86c64; color: white; display: flex; align-items: center; justify-content: center; border-radius: 20px 20px 0px 0px;">
+    <h2>Add New Course</h2>
+</div>
+  
+    <form [formGroup]="addCourseForm" (ngSubmit)="onSubmit()" class="form-add-cour">
+      <div class="form-group">
+        <label for="name">Course Name</label>
+        <input type="text" id="name" formControlName="name" class="form-control" />
+        <div *ngIf="addCourseForm.get('name')?.invalid && addCourseForm.get('name')?.touched" class="text-danger">
+          Course name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" id="category" formControlName="category" class="form-control" />
+        <div *ngIf="addCourseForm.get('category')?.invalid && addCourseForm.get('category')?.touched" class="text-danger">
+          Category is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="duration">Duration (Weeks)</label>
+        <input type="number" id="duration" formControlName="duration" class="form-control" />
+        <div *ngIf="addCourseForm.get('duration')?.invalid && addCourseForm.get('duration')?.touched" class="text-danger">
+          Duration is required and must be a positive number.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Course Description</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+        <div *ngIf="addCourseForm.get('description')?.invalid && addCourseForm.get('description')?.touched" class="text-danger">
+          Description is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" formControlName="price" class="form-control" />
+        <div *ngIf="addCourseForm.get('price')?.invalid && addCourseForm.get('price')?.touched" class="text-danger">
+          Price is required and must be a positive number.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="level">Level</label>
+        <select formControlName="level" class="form-control" id="level">
+          <option value="" disabled>Select Level</option>
+          <option *ngFor="let level of levels" [value]="level">{{ level }}</option>
+        </select>
+      </div>
+  
+      <!-- Prerequisites Section -->
+      <div formArrayName="prerequisites">
+        <div *ngFor="let prerequisite of prerequisites.controls; let i = index">
+          <div class="form-group">
+            <label for="prerequisite-{{i}}">Prerequisite {{i + 1}}</label>
+            <input [formControlName]="i" class="form-control" placeholder="Enter prerequisite" />
+            <button type="button" class="btn btn-danger" (click)="removePrerequisite(i)"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-success" (click)="addPrerequisite()">Add Prerequisite</button>
+      </div>
+  
+      <!-- FAQ Section -->
+      <div formArrayName="faq">
+        <div *ngFor="let faq of faq.controls; let i = index">
+          <div formGroupName="{{i}}">
+            <div class="form-group">
+              <label for="question-{{i}}">Question {{i + 1}}</label>
+              <input formControlName="question" class="form-control" placeholder="Enter question" />
+            </div>
+            <div class="form-group">
+              <label for="answer-{{i}}">Answer</label>
+              <input formControlName="answer" class="form-control" placeholder="Enter answer" />
+            </div>
+            <button type="button" class="btn btn-danger" (click)="removeFaq(i)"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-success" (click)="addFaq()">Add FAQ</button>
+      </div>
+  
+      <!-- Course Content Section -->
+      <div formArrayName="courseContent">
+        <div *ngFor="let content of courseContent.controls; let i = index" [formGroupName]="i">
+          <div class="form-group">
+            <label for="week-{{i}}">Week</label>
+            <input formControlName="week" class="form-control" placeholder="Week number" />
+          </div>
+          <div class="form-group">
+            <label for="title-{{i}}">Title</label>
+            <input formControlName="title" class="form-control" placeholder="Enter content title" />
+          </div>
+          <div class="form-group">
+            <label for="description-{{i}}">Description</label>
+            <textarea formControlName="description" class="form-control" placeholder="Enter content description"></textarea>
+          </div>
+          <button type="button" class="btn btn-danger" (click)="removeCourseContent(i)"><i class="fa-solid fa-trash"></i></button>
+        </div>
+        <button type="button" class="btn btn-success" (click)="addCourseContent()">Add Course Content</button>
+      </div>
+  
+      <button type="submit" class="btn btn-primary submit-btn-cour" [disabled]="addCourseForm?.invalid">Submit</button>
+    </form>
+  </div>
+  
+</div>

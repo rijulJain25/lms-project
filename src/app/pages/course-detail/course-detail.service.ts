@@ -20,4 +20,13 @@ export class CourseDetailService {
     return this.http.get<any>(`${this.apiUrl}instructors/${instId}`);
   }
 
+  updateCourse(courseId: string, courseData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}courses/${courseId}`, courseData);
+  }
+
+  deleteService(courseid: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}courses/${courseid}`);
+
+  }
+
 }

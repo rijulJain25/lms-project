@@ -1,0 +1,10 @@
+.chart-container {
+    width: 80%;  /* Adjust the width as needed */
+    margin: 0 auto;  /* Center the chart */
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: 400px !important;  /* Set a fixed height for the chart */
+  }
+  

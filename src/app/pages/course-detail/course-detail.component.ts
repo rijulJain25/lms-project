@@ -18,6 +18,10 @@ export class CourseDetailComponent implements OnInit {
   errorMessage: string = '';
   isPurchased: boolean = false;
   instructor: any;
+  currentInst: any;
+  userChk: Boolean = false;
+  userRoleChk: any
+  courseToDel: any
 
   constructor(
     private route: ActivatedRoute,
@@ -44,11 +48,22 @@ export class CourseDetailComponent implements OnInit {
     this.courseService.getCourseById(courseId).subscribe(
       (data) => {
         this.course = data;
-        this.checkIfPurchased(courseId);
+        console.log("deidjeidj", this.currentUser.role);
+        
+        if(this.currentUser.role != 'Instructor') {
+          this.checkIfPurchased(courseId);
+        }
         
         this.courseService.getInstructor(this.course.instructor_id).subscribe(
           (instructor) => {
             this.instructor = instructor;
+            if(this.currentUser.role === 'Instructor') {
+              if(this.currentUser.instructorId === this.instructor.instructorId){
+                this.userChk = true;
+                // console.log("rijullll", this.userChk);
+                
+              }
+            }
             console.log(this.instructor);
             
           },
@@ -79,5 +94,31 @@ export class CourseDetailComponent implements OnInit {
       this.store.dispatch(addToCart({ courseId: this.course.course_id, userId: this.currentUser.userId }));
       this.snackBar.showSuccess("Item add to cart")
     }
+  }
+
+  editCourse(courseId: string) {
+    this.router.navigate([`/edit-course/${courseId}`]);
+  }
+
+
+  openDeleteModal(instructor: any) {
+    this.courseToDel = instructor;
+  }
+
+  deleteCourse(cour: any) {
+    console.log("THis is ",cour);
+    
+    if (cour) {
+      this.courseService.deleteService(cour.course_id).subscribe(() => {
+        this.router.navigate([`/dashboard`]);
+        // this.instructor = this.instructor.filter(inst => inst.instructorId !== instructor.id);
+      }, error => {
+        console.error('Error deleting instructor', error);
+      });
+    }
+  }
+
+  closeModal() {
+    this.courseToDel = null;
   }
 }

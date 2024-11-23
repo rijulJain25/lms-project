@@ -12,7 +12,6 @@ export class DeleteModalComponent {
 
   constructor() { }
 
-  // Method to handle the delete confirmation
   onDelete() {
     this.deleteConfirmed.emit(this.instructorToDelete);
   }

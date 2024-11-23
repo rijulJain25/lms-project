@@ -1,0 +1,45 @@
+.add-cout-outer{
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-course-container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.form-add-cour{
+    padding: 30px;
+}
+
+.submit-btn-cour{
+    background-color: #f86c64;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-success{
+    width: 50%;
+    margin-bottom: 20px;
+    background-color: #0d0361;
+    border: none;
+    margin-top: 10px;
+}
+
+.submit-btn-cour:hover{
+    background-color: #ff4a40;
+}

@@ -43,13 +43,13 @@ export class InstructorPageComponent implements OnInit {
   }
 
   updateSpecializations(instructors: any[]) {
-    const specializations = new Set<string>();  // Using a Set to ensure uniqueness
+    const specializations = new Set<string>(); 
     instructors.forEach(inst => {
       if (inst.specialization) {
         specializations.add(inst.specialization);
       }
     });
-    this.allSpecializations = Array.from(specializations);  // Convert Set to Array
+    this.allSpecializations = Array.from(specializations);  
   }
 
   updatePage() {

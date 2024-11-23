@@ -1,0 +1,117 @@
+<!-- subscription.component.html -->
+<div class="container mt-5">
+    <!-- Subscription Heading Section -->
+    <div class="text-center mb-5">
+      <h2>Choose Your Subscription Plan</h2>
+      <p class="lead">Get the best value for your learning with our subscription plans.</p>
+    </div>
+  
+    <!-- Current Subscription Information -->
+    <div class="alert alert-info text-center prior-data">
+      <h5>Current Plan: <strong>{{ currentSubscription }}</strong></h5>
+      <p>Switch plans to enjoy more benefits.</p>
+      <button class="btn btn-warning changee" (click)="onSubscriptionChange(currentSubscription === 'Free' ? 'Basic' : 'Free')">Change Plan</button>
+    </div>
+  
+    <!-- Subscription Card Section -->
+    <div class="row justify-content-center">
+      <!-- Free Subscription Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card" [ngClass]="{'mySub': currentSubscription === 'Free', 'border-light': currentSubscription !== 'Free'}">
+          <div class="card-body text-center">
+            <h3 class="card-title">Free Plan</h3>
+            <p class="card-text">Access to paid courses at full price. Lifetime access to purchased courses.</p>
+            <p><strong>$0</strong></p>
+            <ul>
+              <li>No discounts</li>
+              <li>Pay per course</li>
+              <li>Lifetime access to purchased courses</li>
+            </ul>
+            <button class="btn btn-outline-primary" (click)="onSubscriptionChange('Free')">Select Free Plan</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Basic Subscription Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card" [ngClass]="{'mySub': currentSubscription === 'Basic', 'border-light': currentSubscription !== 'Basic'}">
+          <div class="card-body text-center">
+            <h3 class="card-title">Basic Plan</h3>
+            <p class="card-text">Get 30% off on all courses. Lifetime access to purchased courses.</p>
+            <p><strong>$399.99</strong> (30% off)</p>
+            <ul>
+              <li>30% discount on all courses</li>
+              <li>Lifetime access</li>
+              <li>Exclusive course promotions</li>
+            </ul>
+            <button class="btn btn-outline-success" (click)="onSubscriptionChange('Basic')">Select Basic Plan</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Premium Subscription Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card" [ngClass]="{'mySub': currentSubscription === 'Premium', 'border-light': currentSubscription !== 'Premium'}">
+          <div class="card-body text-center">
+            <h3 class="card-title">Premium Plan</h3>
+            <p class="card-text" >All courses are included for free. Unlimited access to everything!</p>
+            <p><strong>$599.99</strong> (Unlimited Access)</p>
+            <ul>
+              <li>Unlimited access to all courses</li>
+              <li>Exclusive premium content</li>
+              <li>Priority customer support</li>
+            </ul>
+            <button class="btn btn-outline-danger" (click)="onSubscriptionChange('Premium')">Select Premium Plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Progress Bar for Subscription Upgrade -->
+    <div class="mt-4">
+      <h5>Your Progress Towards Premium:</h5>
+      <div class="progress-bar-container">
+        <div class="progress-bar" 
+             role="progressbar"
+             [attr.aria-valuenow]="subscriptionProgress" 
+             [attr.aria-valuemin]="0" 
+             [attr.aria-valuemax]="100" 
+             [style.width.%]="subscriptionProgress">
+        </div>
+      </div>
+      <p class="text-center mt-2">{{ subscriptionProgress }}% towards unlocking Premium Plan</p>
+    </div>
+  
+    <!-- FAQ Accordion -->
+    <div class="accordion mt-5" id="faqAccordion">
+      <div class="card">
+        <div class="card-header" id="faqHeadingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+              What is the difference between Free, Basic, and Premium plans?
+            </button>
+          </h5>
+        </div>
+        <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne" data-parent="#faqAccordion">
+          <div class="card-body">
+            The Free plan gives you access to courses at full price. The Basic plan gives you a 30% discount, and the Premium plan gives you unlimited access to all courses for free.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="faqHeadingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+              Can I upgrade my subscription later?
+            </button>
+          </h5>
+        </div>
+        <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo" data-parent="#faqAccordion">
+          <div class="card-body">
+            Yes, you can upgrade at any time. The changes will be effective immediately.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

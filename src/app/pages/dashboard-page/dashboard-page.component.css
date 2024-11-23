@@ -30,6 +30,18 @@
     background-color: rgb(249, 249, 249);
   }
 
+  .hover-card{
+    transition: ease 0.5s;
+  }
+
+  .hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+    background-color: #f86c64;
+    color: white;
+    border-color: #f86c64; 
+  }
+
 
    .my-profile-card {
     background-color: white;
