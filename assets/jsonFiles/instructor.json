@@ -3,10 +3,11 @@
     "name": "John Doe",
     "email": "john.doe@example.com",
     "bio": "John is a passionate web developer with expertise in front-end technologies like React, HTML, CSS, and JavaScript. He loves teaching and helping students build real-world applications.",
+    "role": "Instructor",
     "reviewIns": 4,
     "image": "assets/images/teacher3.png",
     "specialization": "Web Development",
-    "experience": "5 years in Web Development",
+    "experience": "5",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/johndoe",
       "twitter": "https://twitter.com/johndoe"
@@ -19,10 +20,11 @@
     "name": "Jane Smith",
     "email": "jane.smith@example.com",
     "bio": "Jane has a strong background in statistics and machine learning. She enjoys creating innovative solutions using data and teaching her students how to solve complex problems with Python.",
+    "role": "Instructor",
     "reviewIns": 5,
     "image": "assets/images/teacher2.png",
     "specialization": "Data Science",
-    "experience": "Expert in Data Science and Machine Learning",
+    "experience": "6",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/janesmith",
       "twitter": "https://twitter.com/janesmith"
@@ -35,10 +37,11 @@
     "name": "Michael Johnson",
     "email": "michael.johnson@example.com",
     "bio": "Michael is a mobile development expert with over 4 years of experience in building cross-platform apps using Flutter. He is passionate about mobile development and loves teaching students how to create high-quality mobile apps.",
+    "role": "Instructor",
     "reviewIns": 4,
     "image": "assets/images/teacher5.png",
     "specialization": "Mobile Development",
-    "experience": "Specialized in Mobile Development with Flutter",
+    "experience": "6",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/michaeljohnson",
       "twitter": "https://twitter.com/michaeljohnson"
@@ -51,10 +54,11 @@
     "name": "Sarah Lee",
     "email": "sarah.lee@example.com",
     "bio": "Sarah is a passionate UI/UX designer with a keen eye for detail. She focuses on designing intuitive and aesthetically pleasing user interfaces for web and mobile applications.",
+    "role": "Instructor",
     "reviewIns": 3,
     "image": "assets/images/teacher1.png",
     "specialization": "Design",
-    "experience": "2 years in UI/UX Design",
+    "experience": "3",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/sarahlee",
       "twitter": "https://twitter.com/sarahlee"
@@ -67,10 +71,11 @@
     "name": "David Green",
     "email": "david.green@example.com",
     "bio": "David is a cybersecurity expert with a background in ethical hacking, penetration testing, and network security. He helps organizations protect their digital infrastructure.",
+    "role": "Instructor",
     "reviewIns": 4,
     "image": "assets/images/teacher5.png",
     "specialization": "Cybersecurity",
-    "experience": "7 years in Cybersecurity",
+    "experience": "10",    
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/davidgreen",
       "twitter": "https://twitter.com/davidgreen"
@@ -83,10 +88,11 @@
     "name": "Emma Watson",
     "email": "emma.watson@example.com",
     "bio": "Emma is a game development expert with experience in Unreal Engine and Unity. She helps students learn the art of creating games, from concept to execution.",
+    "role": "Instructor",
     "reviewIns": 5,
     "image": "assets/images/teacher3.png",
     "specialization": "Game Development",
-    "experience": "10 years in Game Development",
+    "experience": "7",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/emmawatson",
       "twitter": "https://twitter.com/emmawatson"
@@ -99,10 +105,11 @@
     "name": "James Brown",
     "email": "james.brown@example.com",
     "bio": "James specializes in modern web technologies like React and Node.js. He loves creating dynamic, scalable web apps and teaching students the nuances of full-stack development.",
+    "role": "Instructor",
     "reviewIns": 4,
     "image": "assets/images/teacher1.png",
     "specialization": "Web Development",
-    "experience": "6 years in Web Development and React",
+    "experience": "4",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/jamesbrown",
       "twitter": "https://twitter.com/jamesbrown"
@@ -115,10 +122,11 @@
     "name": "Alice Johnson",
     "email": "alice.johnson@example.com",
     "bio": "Alice is a Cloud Architect with extensive experience in AWS, Azure, and Google Cloud. She helps organizations migrate and manage their infrastructure in the cloud.",
+    "role": "Instructor",
     "reviewIns": 5,
     "image": "assets/images/teacher4.png",
     "specialization": "Cloud Computing",
-    "experience": "8 years in Cloud Computing",
+    "experience": "2",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/alicejohnson",
       "twitter": "https://twitter.com/alicejohnson"
@@ -131,10 +139,11 @@
     "name": "Robert Miller",
     "email": "robert.miller@example.com",
     "bio": "Robert is an expert in Blockchain development with a strong understanding of decentralized applications and smart contracts. He enjoys explaining complex concepts in a simple way.",
+    "role": "Instructor",
     "reviewIns": 4,
     "image": "assets/images/teacher5.png",
     "specialization": "Blockchain",
-    "experience": "4 years in Blockchain Development",
+    "experience": "8",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/robertmiller",
       "twitter": "https://twitter.com/robertmiller"
@@ -147,10 +156,11 @@
     "name": "Sophia Davis",
     "email": "sophia.davis@example.com",
     "bio": "Sophia has helped numerous companies enhance their online presence. She specializes in social media marketing, SEO, and content strategy. She loves empowering students to build their brands online.",
+    "role": "Instructor",
     "reviewIns": 5,
     "image": "assets/images/teacher3.png",
     "specialization": "Marketing",
-    "experience": "5 years in Digital Marketing",
+    "experience": "6",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/sophiadavis",
       "twitter": "https://twitter.com/sophiadavis"
@@ -163,10 +173,11 @@
     "name": "Ethan Wilson",
     "email": "ethan.wilson@example.com",
     "bio": "Ethan specializes in teaching Python programming to beginners and intermediate learners. He enjoys helping students build strong programming foundations and solve real-world problems with code.",
+    "role": "Instructor",
     "reviewIns": 4,
     "image": "assets/images/teacher4.png",
     "specialization": "Programming",
-    "experience": "3 years in Programming and Python",
+    "experience": "6",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/ethanwilson",
       "twitter": "https://twitter.com/ethanwilson"
@@ -179,10 +190,11 @@
     "name": "Charlotte Harris",
     "email": "charlotte.harris@example.com",
     "bio": "Charlotte is an expert graphic designer with a strong portfolio of branding, advertising, and UI design projects. She loves mentoring students to become proficient in design software and creative techniques.",
+    "role": "Instructor",
     "reviewIns": 5,
     "image": "assets/images/teacher2.png",
     "specialization": "Design",
-    "experience": "12 years in Graphic Design",
+    "experience": "5",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/charlotteharris",
       "twitter": "https://twitter.com/charlotteharris"
@@ -195,10 +207,11 @@
     "name": "Henry Clark",
     "email": "henry.clark@example.com",
     "bio": "Henry is a cloud computing enthusiast and an AWS certified professional. He helps students learn the basics of cloud infrastructure and deployment.",
+    "role": "Instructor",
     "reviewIns": 3,
     "image": "assets/images/teacher1.png",
     "specialization": "Cloud Computing",
-    "experience": "4 years in Cloud Technologies",
+    "experience": "3",
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/henryclark",
       "twitter": "https://twitter.com/henryclark"
