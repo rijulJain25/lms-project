@@ -15,7 +15,6 @@ export class CourseDetailService {
     return this.http.get<any>(`${this.apiUrl}courses/${courseId}`);
   }
 
-
   getInstructor(instId: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}instructors/${instId}`);
   }
@@ -26,7 +25,13 @@ export class CourseDetailService {
 
   deleteService(courseid: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}courses/${courseid}`);
-
   }
 
+  getReviews(courseId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}courses/reviews/${courseId}`);
+  }
+
+  addReview(userId:string, courseId: string, reviewData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}courses/reviews/${courseId}`, {reviewer: userId, rating:reviewData.rating, comment: reviewData.comment});
+  }
 }

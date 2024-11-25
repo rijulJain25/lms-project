@@ -40,42 +40,38 @@ export class LoginPageComponent implements OnInit {
       this.showErrorMessage('Please fill in all required fields correctly.');
       return;
     }
-
+  
     this.isSubmitting = true;
     this.errorMessage = '';
-
+  
     const { email, password } = this.loginForm.value;
-    console.log("sdjoij", this.loginType);
-    
-
-    const loginEndpoint = this.loginType === 'instructors' ? 'instructors' :  'users';
-    
-
-    console.log("Thsi is the type", loginEndpoint);
-    
+    const loginEndpoint = this.loginType === 'instructors' ? 'instructors' : 'users';
+  
     this.authService.login(email, password, loginEndpoint).subscribe(
-      (user) => {
-        console.log(user);
-        
-        if (user) {
-          this.authService.saveUserToLocalStorage(user);
-          console.log('Login successful', user);
-          location.replace('/dashboard');
-
-          // this.router.navigate(['/dashboard']);    
-          
+      (response) => {
+        if (response.user) {
+          this.authService.saveUserToLocalStorage(response.user);
+          if (response.user.role === 'Instructor') {
+            if (response.user.ownRegistered) {
+              location.replace('/dashboard');
+            } else if (response.user.isFirstLogin && !response.user.ownRegistered) {
+              this.router.navigate(['/set-new-password']);
+            }
+          } else {
+            location.replace('/dashboard');
+          }
         } else {
           this.showErrorMessage('Invalid email or password. Please try again.');
         }
-        this.isSubmitting = false; 
+        this.isSubmitting = false;
       },
       (error) => {
         this.showErrorMessage('An error occurred. Please try again later.');
-        this.isSubmitting = false; 
+        this.isSubmitting = false;
       }
     );
   }
-
+  
   showErrorMessage(message: string) {
     this.errorMessage = message;
   }

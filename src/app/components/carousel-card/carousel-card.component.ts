@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class CarouselCardComponent implements OnInit {
 
   errorMessage: string = '';
-
+  subsChk: string = 'Free';
   constructor(private router: Router, private carouselService: CarouselService, private authService: AuthService) { }
 
   instructorData: Instructor = {
@@ -29,7 +29,9 @@ export class CarouselCardComponent implements OnInit {
     },
     location: '',
     username: '',
-    password: ''
+    password: '',
+    isFirstLogin: false,
+    ownRegistered: true,
   };
 
   @Input() course: any;
@@ -41,6 +43,11 @@ export class CarouselCardComponent implements OnInit {
     // console.log("mymyyy",this.course.reviews.length)
     if (this.authService.isAuthenticated()) {
       this.currentUser = this.authService.getCurrentUser();
+      console.log(this.currentUser);
+      
+      this.subsChk = this.currentUser.subscription; 
+      console.log(this.subsChk);
+      
     }
   }
 

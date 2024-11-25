@@ -47,7 +47,7 @@ export class BlogsPageComponent implements OnInit {
         this.isLoading = false;
         this.filterRecentPosts();
       });
-    }, 2000); 
+    }, 1000); 
   }
 
   openAddBlogModal(blog?: BlogPost): void {

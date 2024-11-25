@@ -1,7 +1,7 @@
 /* subscription.component.css */
 .card {
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
   }
   
@@ -23,9 +23,12 @@
     color: #555;
   }
   
-  .btn-outline-primary, .btn-outline-success, .btn-outline-danger {
-    font-size: 1rem;
+  .select-sub-btn{
     width: 100%;
+    border-radius: 5px;
+    background: white;
+    color: black;
+    border: 2px solid #222166;
   }
 
   .changee{
@@ -34,11 +37,16 @@
     color: white!important;
   }
 
+  .select-sub-btn:hover{
+    background-color: #222166;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
   .changee:hover{
     background-color: #fa5c54;
     border-color: #fa5c54;
-    color: white!important;
-
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 
   }
 
@@ -55,6 +63,22 @@
     color: rgb(9, 5, 73);       
   }
   
+  .btn-link{
+    text-decoration: none;
+    color: white;
+  }
+  
+
+  #faqHeadingOne{
+    background-color: #f86c64;
+    color: white;
+  }
+
+  #faqHeadingTwo{
+    background-color: #f86c64;
+    color: white;
+  }
+
   @media (max-width: 767px) {
     .card {
       margin-bottom: 20px;

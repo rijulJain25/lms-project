@@ -1,0 +1,39 @@
+<div class="container">
+    <!-- Header Section -->
+    <header class="page-header">
+      <h1>Explore the Top Trending Courses</h1>
+      <p class="intro-text">
+        Stay ahead of the curve! Check out the most popular courses based on user purchases.
+        These courses are being bought by learners just like you, so dive into the latest trends
+        and enhance your skills today!
+      </p>
+    </header>
+  
+    <!-- Trending Courses Section -->
+    <section class="trending-courses">
+      <h2 class="section-title">Top 6 Trending Courses</h2>
+      <p class="section-description">
+        These are the top 6 courses that have received the most attention from our users. 
+        Don't miss out on the chance to learn from these highly rated courses!
+      </p>
+      
+      <div class="course-cards">
+        <!-- Course Cards -->
+         <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let course of courseDetails">
+          <app-carousel-card [course]="course"></app-carousel-card>
+        </div>
+    </div>
+      </div>
+    </section>
+  
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+      <h3 class="cta-title">Ready to Start Learning?</h3>
+      <p class="cta-description">
+        Browse through our extensive catalog of courses and start learning today! Whether you want to master a new skill or advance in your career, we have the perfect course for you.
+      </p>
+      <button class="cta-button">Browse All Courses</button>
+    </section>
+  </div>
+  

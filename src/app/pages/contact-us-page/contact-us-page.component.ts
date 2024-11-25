@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { nameNoNumbersValidator } from 'src/app/components/custom-validators';
+import { SnackbarService } from 'src/app/components/snackbar.service';
 
 @Component({
   selector: 'app-contact-us-page',
@@ -10,10 +12,10 @@ import emailjs from '@emailjs/browser';
 export class ContactUsPageComponent implements OnInit {
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private snackBar: SnackbarService) {
     // Initialize the form group with validation
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, nameNoNumbersValidator(), Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       subject: ['', [Validators.required]],
       message: ['', [Validators.required]]
@@ -32,12 +34,12 @@ export class ContactUsPageComponent implements OnInit {
     })
     .then((response) => {
       console.log('SUCCESS!', response);
-      alert('Your message has been sent successfully!');
+      this.snackBar.showSuccess('Your message has been sent successfully!');
       this.contactForm.reset();
     })
     .catch((error) => {
       console.error('FAILED...', error);
-      alert('There was an error sending your message. Please try again later.');
+      this.snackBar.showError('There was an error sending your message. Please try again later.');
     });
   }
 

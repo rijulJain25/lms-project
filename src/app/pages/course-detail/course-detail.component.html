@@ -17,12 +17,21 @@
           </div>
 
           <div class="course-prices mb-4">
-            <h2 class="prices">{{ course.price | currency }}</h2>
+            <h2 class="prices" *ngIf="subsChk === 'Free'">{{ course.price | currency }}</h2>
+            <h2 class="prices" *ngIf="subsChk === 'Basic'">$ {{ MyPriceChange(course.price)}}</h2>
+            <h2 class="prices" *ngIf="subsChk === 'Premium'">Free</h2>
+            <button
+              class="button-custum btn btn-primary"
+              *ngIf="currentUser.role === 'Admin' || subsChk === 'Premium'">
+              Resume
+            </button>
+
             <button
               (click)="handleEnrollButton()"
               class="button-custum btn btn-primary"
+              *ngIf="currentUser.role === 'User' && subsChk != 'Premium'"
             >
-              {{ !isPurchased ? "Add to Cart" : "Resume" }}
+              {{ !isPurchased ? (addOrNot? "Added": "Add to Cart") : "Resume" }}
             </button>
           </div>
 
@@ -147,6 +156,54 @@
           <p>{{ instructor.bio }}</p>
         </div>
       </div>
+    </div>
+
+    <div class="review-outer">
+    <div *ngIf="currentUser.role === 'User' && isPurchased" class="review-form" [ngClass]="{ 'disabled-form': reviewChk }">
+
+      <h3>Leave a Review</h3>
+      <form (ngSubmit)="submitReview()" class="form-rev">
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <select id="rating" [(ngModel)]="review.rating" name="rating" required>
+            <option value="0">Select Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comment">Comment</label>
+          <textarea id="comment" [(ngModel)]="review.comment" name="comment" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+      </form>
+      <div *ngIf="reviewChk" class="reviewed-message">
+        <p>You have already reviewed this course!</p>
+      </div>
+    </div>
+
+    
+    <!-- Displaying Reviews -->
+    <div class="display-outer">
+      <h3>Reviews</h3>
+      <div class="reviews-section" *ngIf="reviews.length > 0">
+      <div *ngFor="let review of reviews" class="review">
+        <div class="reviewer-name">By: {{ review.reviewerName }}</div>
+        <div class="review-rating">
+        <div  *ngFor="let star of [].constructor(getRoundedReviews(review.rating)); let i = index">
+          <i class="fa fa-star" [ngClass]="{'star-filled': i < getRoundedReviews(review.rating)}"></i>
+        </div>
+        </div>
+        <div class="review-comment">{{ review.comment }}</div>
+      </div>
+    </div>
+    <div *ngIf=" reviews.length === 0 " class="not-fnd" style="padding: 20px;">
+      <p>No reviews found.</p>
+    </div>
+    </div>
     </div>
 
     <!-- FAQ Section -->

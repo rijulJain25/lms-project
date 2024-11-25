@@ -23,6 +23,10 @@ import { InstructorCoursesComponent } from './pages/instructor-courses/instructo
 import { AddCoursesComponent } from './pages/add-courses/add-courses.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SubscriptionComponent } from './pages/subscription/subscription.component';
+import { PopularCoursesComponent } from './pages/popular-courses/popular-courses.component';
+import { AdminGuardGuard } from './auth/admin-guard.guard';
+import { InstructorGuardGuard } from './auth/instructor-guard.guard';
+import { SetNewPasswordComponent } from './pages/set-new-password/set-new-password.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -36,17 +40,20 @@ const routes: Routes = [
   {path: 'instructor', component: InstructorPageComponent}, 
   { path: 'forgot-password', component: ForgotPasswordComponent },
   {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
-  { path: 'course/:id', component: CourseDetailComponent, canActivate: [AuthGuard] },
-  { path: 'add-instructor', component: AddInstructorComponent },
-  { path: 'edit-instructor/:id', component: EditInstructorComponent },
-  { path: 'manage-students', component: ManageStudentsComponent },
-  { path: 'edit-student/:id', component: EditStudentComponent },
-  { path: 'cart', component: CartPageComponent },
-  { path: 'enrolled-courses', component: EnrolledCoursesComponent },
-  { path: 'edit-course/:id', component: EditCourseComponent },
-  { path: 'created-courses', component: InstructorCoursesComponent },
-  { path: 'add-course', component: AddCoursesComponent },
-  { path: 'subscription', component: SubscriptionComponent },
+  { path: 'course/:id', component: CourseDetailComponent, canActivate: [AuthGuard]},
+  { path: 'add-instructor', component: AddInstructorComponent, canActivate: [AdminGuardGuard]},
+  { path: 'edit-instructor/:id', component: EditInstructorComponent, canActivate: [AdminGuardGuard]},
+  { path: 'manage-students', component: ManageStudentsComponent, canActivate: [AdminGuardGuard] },
+  { path: 'edit-student/:id', component: EditStudentComponent, canActivate: [AdminGuardGuard] },
+  { path: 'cart', component: CartPageComponent, canActivate: [AuthGuard] },
+  { path: 'enrolled-courses', component: EnrolledCoursesComponent, canActivate: [AuthGuard] },
+  { path: 'edit-course/:id', component: EditCourseComponent, canActivate: [InstructorGuardGuard] },
+  { path: 'created-courses', component: InstructorCoursesComponent, canActivate: [InstructorGuardGuard] },
+  { path: 'add-course', component: AddCoursesComponent, canActivate: [InstructorGuardGuard] },
+  { path: 'subscription', component: SubscriptionComponent, canActivate: [AuthGuard] },
+  { path: 'popular-course', component: PopularCoursesComponent },
+  { path: 'set-new-password', component: SetNewPasswordComponent },
+
   { path: '**', component: NotFoundComponent}
 ];
 
@@ -54,4 +61,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}
+

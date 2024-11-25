@@ -10,6 +10,7 @@
                 <div *ngIf="step1Controls.name.invalid && (step1Controls.name.dirty || step1Controls.name.touched)">
                   <small *ngIf="step1Controls.name.errors?.required" class="text-danger">Name is required.</small>
                   <small *ngIf="step1Controls.name.errors?.minlength" class="text-danger">Name must be at least 3 characters long.</small>
+                  <small *ngIf="step1Controls.name.errors?.invalidName" class="text-danger">Name can't contains numbers.</small>
                 </div>
               </div>
   
@@ -19,6 +20,9 @@
                 <div *ngIf="step1Controls.email.invalid && (step1Controls.email.dirty || step1Controls.email.touched)">
                   <small *ngIf="step1Controls.email.errors?.required" class="text-danger">Email is required.</small>
                   <small *ngIf="step1Controls.email.errors?.email" class="text-danger">Invalid email format.</small>
+                  <div *ngIf="step1Controls.email?.hasError('emailTaken')">
+                    <small class="text-danger">This email is already exists.</small>
+                  </div>
                 </div>
               </div>
   
@@ -61,7 +65,7 @@
               <div class="form-group">
                 <label for="interests">Interests</label>
                 <select id="interests" formControlName="interests" class="form-control" (change)="onInterestChange($event)" multiple [attr.disabled]="step2Form.get('interests')?.disabled ? true : null">
-                  <option *ngFor="let interest of interestList" [value]="interest">{{ interest }}</option>
+                  <option *ngFor="let interest of allSpecializations" [value]="interest">{{ interest }}</option>
                 </select>
                 <div *ngIf="step2Controls.interests.invalid && (step2Controls.interests.dirty || step2Controls.interests.touched)">
                   <small class="text-danger">Interests are required.</small>

@@ -9,8 +9,8 @@
             <div class="form-group">
               <label for="name">Name</label>
               <input id="name" type="text" formControlName="name" class="form-control custom-input" />
-              <div *ngIf="instructorForm.get('name')?.invalid && instructorForm.get('name')?.touched" class="text-danger">
-                Name is required and should be at least 3 characters long.
+              <div *ngIf="instructorForm.get('name')?.invalid && instructorForm.get('name')?.touched || instructorForm.get('name')?.hasError('invalidName')" class="text-danger">
+                Name is required and should be at least 3 characters long [a to z & A to Z].
               </div>
             </div>
   
@@ -71,7 +71,7 @@
               <label for="password">Password</label>
               <input id="password" type="password" formControlName="password" class="form-control custom-input" />
               <div *ngIf="instructorForm.get('password')?.invalid && instructorForm.get('password')?.touched" class="text-danger">
-                Password is required and should be at least 6 characters long.
+                Password is required and should be at least 8 characters long.
               </div>
             </div>
   

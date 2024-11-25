@@ -60,12 +60,23 @@
     </div>
 
     <!-- Conditionally render "Enroll Now" or "Open" based on if the user has purchased the course -->
-    <button *ngIf="currentUser.role === 'User'" class="classic-btn-new" (click)="onCourseButtonClick()">
-      {{ hasPurchased(course.course_id) ? 'Resume' : 'Enroll Now' }}
+    <div *ngIf="currentUser">
+    <button *ngIf=" currentUser.role === 'User' && subsChk != 'Premium'" class="classic-btn-new" (click)="onCourseButtonClick()">
+      {{ hasPurchased(course.course_id) ? 'Open' : 'Enroll Now' }}
+    </button>
+
+    <button *ngIf="currentUser.role === 'User' && subsChk === 'Premium'" class="classic-btn-new" (click)="onCourseButtonClick()">
+      Open
     </button>
 
     <button class="classic-btn-new" *ngIf="currentUser.role === 'Instructor' || currentUser.role == 'Admin'" (click)="onCourseButtonClick()">
       View
     </button>
+  </div>
+  <div *ngIf="!currentUser">
+    <button class="classic-btn-new" (click)="onCourseButtonClick()">
+      Enroll Now
+    </button>
+  </div>
   </div>
 </div>

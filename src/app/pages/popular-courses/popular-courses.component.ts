@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { TrendingCoursesService } from './trending-courses.service';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { TrendingCoursesService } from 'src/app/components/home-trending-course/trending-courses.service';
 
 @Component({
-  selector: 'app-home-trending-course',
-  templateUrl: './home-trending-course.component.html',
-  styleUrls: ['./home-trending-course.component.css']
+  selector: 'app-popular-courses',
+  templateUrl: './popular-courses.component.html',
+  styleUrls: ['./popular-courses.component.css']
 })
-export class HomeTrendingCourseComponent implements OnInit {
-
-  trendingCourses$!: Observable<any[]>; 
-  courseDetails: any[] = []; 
+export class PopularCoursesComponent {
+  trendingCourses$!: Observable<any[]>;  
+  courseDetails: any[] = [];  
 
   constructor(private trendingCoursesService: TrendingCoursesService) {}
 
@@ -23,5 +22,4 @@ export class HomeTrendingCourseComponent implements OnInit {
       });
     });
   }
-
 }

@@ -1,0 +1,81 @@
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+  
+  /* Header Styling */
+  .page-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .intro-text {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #f86c64;
+    margin-bottom: 15px;
+  }
+  
+  .section-description {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .cta-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .cta-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .cta-description {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background-color: #f86c64;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #fc4f45;
+  }
+  

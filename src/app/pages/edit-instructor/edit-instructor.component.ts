@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InstructorService } from '../instructor-page/instructor.service';
 import { Instructor } from 'src/app/components/intructor-registration/intructor-registration.component';
 import { SnackbarService } from 'src/app/components/snackbar.service';
+import { nameNoNumbersValidator } from 'src/app/components/custom-validators';
 
 @Component({
   selector: 'app-edit-instructor',
@@ -24,13 +25,13 @@ export class EditInstructorComponent implements OnInit {
     private snackbarService: SnackbarService,
   ) {
     this.instructorForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3), nameNoNumbersValidator()]],
       email: ['', [Validators.required, Validators.email]],
       specialization: ['', [Validators.required]],
       experience: ['', [Validators.required]],
       bio: ['', [Validators.required]],
       location: ['', [Validators.required]],
-      image: ['', []], // Optional field
+      image: ['', []],
       socialLinks: this.fb.group({
         facebook: [''],
         twitter: [''],
@@ -71,7 +72,7 @@ export class EditInstructorComponent implements OnInit {
       this.instService.updateInstructor(this.instructorId, updatedInstructor).subscribe(
         (response) => {
           this.snackbarService.showSuccess('Instructor Updated successfully!'); 
-          this.router.navigate(['/instructors']);
+          this.router.navigate(['/instructor']);
         },
         (error) => {
           console.error('Error updating instructor:', error);

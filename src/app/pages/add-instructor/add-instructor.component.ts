@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InstructorService } from '../instructor-page/instructor.service';
 import { SnackbarService } from 'src/app/components/snackbar.service';
+import { nameNoNumbersValidator } from 'src/app/components/custom-validators';
 
 @Component({
   selector: 'app-add-instructor',
@@ -29,7 +30,7 @@ export class AddInstructorComponent implements OnInit {
     });
 
     this.instructorForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3), nameNoNumbersValidator()]],
       email: ['', [Validators.required, Validators.email]],
       bio: ['', [Validators.required, Validators.minLength(10)]],
       specialization: ['', Validators.required],
@@ -37,7 +38,7 @@ export class AddInstructorComponent implements OnInit {
       linkedin: [''],
       twitter: [''],
       location: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 
@@ -63,6 +64,7 @@ export class AddInstructorComponent implements OnInit {
       this.instService.addInstructor(newInstructor).subscribe( () => { 
         this.snackbarService.showSuccess('Instructor added successfully!'); 
         this.router.navigate(['/instructor']);
-    });}
+    });
+  }
   }
 }

@@ -6,6 +6,7 @@ import { selectCart, selectCartLoading } from 'src/app/store/cart.selector';
 import { AuthService } from 'src/app/auth/auth.service';
 import { CartService } from './cart-page.service';
 import { SnackbarService } from 'src/app/components/snackbar.service';
+import { DashboardService } from '../dashboard-page/dashboard.service';
 
 export interface CartItem {
   courseId: string;
@@ -25,8 +26,9 @@ export class CartPageComponent implements OnInit {
   cartData!: any;
   loading$!: Observable<boolean>;
   currentUser: any;
+  subsChk: String = 'Free';
 
-  constructor(private store: Store, private authService: AuthService, private cartService: CartService, private snackBar: SnackbarService) {}
+  constructor(private store: Store, private authService: AuthService, private cartService: CartService, private snackBar: SnackbarService, private dash: DashboardService) {}
 
   ngOnInit(): void {
     const userId = this.authService.getCurrentUser().userId;
@@ -36,6 +38,8 @@ export class CartPageComponent implements OnInit {
       this.cartData = cart;
     })
     this.loading$ = this.store.select(selectCartLoading);
+    this.currentUser = this.authService.getCurrentUser();
+    this.subsChk = this.currentUser.subscription;
   }
 
   removeFromCart(courseId: string): void {
@@ -48,14 +52,33 @@ export class CartPageComponent implements OnInit {
     const userId = this.authService.getCurrentUser().userId;
     const courseIds = this.getCourseIdsFromCart();
     console.log("These are the course IDs:", courseIds);
-    this.cartService.buyCourses(userId, courseIds).subscribe(() => {
-      this.snackBar.showSuccess("Course bought successfully")
-      this.cartService.updateLocalStorageCourses(this.currentUser);
-      this.store.dispatch(clearCart({ userId }));
-    });
+
+    this.cartService.buyCourses(userId, courseIds).subscribe(
+      (response) => {
+        this.snackBar.showSuccess("Course bought successfully");
+        console.log('Response after course purchase:', response);
+        
+        this.dash.getCurrentUserData().subscribe((updatedUser) => {
+          this.currentUser = updatedUser;
+          console.log("Updated currentUser:", this.currentUser);
+
+          this.cartService.updateLocalStorageCourses(this.currentUser);
+
+          this.store.dispatch(clearCart({ userId }));
+        });
+      },
+      (error) => {
+        this.snackBar.showError("Error buying courses. Please try again.");
+        console.error("Error during course purchase:", error);
+      }
+    );
   }
 
   private getCourseIdsFromCart(): string[] {
     return this.cartData.map((item: { courseDetails: { course_id: any; }; }) => item.courseDetails.course_id);
+  }
+
+  DiscountPrice(DisPrice: number):number{
+    return Math.round(DisPrice *0.7 *100)/100;
   }
 }

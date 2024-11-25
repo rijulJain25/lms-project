@@ -4,7 +4,7 @@
     <label for="name">Name</label>
     <input id="name" formControlName="name" type="text" />
     <div *ngIf="f.name.invalid && f.name.touched" class="error-message">
-      Name is required (min. 3 characters).
+      Name is required (min. 3 characters [a to z & A to Z]).
     </div>
   </div>
 
@@ -91,16 +91,33 @@
     </div>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="interests">Interests</label>
-    <input id="interests" formControlName="interests" type="text" />
-    <div
-      *ngIf="f.interests.invalid && f.interests.touched"
-      class="error-message"
-    >
-      Interests are required.
+    <select id="interests" formControlName="interests" class="form-control" (change)="onInterestChange($event)" multiple [attr.disabled]="studentForm.get('interests')?.disabled ? true : null">
+      <option *ngFor="let interest of allSpecializations" [value]="interest">{{ interest }}</option>
+    </select>
+
+    <div *ngIf="f.interests.invalid && (f.interests.dirty || f.interests.touched)">
+      <small class="text-danger">Interests are required.</small>
+    </div>
+
+    <!-- Display max selection warning -->
+    <div *ngIf="selectedOptions.length >= 5" class="text-warning">
+      You can select a maximum of 5 interests.
+    </div>
+
+    <!-- Display selected interests -->
+    <div *ngIf="selectedOptions.length > 0">
+      <h4>Selected Interests:</h4>
+      <div class="selected-interests">
+        <div *ngFor="let interest of selectedOptions" class="interest-tag">
+          {{ interest }}
+          <button type="button" class="remove-btn" (click)="removeInterest(interest)">x</button>
+        </div>
+      </div>
     </div>
   </div>
+  
 
   <div>
     <label for="location">Location</label>

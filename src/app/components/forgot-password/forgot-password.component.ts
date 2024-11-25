@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
+import { SnackbarService } from '../snackbar.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -18,7 +19,8 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private snackbar: SnackbarService,
   ) {
     this.ValidateForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -48,6 +50,7 @@ export class ForgotPasswordComponent implements OnInit {
       (response) => {
         if (response) {
           this.successMessage = 'Email verified. Please enter your new password.';
+          
           this.errorMessage = '';
           this.validateEmail = true; 
         } else {
@@ -74,8 +77,11 @@ export class ForgotPasswordComponent implements OnInit {
     this.authService.updatePassword(email, newPassword).subscribe(
       (response) => {
         this.successMessage = 'Password updated successfully!';
+        this.snackbar.showSuccess(this.successMessage);
+
         this.errorMessage = '';
         this.forgotPasswordForm.reset();
+        this.router.navigate(['/login']);
       },
       (error) => {
         this.errorMessage = 'An error occurred while updating the password.';

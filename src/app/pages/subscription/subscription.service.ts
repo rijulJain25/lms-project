@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +12,26 @@ export class SubscriptionService {
   constructor(private http: HttpClient) { }
 
   getUserData(): Observable<any> {
-    const userId = localStorage.getItem('userId');
+    const userId = JSON.parse(localStorage.getItem('currentUser') || '{}').userId;
+    console.log(userId);
+    
     return this.http.get(`${this.apiUrl}/${userId}`);
   }
 
   updateSubscription(subscription: string): Observable<any> {
-    const userId = localStorage.getItem('userId');
-    return this.http.put(`${this.apiUrl}/update/${userId}`, { subscription });
+    const userId = JSON.parse(localStorage.getItem('currentUser') || '{}').userId;
+    
+    return this.getUserData().pipe(
+      switchMap((user) => {
+        user.subscription = subscription;
+
+        return this.http.put(`${this.apiUrl}/update/${userId}`, user).pipe(
+          map((updatedUser) => {
+            localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+            return updatedUser; 
+          })
+        );
+      })
+    );
   }
 }

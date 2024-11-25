@@ -27,7 +27,9 @@
       <select [(ngModel)]="subscriptionFilter" class="filter-select" (change)="filterData()">
         <option value="">All Subscriptions</option>
         <option value="Free">Free</option>
+        <option value="Basic">Basic</option>
         <option value="Premium">Premium</option>
+
       </select>
 
       <button class="add-student-btn" (click)="toggleAddStudentForm()">Add Student</button>

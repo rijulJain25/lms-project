@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Instructor } from '../components/intructor-registration/intructor-registration.component';
 
@@ -81,12 +81,16 @@ export class AuthService {
   }
 
   login(email: string, password: string, endPointChk: string): Observable<any> {
-    console.log(`${this.apiUrl}${endPointChk}`);
+    console.log(email, password, endPointChk);
     
-    return this.http.get<any[]>(`${this.apiUrl}${endPointChk}`).pipe(
-      catchError(this.handleError),
-      map(users => users.find(user => user.email === email && user.password === password))
-    );
+    console.log(`${this.apiUrl}${endPointChk}`);
+
+    const body = {
+      email: email,
+      password: password
+    };
+    
+    return this.http.post<any>(`${this.apiUrl}${endPointChk}/loginUserByEmail`, body)
   }
 
   logout(): void {
@@ -111,39 +115,16 @@ export class AuthService {
     throw error;
   }
 
-  forgotPassword(email: string): Observable<any> {
-    return this.http.get<User[]>(`${this.apiUrl}users`).pipe(
-      map(users => users.find(user => user.email === email)),
-      catchError(this.handleError)
-    );
+  forgotPassword(email: string): Observable<{exists: boolean}> {
+    return this.http.post<{exists: boolean}>(`${this.apiUrl}users/check-email`, {email: email});
   }
 
 
 
   updatePassword(email: string, newPassword: string): Observable<any> {
-    return this.http.get<User[]>(`${this.apiUrl}users`).pipe(
-      switchMap(users => {
-        const user = users.find(u => u.email === email);
-        console.log(user);
-  
-        if (user) {
-          user.password = newPassword;
-          console.log(user.userId);
-          console.log(user);
-  
-          return this.http.put<User>(`${this.apiUrl}users/${user.userId}`, user).pipe(
-            map(res => res),
-            catchError(err => {
-              console.error('API Error: ', err);
-              throw err;
-            })
-          );
-        } else {
-          throw new Error('User not found');
-        }
-      }),
-      catchError(this.handleError)
-    );
+    console.log(email, newPassword);
+    
+    return this.http.put<any>(`${this.apiUrl}users/update-password`, {email: email, password: newPassword});
   }
 
 
@@ -158,6 +139,18 @@ export class AuthService {
         return Array.from(categories);
       })
     );
+  }
+
+
+  checkEmailExists(email: string): Observable<boolean> {
+    return this.http.get<any[]>(`${this.apiUrl}users`).pipe(
+      map(users => users.some(user => user.email === email)),
+      catchError(() => of(false)) 
+    );
+  }
+
+  updatePasswordInst(email: string, newPassword: string): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}instructors/update-password`, {email: email, newPassword: newPassword});
   }
 
 

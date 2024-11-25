@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
+import { AuthService, Course } from 'src/app/auth/auth.service';
+import { nameNoNumbersValidator } from '../custom-validators';
+import { emailExistsValidator } from '../email-exists.';
 
 @Component({
   selector: 'app-student-registration',
@@ -18,14 +20,14 @@ export class StudentRegistrationComponent {
   isSubmitting: boolean = false;
   selectedOptions: any[] = []; 
   isLengthMore: boolean = false;
-
+  allSpecializations: String[] = [];
+  courses: Course[] = [];
   selectedInterests: string[] = []; 
-  interestList: string[] = ['Technology', 'Science', 'Arts', 'Sports', 'Music', 'Travel'];  // Example list of interests
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.step1Form = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
+      name: ['', [Validators.required, Validators.minLength(3), nameNoNumbersValidator()]],
+      email: ['', [Validators.required, Validators.email], [emailExistsValidator(this.authService)]],
       dateOfBirth: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8), this.passwordValidator]],
     })
@@ -47,16 +49,39 @@ export class StudentRegistrationComponent {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.getCourses().subscribe((courses) => {
+      this.courses = courses;      
+      this.updateSpecializations(this.courses);
+    })
+  }
 
   passwordValidator(control: any) {
     const value = control.value;
     return !/[!@#$%^&*]/.test(value) ? { specialCharacter: true } : null;
   }
 
+  extractTextAfterColon(input: string): string {
+    const textAfterColon = input.split(':')[1]?.trim();
+    return textAfterColon || '';
+  }
+
+  updateSpecializations(courses: any[]) {
+    const specializations = new Set<string>(); 
+    courses.forEach(crs => {
+      if (crs.category) {
+        specializations.add(crs.category);
+      }
+    });
+    this.allSpecializations = Array.from(specializations);  
+  }
+
+
   onInterestChange(event: any): void {
-    const selectedInterest = event.target.value;
+    let selectedInterest = event.target.value;
   
+    selectedInterest = this.extractTextAfterColon(selectedInterest);
+
     if (!this.selectedOptions.includes(selectedInterest)) {
       this.selectedOptions.push(selectedInterest);
     }

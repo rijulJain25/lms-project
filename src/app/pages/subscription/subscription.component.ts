@@ -13,10 +13,16 @@ export class SubscriptionComponent implements OnInit {
   constructor(private subs: SubscriptionService) { }
 
   ngOnInit(): void {
-    this.subs.getUserData().subscribe((user) => {
-      this.currentSubscription = user.subscription; 
-      this.updateSubscriptionProgress(user.subscription);
-    });
+    const storedSubscription = localStorage.getItem('userSubscription');
+    if (storedSubscription) {
+      this.currentSubscription = storedSubscription;
+      this.updateSubscriptionProgress(this.currentSubscription);
+    } else {
+      this.subs.getUserData().subscribe((user) => {
+        this.currentSubscription = user.subscription;
+        this.updateSubscriptionProgress(this.currentSubscription);
+      });
+    }
   }
 
   updateSubscriptionProgress(subscription: string) {

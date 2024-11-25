@@ -1,4 +1,3 @@
-/* General styling */
 :host {
     display: block;
     padding: 20px;
@@ -16,14 +15,12 @@
     color: #333;
   }
   
-  /* Form container */
   form {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
   
-  /* Input fields styling */
   input,
   select,
   textarea {
@@ -42,10 +39,60 @@
     border-color: #007bff;
     outline: none;
   }
+
+
+
+
+  /* Style for the selected interests */
+.selected-interests {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+
+.interest-tag {
+  background-color: #e0e0e0;
+  margin: 5px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.remove-btn {
+  color: red;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  margin-left: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.remove-btn:hover{
+  background-color: transparent !important;
+}
+
+
+/* Max selection warning */
+.text-warning {
+  margin-top: 10px;
+  color: orange;
+}
+
+
+
+
+
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
   
-  
-  /* Validation error message */
-  input.ng-invalid.ng-touched,
+    input.ng-invalid.ng-touched,
   select.ng-invalid.ng-touched,
   textarea.ng-invalid.ng-touched {
     border-color: #e74c3c;
@@ -57,7 +104,6 @@
     margin-bottom: 10px;
   }
   
-  /* Button styling */
   button {
     background-color: #007bff;
     color: white;
@@ -78,7 +124,6 @@
     cursor: not-allowed;
   }
   
-  /* Responsive styling */
   @media (max-width: 600px) {
     :host {
       padding: 16px;
@@ -117,4 +162,7 @@
       font-size: 0.85rem;
     }
   }
+
+
+
   

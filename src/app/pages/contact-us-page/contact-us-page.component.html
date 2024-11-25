@@ -25,8 +25,8 @@
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Name</mat-label>
             <input matInput formControlName="name" required />
-            <mat-error *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)">
-              <small>Name is required.</small>
+            <mat-error *ngIf="contactForm.get('name')?.hasError('invalidName') ||  contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)">
+              <small>Name is required, can't be number</small>
             </mat-error>
           </mat-form-field>
           

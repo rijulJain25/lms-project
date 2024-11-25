@@ -22,6 +22,14 @@ export class CourseDetailComponent implements OnInit {
   userChk: Boolean = false;
   userRoleChk: any
   courseToDel: any
+  subsChk: string = 'Free';
+  addOrNot: boolean = false;
+  reviewChk: boolean = false;
+  review = {
+    rating: 0,
+    comment: ''
+  };
+  reviews: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -37,10 +45,12 @@ export class CourseDetailComponent implements OnInit {
     const courseId = this.route.snapshot.paramMap.get('id'); 
     if (courseId) {
       this.loadCourseDetails(courseId);
+      this.loadReviews(courseId); 
     }
 
     if (this.authService.isAuthenticated()) {
       this.currentUser = this.authService.getCurrentUser();
+      this.subsChk = this.currentUser.subscription;
     }
   }
 
@@ -87,12 +97,56 @@ export class CourseDetailComponent implements OnInit {
     this.isPurchased = this.currentUser?.purchasedCourses.includes(courseId);
   }
 
+  submitReview(): void {
+    if (!this.review.rating || !this.review.comment) {
+      this.snackBar.showError('Please provide a rating and comment.');
+      return;
+    }
+
+    const courseId = this.course.course_id;
+    const reviewData = {
+      reviewer: this.currentUser.name,
+      rating: this.review.rating,
+      comment: this.review.comment
+    };
+
+    this.courseService.addReview(this.currentUser.userId, courseId, reviewData).subscribe(
+      (response) => {
+        this.reviews.push(response); 
+        this.snackBar.showSuccess('Review submitted successfully!');
+        this.review = { rating: 0, comment: '' }; 
+      },
+      (error) => {
+        this.snackBar.showError('Failed to submit the review.');
+        console.error('Error:', error);
+      }
+    );
+  }
+
+  loadReviews(courseId: string): void {
+    this.courseService.getReviews(courseId).subscribe(
+      (reviews) => {
+        this.reviews = reviews;
+        console.log(this.reviews);
+        if (this.currentUser && this.reviews.some(review => review.User === this.currentUser.userId)) {
+          this.reviewChk = true; 
+        }
+        
+      },
+      (error) => {
+        console.error('Error loading reviews:', error);
+      }
+    );
+  }
+
+
   handleEnrollButton(): void {
     if (this.isPurchased) {
       return; 
     } else {
       this.store.dispatch(addToCart({ courseId: this.course.course_id, userId: this.currentUser.userId }));
-      this.snackBar.showSuccess("Item add to cart")
+      this.snackBar.showSuccess("Item add to cart");
+      this.addOrNot = true;
     }
   }
 
@@ -120,5 +174,13 @@ export class CourseDetailComponent implements OnInit {
 
   closeModal() {
     this.courseToDel = null;
+  }
+
+  MyPriceChange(CourPrice: number): Number {
+    return Math.round(CourPrice * 0.7 * 100) / 100;
+  }
+
+  getRoundedReviews(reviews: number): number {
+    return Math.floor(reviews); 
   }
 }

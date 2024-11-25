@@ -27,7 +27,7 @@
               <li>Pay per course</li>
               <li>Lifetime access to purchased courses</li>
             </ul>
-            <button class="btn btn-outline-primary" (click)="onSubscriptionChange('Free')">Select Free Plan</button>
+            <button class="btn btn-outline-primary select-sub-btn" (click)="onSubscriptionChange('Free')">Select Free Plan</button>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
               <li>Lifetime access</li>
               <li>Exclusive course promotions</li>
             </ul>
-            <button class="btn btn-outline-success" (click)="onSubscriptionChange('Basic')">Select Basic Plan</button>
+            <button class="btn btn-outline-success select-sub-btn" (click)="onSubscriptionChange('Basic')">Select Basic Plan</button>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
               <li>Exclusive premium content</li>
               <li>Priority customer support</li>
             </ul>
-            <button class="btn btn-outline-danger" (click)="onSubscriptionChange('Premium')">Select Premium Plan</button>
+            <button class="btn btn-outline-danger select-sub-btn" (click)="onSubscriptionChange('Premium')">Select Premium Plan</button>
           </div>
         </div>
       </div>
@@ -81,37 +81,37 @@
       </div>
       <p class="text-center mt-2">{{ subscriptionProgress }}% towards unlocking Premium Plan</p>
     </div>
-  
-    <!-- FAQ Accordion -->
-    <div class="accordion mt-5" id="faqAccordion">
-      <div class="card">
-        <div class="card-header" id="faqHeadingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
-              What is the difference between Free, Basic, and Premium plans?
-            </button>
-          </h5>
+
+        <!-- FAQ Accordion -->
+        <div class="accordion mt-5" id="faqAccordion">
+            <div class="card">
+              <div class="card-header" id="faqHeadingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                    What is the difference between Free, Basic, and Premium plans?
+                  </button>
+                </h5>
+              </div>
+              <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                  The Free plan gives you access to courses at full price. The Basic plan gives you a 30% discount, and the Premium plan gives you unlimited access to all courses for free.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="faqHeadingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                    Can I upgrade my subscription later?
+                  </button>
+                </h5>
+              </div>
+              <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo" data-parent="#faqAccordion">
+                <div class="card-body">
+                  Yes, you can upgrade at any time. The changes will be effective immediately.
+                </div>
+              </div>
+            </div>
         </div>
-        <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne" data-parent="#faqAccordion">
-          <div class="card-body">
-            The Free plan gives you access to courses at full price. The Basic plan gives you a 30% discount, and the Premium plan gives you unlimited access to all courses for free.
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="faqHeadingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
-              Can I upgrade my subscription later?
-            </button>
-          </h5>
-        </div>
-        <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo" data-parent="#faqAccordion">
-          <div class="card-body">
-            Yes, you can upgrade at any time. The changes will be effective immediately.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+
+</div>

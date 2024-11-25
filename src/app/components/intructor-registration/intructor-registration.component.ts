@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import { nameNoNumbersValidator } from '../custom-validators';
+import { emailExistsValidator } from '../email-exists.';
 
 export interface Instructor {
   name: string;
@@ -18,6 +20,8 @@ export interface Instructor {
   location: string;
   username: string;
   password: string;
+  isFirstLogin: boolean;
+  ownRegistered: boolean;
 }
 
 @Component({
@@ -41,8 +45,8 @@ export class IntructorRegistrationComponent implements OnInit {
     private router: Router,
   ) {
     this.step1Form = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
+      name: ['', [Validators.required, Validators.minLength(3), nameNoNumbersValidator()]],
+      email: ['', [Validators.required, Validators.email], [emailExistsValidator(this.authService)]],
       password: ['', [Validators.required, Validators.minLength(8), this.passwordValidator]],
     });
 
@@ -103,8 +107,10 @@ export class IntructorRegistrationComponent implements OnInit {
       ...this.step1Form.value,
       ...this.step2Form.value,
       ...this.step3Form.value,
-      reviewIns: 0, // Default review count for a new instructor
-      image: 'assets/images/default-profile.png', // Default image for now
+      reviewIns: 0,
+      image: 'assets/images/default-profile.png', 
+      isFirstLogin: false,
+      ownRegistered: true,
     };
 
     this.isSubmitting = true;
@@ -150,9 +156,8 @@ export class IntructorRegistrationComponent implements OnInit {
 
   loadCategories() {
     this.authService.getCourses().subscribe(courses => {
-      // Extract unique categories from the course data
       const allCategories = courses.map(course => course.category);
-      this.categories = [...new Set(allCategories)];  // Remove duplicates
+      this.categories = [...new Set(allCategories)]; 
     });
   }
 }

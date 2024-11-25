@@ -16,8 +16,11 @@
             <h3>{{ item.courseDetails.name }}</h3>
             <p>{{ item.courseDetails.category }}</p>
             <p>{{ item.courseDetails.duration }} Hours</p>
-            <div class="price">
-              <span class="price-value">{{ item.courseDetails.price | currency }}</span>
+            <div class="price" *ngIf="subsChk === 'Free'">
+                <span class="price-value">{{ item.courseDetails.price | currency }}</span>
+            </div>
+            <div class="price" *ngIf="subsChk === 'Basic'">
+                <span class="price-value">{{ DiscountPrice(item.courseDetails.price) | currency }}</span>
             </div>
             <button class="remove-button" (click)="removeFromCart(item.courseDetails.course_id)">
               <i class="fa-solid fa-trash"></i>

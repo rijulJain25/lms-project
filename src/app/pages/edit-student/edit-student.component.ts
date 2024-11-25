@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/auth/auth.service';
 import { DashboardService } from '../dashboard-page/dashboard.service';
 import { SnackbarService } from 'src/app/components/snackbar.service';
+import { nameNoNumbersValidator } from 'src/app/components/custom-validators';
 
 @Component({
   selector: 'app-edit-student',
@@ -47,7 +48,7 @@ export class EditStudentComponent {
     
     // Initialize form with existing student data
     this.editStudentForm = this.fb.group({
-      name: [this.studentData.name, [Validators.required]],
+      name: [this.studentData.name, [Validators.required, nameNoNumbersValidator(), Validators.minLength(3)]],
       email: [this.studentData.email, [Validators.required, Validators.email]],
       username: [this.studentData.username, [Validators.required]],
       phoneNumber: [this.studentData.phoneNumber, [Validators.required]],

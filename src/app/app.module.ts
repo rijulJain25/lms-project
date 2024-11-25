@@ -61,6 +61,8 @@ import { InstructorCoursesComponent } from './pages/instructor-courses/instructo
 import { AddCoursesComponent } from './pages/add-courses/add-courses.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SubscriptionComponent } from './pages/subscription/subscription.component';
+import { PopularCoursesComponent } from './pages/popular-courses/popular-courses.component';
+import { SetNewPasswordComponent } from './pages/set-new-password/set-new-password.component';
 
 
 @NgModule({
@@ -115,6 +117,8 @@ import { SubscriptionComponent } from './pages/subscription/subscription.compone
     AddCoursesComponent,
     NotFoundComponent,
     SubscriptionComponent,
+    PopularCoursesComponent,
+    SetNewPasswordComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@
                   class="form-control" 
                   [ngClass]="{'is-invalid': instructorForm.get('name')?.invalid && instructorForm.get('name')?.touched}" />
                 <div *ngIf="instructorForm.get('name')?.invalid && instructorForm.get('name')?.touched" class="invalid-feedback">
-                  Name is required and must be at least 3 characters.
+                  Name is required and must be at least 3 characters (a to z & A to Z).
                 </div>
               </div>
   
