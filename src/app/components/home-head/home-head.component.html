@@ -9,10 +9,18 @@
         </p>
         <article>
           <div class="head-btn">
-            <form>
-              <input type="text" placeholder="Treasure your course..." class="inp-custom" />
-              <button class="btn-custom">Search</button>
+            <form [formGroup]="searchForm">
+              <input type="text" placeholder="Treasure your course..." class="inp-custom" formControlName="search" />
+              <button type="button" class="btn-custom">Search</button>
             </form>
+
+            <div *ngIf="filteredCourses.length > 0 && searchCour.length>0" class="suggestions-dropdown">
+              <ul>
+                <li *ngFor="let course of filteredCourses" (click)="onCourseSelect(course)">
+                  {{ course.name }}
+                </li>
+              </ul>
+            </div>
           </div>
         </article>
       </div>

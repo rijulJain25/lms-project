@@ -90,7 +90,7 @@ export class AuthService {
       password: password
     };
     
-    return this.http.post<any>(`${this.apiUrl}${endPointChk}/loginUserByEmail`, body)
+    return this.http.post<any>(`${this.apiUrl}${endPointChk}/loginByEmail`, body)
   }
 
   logout(): void {

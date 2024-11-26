@@ -54,6 +54,30 @@
     background-color: #ff4940;
 }
 
+.suggestions-dropdown {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.suggestions-dropdown ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestions-dropdown li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
 @media (max-width: 940px) {
 
   .home-header{

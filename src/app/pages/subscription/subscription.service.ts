@@ -25,7 +25,7 @@ export class SubscriptionService {
       switchMap((user) => {
         user.subscription = subscription;
 
-        return this.http.put(`${this.apiUrl}/update/${userId}`, user).pipe(
+        return this.http.put(`${this.apiUrl}/${userId}`, user).pipe(
           map((updatedUser) => {
             localStorage.setItem('currentUser', JSON.stringify(updatedUser));
             return updatedUser; 

@@ -1,6 +1,5 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
-// Custom validator to disallow numbers in the name field
 export function nameNoNumbersValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const name = control.value;
