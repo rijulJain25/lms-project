@@ -63,6 +63,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SubscriptionComponent } from './pages/subscription/subscription.component';
 import { PopularCoursesComponent } from './pages/popular-courses/popular-courses.component';
 import { SetNewPasswordComponent } from './pages/set-new-password/set-new-password.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { InstructorProfileComponent } from './components/instructor-profile/instructor-profile.component';
 
 
 @NgModule({
@@ -119,6 +122,9 @@ import { SetNewPasswordComponent } from './pages/set-new-password/set-new-passwo
     SubscriptionComponent,
     PopularCoursesComponent,
     SetNewPasswordComponent,
+    ProfileComponent,
+    UserProfileComponent,
+    InstructorProfileComponent,
   ],
   imports: [
     BrowserModule,

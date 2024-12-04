@@ -1,0 +1,146 @@
+.container {
+    padding: 20px;
+  }
+  
+  .profile-card, .password-card {
+    margin-bottom: 20px;
+  }
+  
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .profile-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+  }
+
+  .btn-primary-pass{
+    background-color: #f86c64;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .btn-primary-pass:hover, .btn-success-pass:hover, .btn-primary-profile:hover, .btn-success-changes:hover{
+    background-color: #ff544b !important;
+  }
+
+  .btn-success-pass{
+    background-color: #f86c64;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+
+  }
+
+  .btn-primary-pass:hover{
+    background-color: #ff544b;
+  }
+
+  .btn-secondary-pass{
+    background-color: #ddd;
+    color: #555;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .btn-primary-profile{
+    background-color: #f86c64;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-success-changes{
+    background-color: #f86c64;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 60%;
+}
+
+.btn-secondary-changes{
+    background-color: #ddd;
+    color: #555;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 30%;
+  }
+
+  .btn-grp{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  .card-body .btn {
+    width: 100%;
+  }
+  
+  .password-change-form {
+    margin-top: 20px;
+  }
+  
+  .password-change-form .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .profile-info-form .form-control {
+    margin-bottom: 10px;
+  }
+  
+  .user-info-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .user-info-card form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .instructor-details {
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+    .row {
+      flex-direction: column;
+    }
+    .profile-card, .password-card {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  

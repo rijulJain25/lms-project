@@ -1,0 +1,158 @@
+<div class="container">
+    <div class="row">
+      <!-- Left Section: Profile Info and Password Change -->
+      <div class="col-md-4">
+        <!-- Profile Info Card -->
+        <div class="card profile-card">
+          <img *ngIf="user.profilePhoto" [src]="user.profilePhoto" alt="Profile Photo" class="card-img-top profile-photo" />
+          <div class="card-body">
+            <h5 class="card-title">{{ user.name }}</h5>
+            <p class="card-text">{{ user.role }}</p>
+          </div>
+        </div>
+  
+        <!-- Change Password Card -->
+        <div class="card password-card mt-4">
+          <div class="card-body">
+            <h5 class="card-title">Change Password</h5>
+            <button *ngIf="!isChangingPassword" class="btn btn-primary-pass" (click)="togglePasswordChange()">Change Password</button>
+  
+            <div *ngIf="isChangingPassword" class="password-change-form">
+              <form [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+                <div class="form-group">
+                  <label for="old-password">Old Password</label>
+                  <input type="password" id="old-password" class="form-control" formControlName="oldPassword" />
+                </div>
+                <div class="form-group">
+                  <label for="new-password">New Password</label>
+                  <input type="password" id="new-password" class="form-control" formControlName="newPassword" />
+                </div>
+                <div class="form-group">
+                  <label for="confirm-password">Confirm Password</label>
+                  <input type="password" id="confirm-password" class="form-control" formControlName="confirmPassword" />
+                </div>
+                <button class="btn btn-success-pass" type="submit" [disabled]="passwordForm.invalid">Update Password</button>
+                <button class="btn btn-secondary-pass" (click)="togglePasswordChange()">Cancel</button>
+              </form>
+            </div>
+  
+            <!-- Forgot Password Link -->
+            <div *ngIf="!isChangingPassword">
+              <a href="/forgot-password" style="color: #f86c64;">Forgot your password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right Section: User Info and Edit Form -->
+      <div class="col-md-8">
+        <div *ngIf="isLoading" class="text-center">
+          <p>Loading...</p>
+        </div>
+  
+        <div *ngIf="!isLoading" class="user-info-card">
+          <div class="profile-header">
+            <h2>Your Profile</h2>
+            <p>Information</p>
+          </div>
+  
+          <!-- Un-editable User Info Form -->
+          <div *ngIf="!isEditing">
+            <form>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" [value]="user.email" disabled />
+              </div>
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" class="form-control" [value]="user.location" disabled />
+              </div>
+              <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" class="form-control" [value]="user.bio" disabled></textarea>
+              </div>
+
+              <div class="form-group"*ngIf="currentUser.role != 'Admin'" >
+                <label for="gender">Gender</label>
+                <textarea id="gender" class="form-control" [value]="user.gender" disabled></textarea>
+              </div>
+              <div class="form-group">
+                <label for="currentInstitution">Current Institution</label>
+                <textarea id="currentInstitution" class="form-control" [value]="user.currentInstitution" disabled></textarea>
+              </div>
+              <div class="form-group" >
+                <label for="phoneNumber">phone Number</label>
+                <textarea id="phoneNumber" class="form-control" [value]="user.phoneNumber" disabled></textarea>
+              </div>
+
+              <div class="form-group" *ngIf="currentUser.role != 'Admin'">
+                <label for="interest">Interest</label>
+                <input type="text" id="interest" [value]="user.interests" class="form-control" disabled/>
+              </div>
+
+              <div class="form-group" *ngIf="currentUser.role != 'Admin'">
+                <label for="subscription">Subscription</label>
+                <input type="text" id="subscription" [value]="user.subscription" class="form-control" disabled/>
+              </div>
+              <button class="btn btn-primary-profile" (click)="toggleEditMode()">Edit Profile</button>
+            </form>
+          </div>
+  
+          <!-- Editable User Info Form -->
+          <div *ngIf="isEditing">
+            <form [formGroup]="profileForm" (ngSubmit)="updateUser()">
+              <!-- Editable Fields -->
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" formControlName="name" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <div class="form-check">
+                  <input type="radio" id="male" formControlName="gender" value="Male" class="form-check-input" />
+                  <label for="male" class="form-check-label">Male</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="female" formControlName="gender" value="Female" class="form-check-input" />
+                  <label for="female" class="form-check-label">Female</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="currentInstitution">Current Institution</label>
+                <input type="text" id="currentInstitution" formControlName="currentInstitution" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="interests">Interest</label>
+                <input type="text" id="interests" formControlName="interests" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="subscription">Subscription</label>
+                <select id="subscription" formControlName="subscription" class="form-control">
+                  <option value="Free">Free</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Enterprise">Enterprise</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bio">bio</label>
+                <input type="textarea" id="bio" formControlName="bio" class="form-control" />
+              </div>
+  <div class="btn-grp">
+              <button class="btn btn-success-changes" type="submit" [disabled]="profileForm.invalid">Save Changes</button>
+              <button class="btn btn-secondary-changes" (click)="toggleEditMode()">Cancel</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

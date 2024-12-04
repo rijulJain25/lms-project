@@ -89,7 +89,7 @@ export class InstructorPageComponent implements OnInit {
         : true;
       return matchSearch && matchSpec;
     });
-    this.currentPage = 1;  // Reset to first page
+    this.currentPage = 1;  
     this.updatePage();
   }
 
@@ -103,7 +103,7 @@ export class InstructorPageComponent implements OnInit {
   }
 
   getRoundedReviews(reviews: number): number {
-    return Math.floor(reviews); // Round down the review value
+    return Math.floor(reviews); 
   }
 
   countLessons(instructorId: string): number {

@@ -43,21 +43,19 @@ export class HomeStatsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Setting up Intersection Observer to track visibility of the cards
     this.createIntersectionObserver();
   }
 
   createIntersectionObserver(): void {
     const options = {
-      root: null, // viewport
+      root: null,
       rootMargin: '0px',
-      threshold: 0.5 // Trigger when 50% of the card is visible
+      threshold: 0.5
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Trigger count-up when the card is in view
           const cardId = entry.target.id;
           switch (cardId) {
             case 'coursesCard':
@@ -73,12 +71,11 @@ export class HomeStatsComponent implements OnInit, AfterViewInit {
               this.startCountUp('categories', this.totalCategories.length);
               break;
           }
-          observer.unobserve(entry.target); // Stop observing after triggering count-up
+          observer.unobserve(entry.target); 
         }
       });
     }, options);
 
-    // Observe the cards
     observer.observe(this.coursesCard.nativeElement);
     observer.observe(this.instructorsCard.nativeElement);
     observer.observe(this.studentsCard.nativeElement);

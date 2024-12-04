@@ -27,6 +27,7 @@ import { PopularCoursesComponent } from './pages/popular-courses/popular-courses
 import { AdminGuardGuard } from './auth/admin-guard.guard';
 import { InstructorGuardGuard } from './auth/instructor-guard.guard';
 import { SetNewPasswordComponent } from './pages/set-new-password/set-new-password.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -53,7 +54,7 @@ const routes: Routes = [
   { path: 'subscription', component: SubscriptionComponent, canActivate: [AuthGuard] },
   { path: 'popular-course', component: PopularCoursesComponent },
   { path: 'set-new-password', component: SetNewPasswordComponent },
-
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent}
 ];
 

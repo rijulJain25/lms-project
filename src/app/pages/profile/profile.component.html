@@ -1,0 +1,3 @@
+<app-user-profile *ngIf="currentUser.role === 'Admin' || currentUser.role === 'User'"></app-user-profile>
+
+<app-instructor-profile *ngIf="currentUser.role === 'Instructor'"></app-instructor-profile>

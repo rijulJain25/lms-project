@@ -102,7 +102,7 @@ export class AuthService {
     localStorage.setItem('currentUser', JSON.stringify(user));
   }
 
-  getCurrentUser(): User {
+  getCurrentUser(): any {
     return JSON.parse(localStorage.getItem('currentUser') || '{}');
   }
 

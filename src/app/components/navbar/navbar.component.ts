@@ -11,10 +11,12 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class NavbarComponent implements OnInit {
   currentUser: any = null;
   userRole: string | null = null;
+  userNow: any;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
+  
     const user = this.authService.getCurrentUser();
     
     if (user && Object.keys(user).length > 0) {
@@ -25,6 +27,10 @@ export class NavbarComponent implements OnInit {
     }
   }
   logout(): void {
+    this.userNow = this.authService.getCurrentUser();
+    // console.log("the logged out user", this.userNow);
+    // alert(JSON.stringify(this.userNow));
+    
     this.authService.logout();
     this.router.navigate(['/home']);
     window.location.reload();
